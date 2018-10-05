@@ -1,12 +1,36 @@
 {
   "pages":[
+    "pages/business/list",
+    "pages/my/index",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/logs/select"
   ],
+
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/business/list",
+        "text": "亲子商户",
+        "iconPath": "pages/img/icon-business.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "pages/img/icon-my.png"
+      },
+      {
+        "pagePath": "pages/logs/select",
+        "text": "ttttt",
+        "iconPath": "pages/img/icon-my.png"
+      }
+    ]
+  },
+
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#008FD1",
+    "navigationBarTitleText": "亲子大联盟",
+    "navigationBarTextStyle":"white"
   }
 }

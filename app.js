@@ -1,15 +1,20 @@
 //app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+  hometeach: "https://www.qinzi123.com/",
+  userCode: "0",
 
+  login: function () {
     // 登录
     wx.login({
       success: res => {
+        var code = res.code;
+        if (code) {
+          this.userCode = code;
+        } else {
+          console.log('获取用户登录态失败：' + res.errMsg);
+        }
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        //console.log(res);
       }
     })
     // 获取用户信息
@@ -33,6 +38,81 @@ App({
       }
     })
   },
+
+  onLaunch: function () {
+    this.login();
+  },
+
+  post: function (loadUrl, postData, func) {
+    wx.request({
+      url: this.hometeach + loadUrl,
+      data: postData,
+      method: "POST",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        func(res.data);
+      }
+    })
+  },
+
+  getUrl: function (loadUrl, func) {
+    wx.request({
+      url: this.hometeach + loadUrl,
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        func(res.data);
+      }
+    })
+  },
+
+  deleteUrl: function (loadUrl, func) {
+    wx.request({
+      url: this.hometeach + loadUrl,
+      method: "DELETE",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        func(res.data);
+      }
+    })
+  },
+
+  isAuth: function (event) {
+    if (!!event.detail.userInfo) {
+      this.globalData.userInfo = event.detail.userInfo;
+      return true;
+    }
+    return false;
+  },
+
+  // 后续要重构采用 result{code: msg: data}这种结构返回
+  hasData: function (data) {
+    if (data == undefined || data == null) return false;
+    return true;
+  },
+
+  joinConfirm: function (event, func) {
+    if (event.type != "getuserinfo") return;
+    if (this.isAuth(event)) {
+      func();
+    } else {
+      wx.showModal({
+        title: '用户未授权',
+        content: '拒绝授权后,将无法发起拼班和参与拼班,  请您确认后重新操作,并允许授权',
+        confirmText: '确认',
+        showCancel: false,
+        success: function (res) {
+        }
+      })
+    }
+  },
+
   globalData: {
     userInfo: null
   }
