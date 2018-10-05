@@ -1,0 +1,13 @@
+<view>
+  <include src="../common/oneBusinessTemp.wxml"></include>
+
+  <view class="bottom-button">
+    <view class="bottom-left-button">
+      +加关注
+    </view>
+
+    <view class="bottom-right-button">
+      转发名片
+    </view>
+  </view>
+</view>

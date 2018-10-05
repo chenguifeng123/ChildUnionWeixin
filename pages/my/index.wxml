@@ -1,2 +1,3 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view>
+<include src="../common/oneBusinessTemp.wxml"></include>
+</view>

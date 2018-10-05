@@ -8,8 +8,8 @@ Page({
    */
   data: {
     oneBusiness: {},
-    isMyPage: true,
-    imageIndex: 1,
+    isMyPage: false,
+    imageIndex: 0,
   },
 
 
@@ -31,9 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var op = this;
     var id = options.id;
-    id = 26;
     this.loadOneBusiness(id);
   },
 
