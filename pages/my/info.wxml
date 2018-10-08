@@ -1,0 +1,63 @@
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder=""   bindinput="bindUserNameInput" value="{{userName}}"  maxlength="10"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">公司</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder=""   bindinput="bindUserNameInput" value="{{userName}}"  maxlength="10"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">职务</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder=""   bindinput="bindUserNameInput" value="{{userName}}"  maxlength="10"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="" bindinput="bindContactInput" value="{{contact}}" maxlength="11" type="number" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">邮箱</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder=""   bindinput="bindUserNameInput" value="{{userName}}"  maxlength="10"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindAreaChange" value="{{areaIndex}}" range="{{area}}">
+                        <view class="weui-select weui-select_in-select-after">{{area[areaIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            
+ 
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">详细地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <textarea bindinput='bindDescription' class="boxInput"      maxlength='2048' placeholder='' value="{{description}}"   selection-end='-1' selection-start='-1' cursor='-1'></textarea>
+                </view>
+            </view>
+            
+        </view>

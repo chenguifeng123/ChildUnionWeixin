@@ -10,11 +10,25 @@ Page({
     oneBusiness: {},
     isMyPage: false,
     imageIndex: 0,
+    isFollowed: false,
+    id:-1
   },
 
+  onGotUserInfo: function(e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.userInfo)
+    console.log(e.detail.rawData)
+  },
 
-  modifyCard: function (event) {
-
+  addFollower:function(event){
+    // 加载一个商户
+    var op = this;
+    var userId = app.getUserId();
+    app.getUrl('/business/addFollower/' + userId + '-' + this.data.id, function (data) {
+      if (app.hasData(data)) {
+        op.setData({ isFollowed: true });
+      }
+    });
   },
 
   loadOneBusiness: function (id) {
@@ -32,6 +46,11 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
+    var isFollowed = options.isFollowed;
+    this.setData({
+      id: id,
+      isFollowed: isFollowed,
+      });
     this.loadOneBusiness(id);
   },
 
@@ -82,7 +101,22 @@ Page({
    */
   onShareAppMessage: function () {
     var op = this;
+    var allUrl = util.fillUrlParams('/pages/business/oneBusiness', {
+      id: op.data.id,
+      isFollowed: false,
+    });
 
+    return {
+      title: '分享名片',
+      path: allUrl,
+      success: function (res) {
+        console.log(res)
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 
 })

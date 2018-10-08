@@ -9,8 +9,10 @@ Page({
 
   oneBusiness:function(event){
     var id = event.currentTarget.dataset.id;
+    var isFollowed = event.currentTarget.dataset.isfollowed;
     var allUrl = util.fillUrlParams('./oneBusiness', {
-      id : id
+      id : id,
+      isFollowed: isFollowed
     });
     wx.navigateTo({
       url: allUrl
@@ -24,7 +26,7 @@ Page({
     id = 26;
     id = id == '' ? -1 : id;
     // 加载外教
-    app.getUrl('business/list/' + id, function (data) {
+    app.getUrl('/business/list/' + id, function (data) {
       if (app.hasData(data)) {
         op.setData({businessList : data});
       }

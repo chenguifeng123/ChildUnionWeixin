@@ -1,41 +1,18 @@
-var util = require('../../utils/util.js');
-const app = getApp()
-
+// pages/my/info.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    oneBusiness: {},
-    isMyPage: true,
-    imageIndex: 1,
-  },
 
-
-  modifyCard: function (event) {
-    wx.navigateTo({
-      url: './info'
-    });
-  },
-
-  loadOneBusiness: function (id) {
-    var op = this;
-    // 加载一个商户
-    app.getUrl('/business/info/' + id, function (data) {
-      if (app.hasData(data)) {
-        op.setData({ oneBusiness: data[0] });
-      }
-    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var op = this;
-    var id = app.getUserId();
-    this.loadOneBusiness(id);
+
   },
 
   /**
@@ -84,8 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    var op = this;
 
   }
-
 })

@@ -1,6 +1,6 @@
 //app.js
 App({
-  hometeach: "https://www.qinzi123.com/",
+  hometeach: "https://www.qinzi123.com",
   userCode: "0",
 
   login: function () {
@@ -111,6 +111,13 @@ App({
         }
       })
     }
+  },
+
+  getUserId: function(){
+    var id = wx.getStorageSync('id');
+    //return id == '' ? -1 : id;
+
+    return 26;
   },
 
   globalData: {

@@ -3,6 +3,7 @@
     "pages/business/list",
     "pages/business/oneBusiness",  
     "pages/my/index",
+    "pages/my/info",
     "pages/index/index",
     "pages/logs/logs",
     "pages/logs/select"
