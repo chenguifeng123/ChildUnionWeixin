@@ -115,12 +115,12 @@ App({
 
   getUserId: function(){
     var id = wx.getStorageSync('id');
-    //return id == '' ? -1 : id;
-
-    return 26;
+    return id == '' ? -1 : id;
+    //return 26;
   },
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+    listDataUpdated : false,
   }
 })

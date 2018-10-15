@@ -1,0 +1,27 @@
+
+
+<view class="title-big">所属亲子行业</view>
+
+<view  class="type-btn">
+  <button class="first-btn service-btn">服务类</button>
+  <button class="first-btn product-btn" disabled="true">产品类</button>
+</view>
+
+<view class="title-sub">
+  <view class="title-small">我不在亲子行业, 但我想寻求商业合作</view>
+  <view class="desc-small">
+    <image src="/pages/img/tip.png" style="width:10px;height:10px;"></image>
+    标签最多选择三项
+  </view>
+</view>
+
+<view class="one-service" wx:for="{{service}}" wx:for-index="index" data-index="{{index}}"  wx:key="{{item.subserviceId}}" > 
+  <view class="title"><text style="color:yellow;">●</text> {{item.subserviceName}}</view>
+  <view>
+    <button class="one-btn {{btnServiceSelected[index][tagIndex]}}" wx:for="{{item.tagList}}" wx:for-index="tagIndex" wx:for-item="tags" data-parent="{{index}}" data-index="{{tagIndex}}" wx:key="{{tags.tagId}}" data-tag="{{tags.tagId}}" bindtap="tagClick">{{tags.tagName}} </button>
+  </view>
+</view>
+
+<view class="next-view">
+  <button class="next-step" bindtap="nextStep">下一步</button>
+</view>

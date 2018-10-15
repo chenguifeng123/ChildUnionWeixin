@@ -1,5 +1,6 @@
 var util = require('../../utils/util.js');
 const app = getApp()
+import oneBusinessTemp from '../common/oneBusinessTemp';
 
 Page({
 
@@ -10,14 +11,38 @@ Page({
     oneBusiness: {},
     isMyPage: false,
     imageIndex: 0,
-    isFollowed: false,
+    follow:0,
     id:-1
   },
 
+  getFollowerById: oneBusinessTemp.getFollowerById,
+  getFansById: oneBusinessTemp.getFansById,
+
+  addCardUser:function(){
+
+  },
+
+
   onGotUserInfo: function(e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
+    app.globalData.userInfo = e.detail.userInfo;
+    //console.log(e.detail.errMsg)
+    //console.log(e.detail.userInfo)
+    //console.log(e.detail.rawData)
+    if (app.getUserId() == -1){
+      wx.showModal({
+        title: '提示',
+        content: '请先完善个人信息,再关注',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/my/type'
+            });
+          }
+        }
+      })
+    }else{
+      this.addFollower(e);
+    }
   },
 
   addFollower:function(event){
@@ -26,7 +51,14 @@ Page({
     var userId = app.getUserId();
     app.getUrl('/business/addFollower/' + userId + '-' + this.data.id, function (data) {
       if (app.hasData(data)) {
-        op.setData({ isFollowed: true });
+        op.setData({follow:1});
+        app.globalData.listDataUpdated = true;
+        
+        var allUrl = util.fillUrlParams('/pages/business/success', {
+        });
+        wx.navigateTo({
+          url: allUrl
+        });
       }
     });
   },
@@ -46,10 +78,10 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    var isFollowed = options.isFollowed;
+    var follow = options.follow;
     this.setData({
       id: id,
-      isFollowed: isFollowed,
+      follow: follow
       });
     this.loadOneBusiness(id);
   },
@@ -103,7 +135,7 @@ Page({
     var op = this;
     var allUrl = util.fillUrlParams('/pages/business/oneBusiness', {
       id: op.data.id,
-      isFollowed: false,
+      isFollowed: 0,
     });
 
     return {

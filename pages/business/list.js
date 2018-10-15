@@ -1,34 +1,38 @@
 var util = require('../../utils/util.js');
 const app = getApp()
+import businessTemp from '../common/businessTemp';
 
 Page({
   data: {
     businessList : [],
 
+    start: 1,
+    pageSize: 30,
+    hasMoreData: true,
   },
 
-  oneBusiness:function(event){
-    var id = event.currentTarget.dataset.id;
-    var isFollowed = event.currentTarget.dataset.isfollowed;
-    var allUrl = util.fillUrlParams('./oneBusiness', {
-      id : id,
-      isFollowed: isFollowed
-    });
-    wx.navigateTo({
-      url: allUrl
-    });
-
-  },
+  oneBusiness: businessTemp.oneBusiness,
 
   loadAllBusiness:function(){
     var op = this;
     var id = wx.getStorageSync('id');
-    id = 26;
     id = id == '' ? -1 : id;
-    // 加载外教
-    app.getUrl('/business/list/' + id, function (data) {
+    var businessList = this.data.businessList;
+    // 加载商户
+    app.getUrl('/business/list/' + id + '-' + this.data.start + '-' + this.data.pageSize, function (data) {
       if (app.hasData(data)) {
-        op.setData({businessList : data});
+        if (data.length < op.data.pageSize) {
+          op.setData({
+            businessList: businessList.concat(data),
+            hasMoreData: false
+          });
+        } else {
+          op.setData({
+            businessList: businessList.concat(data),
+            hasMoreData: true,
+            start: op.data.start + op.data.pageSize
+          })
+        }
       }
     });
   },
@@ -37,4 +41,51 @@ Page({
     this.loadAllBusiness();
   },
 
+  /**
+    * 生命周期函数--监听页面显示
+    */
+  onShow: function () {
+    if (app.globalData.listDataUpdated){
+      this.loadAllBusiness();
+      app.globalData.listDataUpdated = false;
+    }
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.data.start = 1;
+    wx.showToast({
+      title: '正在刷新',
+    });
+    this.loadAllBusiness();
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    if (this.data.hasMoreData) {
+      /*
+      wx.showToast({
+        title: '正在加载',
+        duration: 500,
+      });*/
+      this.loadAllBusiness();
+    } else {
+      wx.showToast({
+        title: '没有更多数据',
+        duration: 500,
+      })
+    }
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+  
 })

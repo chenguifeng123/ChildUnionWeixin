@@ -2,11 +2,13 @@
   "pages":[
     "pages/business/list",
     "pages/business/oneBusiness",  
+    "pages/business/success",
+    "pages/business/commend",
+    "pages/business/follower",
+    "pages/business/fans",
     "pages/my/index",
     "pages/my/info",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/logs/select"
+    "pages/my/type"
   ],
 
   "tabBar": {

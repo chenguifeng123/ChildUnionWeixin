@@ -22,12 +22,18 @@ page, .page{
 }
 
 .card-img{
+  width: 77px;
+  height: 30px;
+}
+
+
+.btn-card-img{
   position: absolute;
    right: 2px;
    left: auto;
    top: 10px;
-   width: 77px;
-   height: 30px;
+  padding: 0px;
+  background-color: rgba(255,255,255,0);
 }
 
 .modify-img{
@@ -37,6 +43,10 @@ page, .page{
    top: 10px;
    width: 24px;
    height: 24px;
+}
+
+.btn-card-img::after{
+  border: none;
 }
 
 .userinfo-nickname {

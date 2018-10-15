@@ -2,7 +2,10 @@
   <view class = "title">
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{oneBusiness.headimgurl}}" background-size="cover"></image>
       <image bindtap="modifyCard" class="modify-img" src="/pages/img/modify.png" wx:if="{{isMyPage == true}}"></image>
-      <image bindtap="" class="card-img" src="/pages/img/card.png" wx:if="{{isMyPage == true}}"></image>
+      <button class="btn-card-img"  open-type="share"  wx:if="{{isMyPage == true}}">
+        <image class="card-img" src="/pages/img/card.png" wx:if="{{isMyPage == true}}"></image>
+      </button>
+      
       <view class="user-desc">
         <text class="userinfo-nickname">{{oneBusiness.realname}}</text>
         <image src="/pages/img/man.png" class="gender" wx:if="{{oneBusiness.gender == 0}}"></image>
@@ -11,7 +14,7 @@
       <view class="business-company">{{oneBusiness.company}}</view>
       <view class="business-job">{{oneBusiness.job}}</view>
   </view>
-  <view class="follow-count">
+  <view class="follow-count" data-count=" {{oneBusiness.follow_count}}" data-id="{{oneBusiness.id}}" bindtap="getFollowerById" >
     <view class="follow-left">
       <view class="follow-desc">关注
       </view>
@@ -20,7 +23,7 @@
       </view>
     </view>
 
-    <view class="follow-right">
+    <view class="follow-right" data-count=" {{oneBusiness.fans_count}}" data-id="{{oneBusiness.id}}" bindtap="getFansById">
       <view class="follow-desc">粉丝
       </view>
       <view class="follow-value">

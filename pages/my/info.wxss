@@ -1,1 +1,19 @@
-/* pages/my/info.wxss */
+.weui-label, .weui-cell__bd{
+  font-size: 0.8em;
+}
+
+.weui-label{
+  width: 70px;
+}
+.submit-view{
+  margin-top:15px;
+  text-align: center;
+}
+
+.submit-btn{
+  background-color:  rgb(1, 143, 215);
+  width: 60%;
+  border:2px solid;
+  border-radius:25px;
+  color: white;
+}

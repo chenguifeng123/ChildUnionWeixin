@@ -2,7 +2,7 @@
   <include src="../common/oneBusinessTemp.wxml"></include>
 
   <view class="bottom-button">
-    <button class="bottom-left-button bottom-class" open-type="getUserInfo" bindtap="addFollower" bindgetuserinfo="onGotUserInfo" disabled="{{!isFollowed}}">
+    <button class="bottom-left-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" disabled="{{follow == 1}}">
       +加关注
     </button>
 
