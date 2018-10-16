@@ -1,13 +1,14 @@
         <!-- 头像 -->
-        <view class="business-left-info"> 
+        <view class="business-left-info" data-id="{{item.id}}" data-follow="{{item.isFollow}}" bindtap="oneBusiness"> 
           <image class="business-photo" src="{{item.headimgurl}}" background-size="cover"></image>
         </view>
         <!-- 信息 -->
-        <view class="business-middle-info"> 
+        <view class="business-middle-info" data-id="{{item.id}}" data-follow="{{item.isFollow}}" bindtap="oneBusiness"> 
           <!-- 姓名头衔 -->
           <view  class="business-desc-info"> 
             <text class="business-name"> {{item.realname}} </text>
-            <image src="{{'/pages/img/' + 'man' +'.png'}}" style="width: 15px; height: 15px; "/>
+            <image src="/pages/img/women.png" wx:if="{{item.gender == 1}}" style="width: 15px; height: 15px; "/>
+            <image src="/pages/img/man.png" wx:else style="width: 15px; height: 15px; "/>
             <text class="business-job"> {{item.job}} </text>
           </view>
           <!-- 公司 -->
@@ -26,6 +27,6 @@
 
         <!-- 关注 -->
         <view class="business-right-info"> 
-            <button class="business-btn-not-follow" wx:if="{{item.isFollow == 0}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" bindtap="oneBusiness">+关注</button> 
-            <button class="business-btn-follow" wx:if="{{item.isFollow == 1}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" bindtap="oneBusiness">已关注</button>
+            <button class="business-btn-not-follow" wx:if="{{item.isFollow == 0}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" >+关注</button> 
+            <button class="business-btn-follow" wx:if="{{item.isFollow == 1}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" >已关注</button>
          </view>

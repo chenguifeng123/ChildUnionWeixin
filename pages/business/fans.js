@@ -13,12 +13,14 @@ Page({
   },
 
   oneBusiness: businessTemp.oneBusiness,
-
+  onGotUserInfo: businessTemp.onGotUserInfo,
+  addFollower: businessTemp.addFollower,
+  
   loadFans: function () {
     var op = this;
     var id = this.data.id;
     // 加载商户
-    app.getUrl('/business/my/fans/' + id, function (data) {
+    app.getUrl('/business/my/fans/' + id + "-" + app.getUserId(), function (data) {
       if (app.hasData(data)) {
         op.setData({
           businessList: data,

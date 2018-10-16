@@ -9,7 +9,9 @@ Page({
   },
 
   oneBusiness: businessTemp.oneBusiness,
-
+  onGotUserInfo: businessTemp.onGotUserInfo,
+  addFollower: businessTemp.addFollower,
+  
   loadCommendBusiness: function () {
     var op = this;
     var start = Math.floor((Math.random() * 390 + 0));

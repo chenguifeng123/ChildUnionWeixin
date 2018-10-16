@@ -8,8 +8,8 @@
       
       <view class="user-desc">
         <text class="userinfo-nickname">{{oneBusiness.realname}}</text>
-        <image src="/pages/img/man.png" class="gender" wx:if="{{oneBusiness.gender == 0}}"></image>
-        <image src="/pages/img/women.png" class="gender"  wx:else></image>
+        <image src="/pages/img/women.png" class="gender" wx:if="{{oneBusiness.gender == 1}}"></image>
+        <image src="/pages/img/man.png" class="gender"  wx:else></image>
       </view>
       <view class="business-company">{{oneBusiness.company}}</view>
       <view class="business-job">{{oneBusiness.job}}</view>
@@ -46,10 +46,10 @@
               <image src="{{'/pages/img/phone-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.phone}}</text>
             </view>
-            <view>
+            <!--view>
               <image src="{{'/pages/img/mail-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.mail}}</text>
-            </view>
+            </view-->
             <view>
               <image src="{{'/pages/img/addr-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.workaddress}}</text>

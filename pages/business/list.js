@@ -12,6 +12,23 @@ Page({
   },
 
   oneBusiness: businessTemp.oneBusiness,
+  onGotUserInfo: businessTemp.onGotUserInfo,
+  addFollower: businessTemp.addFollower,
+
+  refreshAllBusiness:function(){
+    var op = this;
+    var id = wx.getStorageSync('id');
+    id = id == '' ? -1 : id;
+    var page = this.data.start == 1 ? this.data.pageSize : this.data.start;
+    // 加载商户
+    app.getUrl('/business/list/' + id + '-' + 1 + '-' + page, function (data) {
+      if (app.hasData(data)) {
+          op.setData({
+            businessList: data
+          });
+      }
+    });
+  },
 
   loadAllBusiness:function(){
     var op = this;
@@ -38,7 +55,7 @@ Page({
   },
 
   onLoad: function () {
-    this.loadAllBusiness();
+    this.refreshAllBusiness();
   },
 
   /**
@@ -46,7 +63,7 @@ Page({
     */
   onShow: function () {
     if (app.globalData.listDataUpdated){
-      this.loadAllBusiness();
+      this.refreshAllBusiness();
       app.globalData.listDataUpdated = false;
     }
   },
