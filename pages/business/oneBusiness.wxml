@@ -2,8 +2,14 @@
   <include src="../common/oneBusinessTemp.wxml"></include>
 
   <view class="bottom-button">
-    <button class="bottom-left-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" disabled="{{follow == 1}}">
+    <button class="bottom-left-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" wx:if="{{follow == 0}}">
       +加关注
+    </button>
+    <button class="bottom-left-button bottom-class" bindtap="cancel" wx:else="{{follow == 1}}">
+      取消关注
+    </button>
+    <button class="bottom-middle-button bottom-class" bindtap="goHome">
+      <image src="/pages/img/home.png" class="bottom-img" />
     </button>
 
     <button class="bottom-right-button bottom-class" open-type="share">

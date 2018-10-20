@@ -14,8 +14,8 @@
       <view class="business-company">{{oneBusiness.company}}</view>
       <view class="business-job">{{oneBusiness.job}}</view>
   </view>
-  <view class="follow-count" data-count=" {{oneBusiness.follow_count}}" data-id="{{oneBusiness.id}}" bindtap="getFollowerById" >
-    <view class="follow-left">
+  <view class="follow-count">
+    <view class="follow-left" data-count=" {{oneBusiness.follow_count}}" data-id="{{oneBusiness.id}}" bindtap="getFollowerById">
       <view class="follow-desc">关注
       </view>
       <view class="follow-value">

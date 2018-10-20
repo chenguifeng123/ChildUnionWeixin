@@ -18,10 +18,29 @@ Page({
   getFollowerById: oneBusinessTemp.getFollowerById,
   getFansById: oneBusinessTemp.getFansById,
 
-  addCardUser:function(){
-
+  goHome:function(event){
+    wx.switchTab({
+      url: '/pages/business/list',
+    })
   },
 
+    cancel:function(event){
+      // 加载一个商户
+      var op = this;
+      var userId = app.getUserId();
+      app.getUrl('/business/deleteFollower/' + userId + '-' + this.data.id, function (data) {
+        if (app.hasData(data)) {
+          op.setData({ follow: 0 });
+          app.globalData.listDataUpdated = true;
+
+          var allUrl = util.fillUrlParams('/pages/business/success', {
+          });
+          wx.navigateTo({
+            url: allUrl
+          });
+        }
+      });
+    },
 
   onGotUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo;
