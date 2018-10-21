@@ -17,3 +17,7 @@
   border-radius:25px;
   color: white;
 }
+
+.boxInput{
+  width: 200px;
+}
