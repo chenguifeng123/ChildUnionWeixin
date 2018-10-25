@@ -24,7 +24,8 @@ Page({
     app.getUrl('/business/list/' + id + '-' + 1 + '-' + page, function (data) {
       if (app.hasData(data)) {
           op.setData({
-            businessList: data
+            businessList: data,
+            start: page + 1
           });
       }
     });

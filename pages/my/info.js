@@ -79,8 +79,44 @@ Page({
     });
   },
 
+
+  checkInput: function () {
+    if (!this.data.realname || this.data.realname.length < 1) {
+      wx.showToast({
+        title: '姓名不能为空'
+      });
+      return false;
+    }
+    if (!this.data.company || this.data.company.length == 8) {
+      wx.showToast({
+        title: '公司不能为空'
+      });
+      return false;
+    }
+    if (!this.data.job || this.data.job.length == 0) {
+      wx.showToast({
+        title: '职务不能为空'
+      });
+      return false;
+    }
+    if (!this.data.phone || this.data.phone.length == 0) {
+      wx.showToast({
+        title: '手机不能为空'
+      });
+      return false;
+    }
+    if (!this.data.workaddress || this.data.workaddress.length == 0) {
+      wx.showToast({
+        title: '地址不能为空'
+      });
+      return false;
+    }
+    return true;
+  },
+
   submit:function(){
     var op = this;
+    if(!this.checkInput()) return;
     app.post('/business/setUser', {
       code:  app.userCode,
       headimgurl: app.globalData.userInfo.avatarUrl,
