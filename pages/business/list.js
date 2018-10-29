@@ -6,7 +6,7 @@ Page({
   data: {
     businessList : [],
 
-    start: 1,
+    start: 0,
     pageSize: 30,
     hasMoreData: true,
   },
@@ -19,13 +19,13 @@ Page({
     var op = this;
     var id = wx.getStorageSync('id');
     id = id == '' ? -1 : id;
-    var page = this.data.start == 1 ? this.data.pageSize : this.data.start;
+    var page = this.data.start == 0 ? this.data.pageSize : this.data.start;
     // 加载商户
-    app.getUrl('/business/list/' + id + '-' + 1 + '-' + page, function (data) {
+    app.getUrl('/business/list/' + id + '-' + 0 + '-' + page, function (data) {
       if (app.hasData(data)) {
           op.setData({
             businessList: data,
-            start: page + 1
+            start: page
           });
       }
     });
