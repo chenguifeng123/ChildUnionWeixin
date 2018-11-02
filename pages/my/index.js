@@ -15,6 +15,7 @@ Page({
 
   getFollowerById: oneBusinessTemp.getFollowerById,
   getFansById: oneBusinessTemp.getFansById,
+  callMe: oneBusinessTemp.callMe,
 
   modifyCard: function (event) {
     wx.navigateTo({

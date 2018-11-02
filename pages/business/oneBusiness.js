@@ -17,6 +17,7 @@ Page({
 
   getFollowerById: oneBusinessTemp.getFollowerById,
   getFansById: oneBusinessTemp.getFansById,
+  callMe: oneBusinessTemp.callMe,
 
   goHome:function(event){
     wx.switchTab({

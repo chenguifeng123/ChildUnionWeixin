@@ -59,7 +59,19 @@ Page({
     });
   },
 
+  tagCheck:function(){
+    var tag = this.data.tagList;
+    if(tag.length == 0){
+      wx.showToast({
+        title: '标签必须选择',
+      })
+      return false;
+    }
+    return true;
+  },
+
   nextStep:function(event){
+    if(!this.tagCheck()) return ;
     var op = this;
     var allUrl = util.fillUrlParams('./info', {
       tag: op.data.tagList,

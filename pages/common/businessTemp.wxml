@@ -8,7 +8,7 @@
           <view  class="business-desc-info"> 
             <text class="business-name"> {{item.realname}} </text>
             <image src="/pages/img/women.png" wx:if="{{item.gender == 1}}" style="width: 15px; height: 15px; "/>
-            <image src="/pages/img/man.png" wx:else style="width: 15px; height: 15px; "/>
+            <!--image src="/pages/img/man.png" wx:else style="width: 15px; height: 15px; "/-->
             <text class="business-job"> {{item.job}} </text>
           </view>
           <!-- 公司 -->
@@ -17,9 +17,9 @@
           </view>
           <!-- 标签 -->
           <view class="business-button-info" > 
-            <button class="business-btn-tag tag1" wx:if="{{!!item.tag1}}">{{item.tag1}}</button> 
-            <button class="business-btn-tag tag2" wx:if="{{!!item.tag2}}">{{item.tag2}}</button> 
-            <button class="business-btn-tag tag3" wx:if="{{!!item.tag3}}">{{item.tag3}}</button> 
+            <button class="business-btn-tag" wx:if="{{!!item.tag1}}">{{item.tag1}}</button> 
+            <button class="business-btn-tag" wx:if="{{!!item.tag2}}">{{item.tag2}}</button> 
+            <button class="business-btn-tag" wx:if="{{!!item.tag3}}">{{item.tag3}}</button> 
             <button class="business-btn-tag default-tag" wx:if="{{!item.tag1 && !item.tag2 && !item.tag3}}"></button>
           </view>
 

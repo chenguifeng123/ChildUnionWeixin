@@ -9,7 +9,7 @@
       <view class="user-desc">
         <text class="userinfo-nickname">{{oneBusiness.realname}}</text>
         <image src="/pages/img/women.png" class="gender" wx:if="{{oneBusiness.gender == 1}}"></image>
-        <image src="/pages/img/man.png" class="gender"  wx:else></image>
+        <!--image src="/pages/img/man.png" class="gender"  wx:else></image-->
       </view>
       <view class="business-company">{{oneBusiness.company}}</view>
       <view class="business-job">{{oneBusiness.job}}</view>
@@ -35,16 +35,16 @@
   <view class="business-info">
       <!-- 标签 -->
           <view class="business-button-info" > 
-            <button class="business-btn-tag tag1" wx:if="{{!!oneBusiness.tag1}}">{{oneBusiness.tag1}}</button> 
-            <button class="business-btn-tag tag2" wx:if="{{!!oneBusiness.tag2}}">{{oneBusiness.tag2}}</button> 
-            <button class="business-btn-tag tag3" wx:if="{{!!oneBusiness.tag3}}">{{oneBusiness.tag3}}</button> 
+            <button class="business-btn-tag" wx:if="{{!!oneBusiness.tag1}}">{{oneBusiness.tag1}}</button> 
+            <button class="business-btn-tag" wx:if="{{!!oneBusiness.tag2}}">{{oneBusiness.tag2}}</button> 
+            <button class="business-btn-tag" wx:if="{{!!oneBusiness.tag3}}">{{oneBusiness.tag3}}</button> 
             <button class="business-btn-tag default-tag" wx:if="{{!oneBusiness.tag1 && !oneBusiness.tag2 && !oneBusiness.tag3}}"></button>
           </view>
 
           <view class="desc-info">
             <view>
               <image src="{{'/pages/img/phone-' + imageIndex + '.png'}}" class="desc-img"></image>
-              <text>{{oneBusiness.phone}}</text>
+              <text data-phone="{{oneBusiness.phone}}" bindtap="callMe">{{oneBusiness.phone}}</text>
             </view>
             <!--view>
               <image src="{{'/pages/img/mail-' + imageIndex + '.png'}}" class="desc-img"></image>
@@ -58,6 +58,7 @@
               <image src="{{'/pages/img/intro-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.introduce}}</text>
             </view>
+
           </view>
   </view>
 </view>

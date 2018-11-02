@@ -111,6 +111,12 @@ Page({
       });
       return false;
     }
+    if (!this.data.introduce || this.data.introduce.length == 0) {
+      wx.showToast({
+        title: '简介不能为空'
+      });
+      return false;
+    }
     return true;
   },
 

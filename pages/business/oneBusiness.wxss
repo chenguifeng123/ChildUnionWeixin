@@ -32,10 +32,18 @@
   font-size: 0.9em;
 }
 
+.bottomHomePage-img{
+  width: 35px;
+  height: 35px;
+  padding-bottom:8px;
+  vertical-align: middle;
+}
+
 .bottom-img{
   width: 20px;
   height: 20px;
-vertical-align: middle;
+  padding-bottom:8px;
+  vertical-align: middle;
 }
 
 .bottom-txt{

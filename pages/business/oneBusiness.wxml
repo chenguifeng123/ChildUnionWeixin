@@ -9,7 +9,7 @@
       取消关注
     </button>
     <button class="bottom-middle-button bottom-class" bindtap="goHome">
-      <image src="/pages/img/home.png" class="bottom-img" />
+      <image src="/pages/img/home.png" class="bottomHomePage-img" />
     </button>
 
     <button class="bottom-right-button bottom-class" open-type="share">

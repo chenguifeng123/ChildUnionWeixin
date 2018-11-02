@@ -26,6 +26,13 @@ var oneBusiness = {
     });
   },
 
+  callMe:function(event){
+    var phone = event.currentTarget.dataset.phone;
+    wx.makePhoneCall({
+      phoneNumber: phone
+    })
+  }
+
 };
 
 export default oneBusiness;
