@@ -38,10 +38,19 @@
 }
 
 .business-job{
+  color: #777777;
   font-size:0.7em;
 }
 
-.business-name, .business-job, .business-company{
+.business-company{
+  color: #777777;
+  font-size:0.7em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.business-name, .business-job{
     overflow: hidden;
     white-space: nowrap;
     text-overflow:ellipsis;
@@ -57,14 +66,15 @@
 
 .business-btn-tag{
   color: black;
-  font-size: 0.65em;
+  font-size: 0.6em;
+  width: 60px;
   height: 20px;
   display: inline-block;
-  line-height: 1.5;
+  line-height: 1.8;
   vertical-align: middle;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-right: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-right: 3px;
 }
 
 .tag1{
