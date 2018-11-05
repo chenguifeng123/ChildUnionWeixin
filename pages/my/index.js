@@ -59,6 +59,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var op = this;
+    if(app.getUserId() == -1){
+      wx.showModal({
+        title: '完善信息',
+        content: '请完善个人信息,谢谢',
+        success: function (res) {
+          console.log(res)
+          if (res.confirm) {
+            op.modifyCard();
+          }
+        }
+      });
+    }
     this.refresh();
   },
 
