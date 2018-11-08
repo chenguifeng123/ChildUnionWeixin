@@ -12,7 +12,7 @@
                   <button class="home-bak-btn" bindtap="goHome">回到首页</button>
                     <!--navigator url="./list" class="weui-footer__link">查看商户</navigator-->
                 </view>
-                <view class="weui-footer__text">Copyright © 2013-2018 南京亲子云</view>
+                <view class="weui-footer__text">Copyright © 2015-2018 南京豆苗软件科技有限公司</view>
             </view>
         </view>
     </view>

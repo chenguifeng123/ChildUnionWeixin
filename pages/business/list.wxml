@@ -1,5 +1,5 @@
 <view>
-
+      <official-account></official-account>
       <view class="one-business" wx:for="{{businessList}}" wx:for-index="index" data-index="{{index}}" data-id="{{item.id}}" wx:key="{{item.id}}" > 
         <include src="../common/businessTemp.wxml"></include>
       </view>

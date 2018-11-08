@@ -2,19 +2,21 @@
   <include src="../common/oneBusinessTemp.wxml"></include>
 
   <view class="bottom-button">
-    <button class="bottom-left-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" wx:if="{{follow == 0}}">
-      +加关注
+    <button class="bottom-left-button bottom-class" bindtap="goHome">
+      <image src="/pages/img/home.png" class="bottom-img" />
+      <text class="bottom-txt"> 回首页</text>
     </button>
-    <button class="bottom-left-button bottom-class" bindtap="cancel" wx:else="{{follow == 1}}">
-      取消关注
+    <button class="bottom-middle-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" wx:if="{{follow == 0}}">
+      <image src="/pages/img/follow.png" class="bottom-img" />
+      <text class="middle-bottom-txt"> 关注</text>
     </button>
-    <button class="bottom-middle-button bottom-class" bindtap="goHome">
-      <image src="/pages/img/home.png" class="bottomHomePage-img" />
+    <button class="bottom-middle-button bottom-class" bindtap="cancel" wx:else="{{follow == 1}}"> 取消关注
     </button>
+    
 
     <button class="bottom-right-button bottom-class" open-type="share">
       <image src="/pages/img/share.png" class="bottom-img" />
-      <text class="bottom-txt">转发名片</text>
+      <text class="bottom-txt"> 转发名片</text>
     </button>
   </view>
 </view>
