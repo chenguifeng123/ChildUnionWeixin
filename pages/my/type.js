@@ -114,6 +114,7 @@ Page({
         var tagList = [];
         for(var index = 1; index <= 3; index ++){
           var tagId = tags["tag" + index];
+          if(!tagId) continue;
           var fullIndex = op.data.tagMap[tagId];
           var parent = fullIndex["parent"];
           var child = fullIndex["index"];

@@ -1,9 +1,14 @@
 <view class="page">
   <view class = "title">
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{oneBusiness.headimgurl}}" background-size="cover"></image>
-      <image bindtap="modifyCard" class="modify-img" src="/pages/img/modify.png" wx:if="{{isMyPage == true}}"></image>
-      <button class="btn-card-img"  open-type="share"  wx:if="{{isMyPage == true}}">
-        <image class="card-img" src="/pages/img/card.png" wx:if="{{isMyPage == true}}"></image>
+
+  <view class="refresh-personal" wx:if="{{isMyPage == true}}">
+    <button class="weui-btn mini-btn button-personal" type="default" size="mini" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">刷新资料</button>
+  </view>
+
+      <image bindtap="modifyCard" class="modify-img" src="/pages/img/modify.png" wx:if="{{isMyPage == true && needShow == true}}"></image>
+      <button class="btn-card-img"  open-type="share"  wx:if="{{isMyPage == true && needShow == true}}">
+        <image class="card-img" src="/pages/img/card.png" wx:if="{{isMyPage == true && needShow == true}}"></image>
       </button>
       
       <view class="user-desc">

@@ -10,12 +10,27 @@ Page({
   data: {
     oneBusiness: {},
     isMyPage: true,
+    needShow: false,
     imageIndex: 1,
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,
   getFansById: oneBusinessTemp.getFansById,
   callMe: oneBusinessTemp.callMe,
+
+  onGotUserInfo: function (e) {
+    app.globalData.userInfo = e.detail.userInfo;
+    if (app.globalData.userInfo != null){
+      var op = this;
+      app.getUrl('/business/info/code/' + app.userCode, function (data) {
+        if (app.hasData(data)) {
+          if (data == null) return;
+          wx.setStorageSync('id', data);
+          op.refresh();
+        }
+      });
+    }
+  },
 
   modifyCard: function (event) {
     wx.navigateTo({
@@ -29,7 +44,10 @@ Page({
     app.getUrl('/business/info/' + id, function (data) {
       if (app.hasData(data)) {
         if(data == null || data.length == 0) return;
-        op.setData({ oneBusiness: data[0] });
+        op.setData({ 
+          oneBusiness: data[0],
+          needShow: true
+         });
       }
     });
   },
@@ -60,18 +78,7 @@ Page({
    */
   onShow: function () {
     var op = this;
-    if(app.getUserId() == -1){
-      wx.showModal({
-        title: '完善信息',
-        content: '请完善个人信息,谢谢',
-        success: function (res) {
-          console.log(res)
-          if (res.confirm) {
-            op.modifyCard();
-          }
-        }
-      });
-    }
+    
     this.refresh();
   },
 

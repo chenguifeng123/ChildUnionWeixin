@@ -9,11 +9,36 @@ Page({
     start: 0,
     pageSize: 30,
     hasMoreData: true,
+
+    inputShowed: false,
+    searchValue: "",
   },
 
   oneBusiness: businessTemp.oneBusiness,
   onGotUserInfo: businessTemp.onGotUserInfo,
   addFollower: businessTemp.addFollower,
+
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+  clearInput: function () {
+    this.setData({
+      searchValue: "",
+      inputShowed: false
+    });
+    this.refreshAllBusiness();
+  },
+  inputTyping: function (e) {
+    this.setData({
+      searchValue: e.detail.value
+    });
+  },
+
+  searchSubmit:function(e){
+    this.refreshAllBusiness();
+  },
 
   refreshAllBusiness:function(){
     var op = this;
@@ -21,7 +46,12 @@ Page({
     id = id == '' ? -1 : id;
     var page = this.data.start == 0 ? this.data.pageSize : this.data.start;
     // 加载商户
-    app.getUrl('/business/list/' + id + '-' + 0 + '-' + page, function (data) {
+    app.post('/business/list', {
+      id: id,
+      start: 0,
+      num: page,
+      search: op.data.searchValue
+    }, function (data) {
       if (app.hasData(data)) {
           op.setData({
             businessList: data,
@@ -37,7 +67,12 @@ Page({
     id = id == '' ? -1 : id;
     var businessList = this.data.businessList;
     // 加载商户
-    app.getUrl('/business/list/' + id + '-' + this.data.start + '-' + this.data.pageSize, function (data) {
+    app.post('/business/list', {
+        id: id,
+        start: op.data.start,
+        num: op.data.pageSize,
+        search: op.data.searchValue
+      }, function (data) {
       if (app.hasData(data)) {
         if (data.length < op.data.pageSize) {
           op.setData({
