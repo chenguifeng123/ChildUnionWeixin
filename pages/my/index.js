@@ -24,9 +24,22 @@ Page({
       var op = this;
       app.getUrl('/business/info/code/' + app.userCode, function (data) {
         if (app.hasData(data)) {
-          if (data == null) return;
-          wx.setStorageSync('id', data);
-          op.refresh();
+          if (data == null || data == -1){
+            wx.showModal({
+              title: '完善信息',
+              content: '请完善个人信息,谢谢',
+              success: function (res) {
+                console.log(res)
+                if (res.confirm) {
+                  op.modifyCard();
+                }
+              }
+            });
+          }else{
+            wx.setStorageSync('id', data);
+            op.refresh();
+          }
+          
         }
       });
     }
