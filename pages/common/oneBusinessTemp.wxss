@@ -39,7 +39,7 @@ page, .page{
 .modify-img{
   position: absolute;
    right: auto;
-   left: 2px;
+   left: 10px;
    top: 10px;
    width: 24px;
    height: 24px;
