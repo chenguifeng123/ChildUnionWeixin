@@ -2,7 +2,7 @@
   <view class = "title">
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{oneBusiness.headimgurl}}" background-size="cover"></image>
 
-  <view class="refresh-personal" wx:if="{{isMyPage == true}}">
+  <view class="refresh-personal" wx:if="{{isMyPage == true && needShow == false}}">
     <button class="weui-btn mini-btn button-personal" type="default" size="mini" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">刷新资料</button>
   </view>
 
