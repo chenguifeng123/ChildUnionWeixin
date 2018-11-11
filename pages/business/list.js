@@ -25,6 +25,9 @@ Page({
   },
   clearInput: function () {
     this.setData({
+      start: 0,
+      pageSize: 30,
+      hasMoreData: true,
       searchValue: "",
       inputShowed: false
     });
