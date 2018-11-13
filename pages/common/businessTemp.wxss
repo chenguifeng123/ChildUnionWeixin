@@ -95,7 +95,8 @@
 
 .business-btn-not-follow, .business-btn-follow{
   font-size:0.7em;
-  border-radius:0px;
+  width: 65px;
+  border-radius:5px;
   padding-left:10px;
   padding-right: 10px;
   margin-bottom: 30%;
