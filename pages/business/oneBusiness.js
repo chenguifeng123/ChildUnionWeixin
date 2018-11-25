@@ -12,7 +12,12 @@ Page({
     isMyPage: false,
     imageIndex: 0,
     follow:0,
-    id:-1
+    id:-1,
+
+    messageList:[],
+    start: 0,
+    pageSize: 10,
+    hasMoreData: true,
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,
@@ -25,7 +30,38 @@ Page({
     })
   },
 
-    cancel:function(event){
+  jump2OneMessage:function(event){
+    var id = event.currentTarget.dataset.id;
+    var title = event.currentTarget.dataset.title;
+    var message = event.currentTarget.dataset.message;
+    var last = event.currentTarget.dataset.last;
+
+    var card = this.data.oneBusiness.id;
+    var phone = this.data.oneBusiness.phone;
+    var realname = this.data.oneBusiness.realname;
+    var job = this.data.oneBusiness.job;
+    var company = this.data.oneBusiness.company;
+    var headimgurl = this.data.oneBusiness.headimgurl;
+
+    var allUrl = util.fillUrlParams('/pages/cooperate/oneMessage', {
+      id: id,
+      title: title,
+      message: message,
+      last: last,
+
+      card: card,
+      phone: phone,
+      realname: realname,
+      job: job,
+      company: company,
+      headimgurl: headimgurl
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+
+  cancel:function(event){
       // 加载一个商户
       var op = this;
       var userId = app.getUserId();
@@ -44,25 +80,10 @@ Page({
     },
 
   onGotUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo;
-    //console.log(e.detail.errMsg)
-    //console.log(e.detail.userInfo)
-    //console.log(e.detail.rawData)
-    if (app.getUserId() == -1){
-      wx.showModal({
-        title: '提示',
-        content: '请先完善个人信息,再关注',
-        success: function (res) {
-          if (res.confirm) {
-            wx.navigateTo({
-              url: '/pages/my/type'
-            });
-          }
-        }
-      })
-    }else{
-      this.addFollower(e);
-    }
+    var op = this;
+    app.onGotUserInfo(e, function(){
+      op.addFollower(e);
+    });
   },
 
   addFollower:function(event){
@@ -93,6 +114,41 @@ Page({
     });
   },
 
+  loadMessageByCardId: function(id){
+    var op = this;
+    var messageList = this.data.messageList;
+    app.post('/cooperate/cardId', {
+      start: op.data.start,
+      num: op.data.pageSize,
+      cardId: id
+    }, function (data) {
+      if (app.hasData(data)) {
+        if (data.length < op.data.pageSize) {
+          op.setData({
+            messageList: messageList.concat(data),
+            hasMoreData: false
+          });
+        } else {
+          op.setData({
+            messageList: messageList.concat(data),
+            hasMoreData: true,
+            start: op.data.start + op.data.pageSize
+          })
+        }
+      }
+    });
+  },
+
+  refreshAllMessage: function () {
+    this.setData({
+      messageList: [],
+      start: 0,
+      pageSize: 10,
+      hasMoreData: true,
+    });
+    this.loadMessageByCardId(this.data.id);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -104,6 +160,7 @@ Page({
       follow: follow
       });
     this.loadOneBusiness(id);
+    this.loadMessageByCardId(id);
   },
 
   /**
@@ -117,7 +174,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (app.globalData.messageBussinessUpdated) {
+      this.refreshAllMessage();
+      app.globalData.messageBussinessUpdated = false;
+    }
   },
 
   /**
@@ -138,14 +198,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.refreshAllMessage();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.hasMoreData) {
+      this.loadMessageByCardId(this.data.id);
+    } else {
+      wx.showToast({
+        title: '没有更多数据',
+        duration: 500,
+      })
+    }
   },
 
   /**

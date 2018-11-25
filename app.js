@@ -83,12 +83,40 @@ App({
     })
   },
 
-  isAuth: function (event) {
-    if (!!event.detail.userInfo) {
-      this.globalData.userInfo = event.detail.userInfo;
-      return true;
+  modifyCard: function () {
+    wx.navigateTo({
+      url: '/pages/my/type'
+    });
+  },
+
+  onGotUserInfo: function (e, getFunction) {
+    this.globalData.userInfo = e.detail.userInfo;
+    if (this.getUserId() != -1) {
+      getFunction();
+      return;
     }
-    return false;
+    if (this.globalData.userInfo != null) {
+      var op = this;
+      op.getUrl('/business/info/code/' + op.userCode, function (data) {
+        if (op.hasData(data)) {
+          if (data == null || data == -1) {
+            wx.showModal({
+              title: '完善信息',
+              content: '请完善个人信息,谢谢',
+              success: function (res) {
+                console.log(res)
+                if (res.confirm) {
+                  op.modifyCard();
+                }
+              }
+            });
+          } else {
+            wx.setStorageSync('id', data);
+            getFunction();
+          }
+        }
+      });
+    }
   },
 
   // 后续要重构采用 result{code: msg: data}这种结构返回
@@ -122,5 +150,7 @@ App({
   globalData: {
     userInfo: null,
     listDataUpdated : false,
+    messageDataUpdated : false,
+    messageBussinessUpdated: false,
   }
 })

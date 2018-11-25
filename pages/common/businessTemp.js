@@ -16,22 +16,10 @@ var business = {
   },
 
   onGotUserInfo: function (e) {
-    app.globalData.userInfo = e.detail.userInfo;
-    if (app.getUserId() == -1) {
-      wx.showModal({
-        title: '提示',
-        content: '请先完善个人信息,再关注',
-        success: function (res) {
-          if (res.confirm) {
-            wx.navigateTo({
-              url: '/pages/my/type'
-            });
-          }
-        }
-      })
-    } else {
-      this.addFollower(e);
-    }
+    var op = this;
+    app.onGotUserInfo(e, function () {
+      op.addFollower(e);
+    });
   },
 
   addFollower: function (event) {

@@ -1,0 +1,26 @@
+        <!-- 头像 -->
+        <view class="reply-left-info" data-card="{{item.cardId}}" bindtap="jumpBusiness"> 
+          <image class="reply-photo" src="{{item.cardInfo.headimgurl}}" background-size="cover"></image>
+        </view>
+        <view class="reply-right-info" > 
+          <view class="reply-name-info"> 
+            <text class="reply-name"> {{item.cardInfo.realname}} </text>
+            <button class="reply-btn" data-id="{{item.id}}" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" >回复</button> 
+          </view>
+          <view class="reply-time-info">
+            <text class="reply-time"> {{item.lastString}} </text>
+          </view>
+
+        </view>
+
+        <view class="reply-message-multi" wx:if="{{item.replyId != 0}}">
+          <text style="color:blue;">@{{item.replyInfo.cardInfo.realname}}</text>
+          <text>{{item.replyMessage}}</text>
+          <view class="reply-message-inner">
+            <view class="inner-name">@{{item.replyInfo.cardInfo.realname}}</view>
+            <view class="inner-reply-message">{{item.replyInfo.replyMessage}}</view>
+          </view>
+        </view>
+        <view class="reply-message" wx:else>
+          {{item.replyMessage}}
+        </view>

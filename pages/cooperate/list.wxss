@@ -1,0 +1,85 @@
+.page, page{
+  background-color: #eee;
+}
+
+
+.one-message{
+  margin-bottom: 10px;
+  background-color:white;
+}
+
+.weui-panel__hd{
+  font-size: 1em;
+}
+
+.weui-panel:after{
+  border-bottom: 0rpx;
+}
+
+.btn-grade{
+  background-color: #F3434B;
+  color: white;
+}
+
+.weui-media-box__desc{
+  font-size: 15px;
+}
+
+.weui-media-box__title{
+  font-size: 15px;
+}
+
+
+.userinfo-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 1rpx;
+  border-radius: 50%;
+  border-color: white;
+  border-style:solid;
+  border-width: 1px;
+  /* margin-top:5px; */
+
+}
+
+.username{
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align:top;
+  
+}
+
+.time {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30%;
+  text-align: right;
+}
+
+.btn-addmessage{
+  position: fixed;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  bottom: 5%;
+  right: 5%;
+  background-color: rgba(255,255,255,0);
+  border: none;
+}
+
+button::after{ border: none; }
+
+.btn-addmessage image{
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.weui-media-box__desc{
+  white-space: pre-wrap;
+}
+
+.text-message{
+  word-break:break-all; 
+}

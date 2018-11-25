@@ -1,6 +1,28 @@
 <view>
   <include src="../common/oneBusinessTemp.wxml"></include>
 
+
+  <view class="message-banner">
+    全部商业合作({{messageList.length}})
+  </view>
+
+  <view wx:for="{{messageList}}" wx:key="{{item.id}}" class="one-message" data-id="{{item.id}}" data-title="{{item.title}}" data-message="{{item.message}}" data-last="{{item.lastString}}" bindtap="jump2OneMessage">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}
+        </view>
+        <view class="message-lastString">
+          {{item.lastString}}        
+        </view>
+        <view class="weui-media-box__desc"><text class="text-message">{{item.message}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+
   <view class="bottom-button">
     <button class="bottom-left-button bottom-class" bindtap="goHome">
       <image src="/pages/img/home.png" class="bottom-img" />

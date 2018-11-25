@@ -18,36 +18,14 @@ Page({
   getFansById: oneBusinessTemp.getFansById,
   callMe: oneBusinessTemp.callMe,
 
-  onGotUserInfo: function (e) {
-    app.globalData.userInfo = e.detail.userInfo;
-    if (app.globalData.userInfo != null){
-      var op = this;
-      app.getUrl('/business/info/code/' + app.userCode, function (data) {
-        if (app.hasData(data)) {
-          if (data == null || data == -1){
-            wx.showModal({
-              title: '完善信息',
-              content: '请完善个人信息,谢谢',
-              success: function (res) {
-                console.log(res)
-                if (res.confirm) {
-                  op.modifyCard();
-                }
-              }
-            });
-          }else{
-            wx.setStorageSync('id', data);
-            op.refresh();
-          }
-          
-        }
-      });
-    }
+  modifyCard: function (event) {
+    app.modifyCard();
   },
 
-  modifyCard: function (event) {
-    wx.navigateTo({
-      url: './type'
+  onGotUserInfo: function (e) {
+    var op = this;
+    app.onGotUserInfo(e, function(){
+      op.refresh();
     });
   },
 

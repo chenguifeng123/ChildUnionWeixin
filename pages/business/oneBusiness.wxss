@@ -1,5 +1,23 @@
 @import "../common/oneBusinessTemp.wxss";
 
+.one-message{
+  margin-bottom: 10px;
+}
+
+.desc-info{
+  margin-bottom: 0;
+}
+
+.message-banner{
+  font-size: 0.7em;
+  margin: 5px;
+}
+
+.message-lastString{
+  font-size: 0.6em;
+  color: #ccc;
+}
+
 .bottom-button{
   position: fixed;
   bottom: 0;

@@ -1,0 +1,70 @@
+<view>
+
+<view class="content">
+
+  <view class="title">
+    {{title}}
+  </view>
+
+  <view class="author">
+        <!-- 头像 -->
+        <view class="message-left-info" data-card="{{card}}" bindtap="jumpBusiness"> 
+          <image class="message-photo" src="{{headimgurl}}" background-size="cover"></image>
+        </view>
+        <!-- 信息 -->
+        <view class="message-right-info"> 
+          <view  class="message-desc-info"> 
+            <text class="name-text"> {{realname}} </text>
+            <text class="job-text"> {{job}} </text>
+          </view>
+          <view class="message-company-info" > 
+            <text class="company-text"> {{company}} </text>
+            <text class="last-text"> {{last}} </text>
+          </view>
+        
+        </view>
+  </view>
+
+  <view class="message">
+    <text class="text-message">{{message}}</text>
+  </view>
+  <button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    留言
+  </button>
+
+</view> 
+
+<view class="reply-bannber" wx:if="{{replyList.length > 0}}">
+咨询信息
+</view>
+
+<view class="reply-content" wx:if="{{replyList.length > 0}}">
+  <view class="weui-panel__bd">
+    <view wx:for="{{replyList}}" wx:key="{{item.id}}">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__desc">
+          <include src="../common/messageReplyTemp.wxml"></include>
+         </view>
+       </view>
+     </view>
+  </view>
+  <text> \t\n </text>
+  <text> \t\n </text>
+</view>
+
+  <view class="bottom-button">
+    <button class="bottom-left-button bottom-class" bindtap="goHome">
+      <image src="/pages/img/home.png" class="bottom-img" />
+      <text class="bottom-txt"> 回首页</text>
+    </button>
+    <button class="bottom-middle-button bottom-class"   bindtap="contact">
+      <image src="/pages/img/button-contact.png" class="bottom-right-img" />
+    </button>
+
+    <button class="bottom-right-button bottom-class" open-type="share">
+      <image src="/pages/img/button-share.png" class="bottom-right-img" />
+    </button>
+  </view>
+
+
+</view>

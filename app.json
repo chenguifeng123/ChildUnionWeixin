@@ -6,6 +6,10 @@
     "pages/business/commend",
     "pages/business/follower",
     "pages/business/fans",
+    "pages/cooperate/list",
+    "pages/cooperate/oneMessage",
+    "pages/cooperate/message",
+    "pages/cooperate/reply",
     "pages/my/index",
     "pages/my/info",
     "pages/my/type"
@@ -17,6 +21,11 @@
         "pagePath": "pages/business/list",
         "text": "亲子商户",
         "iconPath": "pages/img/icon-business.png"
+      },
+      {
+        "pagePath": "pages/cooperate/list",
+        "text": "商务合作",
+        "iconPath": "pages/img/icon-cooperate.png"
       },
       {
         "pagePath": "pages/my/index",
