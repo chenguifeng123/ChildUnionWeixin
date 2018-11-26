@@ -151,7 +151,7 @@ Page({
    */
   onShareAppMessage: function () {
     var op = this;
-    var allUrl = util.fillUrlParams('/pages/business/oneMessage', {
+    var allUrl = util.fillUrlParams('/pages/cooperate/oneMessage', {
       id: op.data.id,
       title: op.data.title,
       message: op.data.message,
