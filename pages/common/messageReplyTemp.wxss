@@ -6,18 +6,24 @@
   margin-top:5px;
 }
 
-.reply-left-info, .reply-right-info{
+.reply-left-info, .reply-middle-info, .reply-right-info{
   display: inline-block;
-  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .reply-left-info{
   width: 15%;
 }
 
+.reply-middle-info{
+  width: 60%;
+}
+
 .reply-name{
   font-size: 1.5em;
   color: black;
+  width: 50%;
+
 }
 
 .reply-time{
@@ -42,13 +48,13 @@
   font-size:0.8em;
   background-color: white;
   color: black;
-  display:inline-block;
-  margin-left: 150px;
+  /*display:inline-block;*/
 }
 
 .reply-name-info{
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .reply-message{
