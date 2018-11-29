@@ -6,9 +6,9 @@
     {{title}}
   </view>
 
-  <view class="author">
+  <view class="author" data-card="{{card}}" bindtap="jumpBusiness">
         <!-- 头像 -->
-        <view class="message-left-info" data-card="{{card}}" bindtap="jumpBusiness"> 
+        <view class="message-left-info"> 
           <image class="message-photo" src="{{headimgurl}}" background-size="cover"></image>
         </view>
         <!-- 信息 -->
