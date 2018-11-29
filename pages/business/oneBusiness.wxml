@@ -3,7 +3,7 @@
 
 
   <view class="message-banner">
-    全部商业合作({{messageList.length}})
+    合作信息({{messageList.length}})
   </view>
 
   <view wx:for="{{messageList}}" wx:key="{{item.id}}" class="one-message" data-id="{{item.id}}" data-title="{{item.title}}" data-message="{{item.message}}" data-last="{{item.lastString}}" bindtap="jump2OneMessage">
