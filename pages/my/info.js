@@ -87,7 +87,7 @@ Page({
       });
       return false;
     }
-    if (!this.data.company || this.data.company.length == 8) {
+    if (!this.data.company || this.data.company.length == 0) {
       wx.showToast({
         title: '公司不能为空'
       });

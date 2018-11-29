@@ -12,6 +12,8 @@ Page({
     title: '',
     message: '',
     last: '',
+    read: 0,
+    like: 0,
 
     card: 0,
     phone: '',
@@ -38,6 +40,30 @@ Page({
       wx.navigateTo({
         url: allUrl
       });
+    });
+  },
+
+  updateLike: function(e){
+    var op = this;
+    app.getUrl('/cooperate/message/like/' + op.data.id, function (data) {
+      if (app.hasData(data)) {
+        op.setData({
+          like: Number(op.data.like)+1,
+        });
+        app.globalData.messageDataUpdated = true;
+      }
+    });
+  },
+
+  updateRead: function(){
+    var op = this;
+    app.getUrl('/cooperate/message/read/' + op.data.id, function (data) {
+      if (app.hasData(data)) {
+        op.setData({
+          read: Number(op.data.read) + 1,
+        });
+        app.globalData.messageDataUpdated = true;
+      }
     });
   },
 
@@ -80,6 +106,8 @@ Page({
     var title = options.title;
     var message = options.message;
     var last = options.last;
+    var read = options.read;
+    var like = options.like;
     var card = options.card;
     var phone = options.phone;
     var realname = options.realname;
@@ -92,6 +120,8 @@ Page({
       title: title,
       message: message,
       last: last,
+      read: read,
+      like: like,
 
       card: card,
       phone: phone,
@@ -102,6 +132,7 @@ Page({
     });
 
     this.loadReply4MessageId(id);
+    this.updateRead();
   },
 
   /**
@@ -156,6 +187,8 @@ Page({
       title: op.data.title,
       message: op.data.message,
       last: op.data.last,
+      read: op.data.read,
+      like: op.data.like,
 
       card: op.data.card,
       phone: op.data.phone,

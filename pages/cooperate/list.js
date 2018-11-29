@@ -53,6 +53,8 @@ Page({
     var title = event.currentTarget.dataset.title;
     var message = event.currentTarget.dataset.message;
     var last = event.currentTarget.dataset.last;
+    var read = event.currentTarget.dataset.read;
+    var like = event.currentTarget.dataset.like;
     var card = event.currentTarget.dataset.card;
     var phone = event.currentTarget.dataset.phone;
     var realname = event.currentTarget.dataset.realname;
@@ -65,6 +67,8 @@ Page({
       title: title,
       message: message,
       last: last,
+      read: read,
+      like: like,
 
       card: card,
       phone: phone,
