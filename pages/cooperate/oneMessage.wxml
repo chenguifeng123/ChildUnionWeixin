@@ -33,11 +33,11 @@
       阅读 {{read}}
     </view>
     <view class="like-count">
-      <image src="/pages/img/like.jpg" style="width:20px;height:20px;" bindtap="updateLike"></image> {{like}}
+      <image src="/pages/img/like.jpg" style="width:16px;height:16px;" bindtap="updateLike"></image> {{like}}
     </view>
   </view>
   <button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
-    留言
+    留　言
   </button>
 
 </view> 
