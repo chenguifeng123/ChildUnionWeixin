@@ -199,7 +199,7 @@ Page({
     });
 
     return {
-      title: '分享合作',
+      title: '我发布了一篇合作信息，欢迎大家交流合作！',
       path: allUrl,
       success: function (res) {
         console.log(res)
