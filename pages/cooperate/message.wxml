@@ -30,7 +30,7 @@
 
     </view>
     <view class="message-tip">
-      最多2000字
+      最多2000字(不支持表情包)
     </view>
   </view>
 
