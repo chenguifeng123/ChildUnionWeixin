@@ -35,7 +35,13 @@ Page({
   },
 
   searchSubmit:function(e){
-    this.refreshAllBusiness();
+    this.setData({
+      businessList: [],
+      start: 0,
+      hasMoreData: true,
+      inputShowed: false
+    });
+    this.loadAllBusiness();
   },
 
   refreshAllBusiness:function(){
