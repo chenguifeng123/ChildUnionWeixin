@@ -19,7 +19,7 @@
     "list": [
       {
         "pagePath": "pages/business/list",
-        "text": "亲子商户",
+        "text": "亲子名片",
         "iconPath": "pages/img/icon-business.png"
       },
       {
