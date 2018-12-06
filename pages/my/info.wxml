@@ -34,6 +34,14 @@
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
+                    <view class="weui-label">微信号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="" bindinput="bindWeixinInput" value="{{weixincode}}" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
                     <view class="weui-label">地址</view>
                 </view>
                 <view class="weui-cell__bd">

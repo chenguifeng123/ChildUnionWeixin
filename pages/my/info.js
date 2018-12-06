@@ -13,6 +13,7 @@ Page({
     phone:'',
     workaddress:'',
     introduce:'',
+    weixincode:'',
 
     tag : []
   },
@@ -38,6 +39,12 @@ Page({
   bindPhoneInput: function (e) {
     this.setData({
       phone: e.detail.value
+    })
+  },
+
+  bindWeixinInput: function (e) {
+    this.setData({
+      weixincode: e.detail.value
     })
   },
 
@@ -72,6 +79,7 @@ Page({
           company: oneBusiness.company,
           job: oneBusiness.job,
           phone: oneBusiness.phone,
+          weixincode: !!oneBusiness.weixincode ? oneBusiness.weixincode: '',
           workaddress: oneBusiness.workaddress,
           introduce: oneBusiness.introduce,
          });
@@ -105,6 +113,12 @@ Page({
       });
       return false;
     }
+    if (!this.data.weixincode || this.data.weixincode.length == 0) {
+      wx.showToast({
+        title: '微信号不能为空'
+      });
+      return false;
+    }
     if (!this.data.workaddress || this.data.workaddress.length == 0) {
       wx.showToast({
         title: '地址不能为空'
@@ -130,6 +144,7 @@ Page({
       company: op.data.company,
       job: op.data.job,
       phone: op.data.phone,
+      weixincode: op.data.weixincode,
       workaddress: op.data.workaddress,
       introduce: op.data.introduce,
       tag : op.data.tag

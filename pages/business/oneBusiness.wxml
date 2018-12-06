@@ -6,7 +6,7 @@
     合作信息({{messageList.length}})
   </view>
 
-  <view wx:for="{{messageList}}" wx:key="{{item.id}}" class="one-message" data-id="{{item.id}}" data-title="{{item.title}}" data-message="{{item.message}}" data-last="{{item.lastString}}" bindtap="jump2OneMessage">
+  <view wx:for="{{messageList}}" wx:key="{{item.id}}" class="one-message" data-id="{{item.id}}" data-title="{{item.title}}" data-message="{{item.message}}" data-last="{{item.lastString}}" data-read="{{item.readCount}}" data-like="{{item.giveLike}}" bindtap="jump2OneMessage">
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
       <view class="weui-media-box weui-media-box_text">

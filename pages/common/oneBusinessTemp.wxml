@@ -51,10 +51,10 @@
               <image src="{{'/pages/img/phone-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text data-phone="{{oneBusiness.phone}}" bindtap="callMe">{{oneBusiness.phone}}</text>
             </view>
-            <!--view>
+            <view>
               <image src="{{'/pages/img/mail-' + imageIndex + '.png'}}" class="desc-img"></image>
-              <text>{{oneBusiness.mail}}</text>
-            </view-->
+              <text>{{oneBusiness.weixincode}}</text>
+            </view>
             <view>
               <image src="{{'/pages/img/addr-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.workaddress}}</text>

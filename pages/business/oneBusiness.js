@@ -35,6 +35,8 @@ Page({
     var title = event.currentTarget.dataset.title;
     var message = event.currentTarget.dataset.message;
     var last = event.currentTarget.dataset.last;
+    var read = event.currentTarget.dataset.read;
+    var like = event.currentTarget.dataset.like;
 
     var card = this.data.oneBusiness.id;
     var phone = this.data.oneBusiness.phone;
@@ -48,6 +50,8 @@ Page({
       title: title,
       message: message,
       last: last,
+      read: read,
+      like: like,
 
       card: card,
       phone: phone,
@@ -178,6 +182,12 @@ Page({
       this.refreshAllMessage();
       app.globalData.messageBussinessUpdated = false;
     }
+    /*
+    if (app.globalData.messageDataUpdated) {
+      this.loadMessageByCardId(this.data.id);
+      app.globalData.messageDataUpdated = false;
+    }
+    */
   },
 
   /**
