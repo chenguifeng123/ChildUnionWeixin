@@ -52,7 +52,7 @@
               <text data-phone="{{oneBusiness.phone}}" bindtap="callMe">{{oneBusiness.phone}}</text>
             </view>
             <view>
-              <image src="{{'/pages/img/mail-' + imageIndex + '.png'}}" class="desc-img"></image>
+              <image src="{{'/pages/img/wechat-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.weixincode}}</text>
             </view>
             <view>
