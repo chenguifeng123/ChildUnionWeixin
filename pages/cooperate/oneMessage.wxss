@@ -12,13 +12,14 @@ page{
 
 .content, .reply-content{
   background-color: white;
-  padding: 5px;
+  padding: 10px;
 }
 
 .title{
   font-size: 1.3em;
   font-weight: bold;
   word-break: break-all;
+  padding: 10px;
 }
 
 .message-photo{

@@ -199,7 +199,7 @@ Page({
     });
 
     return {
-      title: '我发布了一篇合作信息，欢迎大家交流合作！',
+      title: op.data.realname + '发布了一条合作信息！',
       path: allUrl,
       success: function (res) {
         console.log(res)
