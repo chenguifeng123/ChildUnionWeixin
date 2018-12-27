@@ -15,7 +15,8 @@ Page({
     introduce:'',
     weixincode:'',
 
-    tag : []
+    tag : [],
+    invite:-1,
   },
 
   bindRealnameInput: function (e) {
@@ -147,7 +148,9 @@ Page({
       weixincode: op.data.weixincode,
       workaddress: op.data.workaddress,
       introduce: op.data.introduce,
-      tag : op.data.tag
+      tag : op.data.tag,
+
+      invite:op.data.invite
     }, function (data) {
       if (app.hasData(data)) {
         if(app.getUserId() == -1){
@@ -174,8 +177,10 @@ Page({
    */
   onLoad: function (options) {
     var tag = options.tag;
+    var invite = options.invite;
     this.setData({
-      tag: tag
+      tag: tag,
+      invite:invite,
       });
     this.loadOneBusiness(app.getUserId());
   },

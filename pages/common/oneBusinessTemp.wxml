@@ -28,11 +28,19 @@
       </view>
     </view>
 
-    <view class="follow-right" data-count=" {{oneBusiness.fans_count}}" data-id="{{oneBusiness.id}}" bindtap="getFansById">
+    <view class="follow-middle" data-count=" {{oneBusiness.fans_count}}" data-id="{{oneBusiness.id}}" bindtap="getFansById">
       <view class="follow-desc">粉丝
       </view>
       <view class="follow-value">
         {{oneBusiness.fans_count}}
+      </view>
+    </view>
+
+        <view class="follow-right" data-score=" {{oneBusiness.score}}" data-id="{{oneBusiness.id}}" bindtap="jumpScore">
+      <view class="follow-desc">积分
+      </view>
+      <view class="follow-value">
+        {{!!oneBusiness.score ? oneBusiness.score : 0 }}
       </view>
     </view>
   </view>

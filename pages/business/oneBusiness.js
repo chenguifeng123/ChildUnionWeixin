@@ -22,6 +22,7 @@ Page({
 
   getFollowerById: oneBusinessTemp.getFollowerById,
   getFansById: oneBusinessTemp.getFansById,
+  jumpScore: oneBusinessTemp.jumpScore,
   callMe: oneBusinessTemp.callMe,
 
   goHome:function(event){

@@ -1,0 +1,20 @@
+/* pages/business/score.wxss */
+page, .page{
+  background-color: #eee;
+}
+
+.one-panel{
+  margin-top: 10px;
+  background-color: white;
+}
+
+.title{
+  margin-left: 5px;
+  border-left-width: 5px;
+  border-left-color:#008FD1;
+  border-left-style: solid;
+}
+
+.desc{
+  font-size: 0.7em;
+}

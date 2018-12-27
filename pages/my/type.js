@@ -11,7 +11,8 @@ Page({
     canPushCount : 3,
     btnServiceSelected:[],
     tagMap : {},
-    tagList:[]
+    tagList:[],
+    invite:-1
   },
 
   btnSelect: function(data){
@@ -75,6 +76,7 @@ Page({
     var op = this;
     var allUrl = util.fillUrlParams('./info', {
       tag: op.data.tagList,
+      invite: op.data.invite,
     });
     wx.navigateTo({
       url: allUrl
@@ -146,6 +148,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var invite = options.invite;
+    if (!!invite){
+      this.setData({invite: invite});
+    }
     this.loadService();
   },
 

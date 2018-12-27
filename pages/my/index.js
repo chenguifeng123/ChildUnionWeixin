@@ -11,11 +11,14 @@ Page({
     oneBusiness: {},
     isMyPage: true,
     needShow: false,
+    needSign: true,
+    id: -1,
     imageIndex: 1,
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,
   getFansById: oneBusinessTemp.getFansById,
+  jumpScore: oneBusinessTemp.jumpScore,
   callMe: oneBusinessTemp.callMe,
 
   modifyCard: function (event) {
@@ -26,6 +29,51 @@ Page({
     var op = this;
     app.onGotUserInfo(e, function(){
       op.refresh();
+    });
+  },
+
+  sign:function(e){
+    var op = this;
+    app.onGotUserInfo(e, function () {
+      op.sign2Server(op.data.id);
+      op.refresh();
+    });
+  },
+
+  jumpInvite:function(e){
+    var allUrl = util.fillUrlParams('/pages/my/invite', {
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+
+  loadSign:function(id){
+    var op = this;
+    // 加载一个商户
+    app.getUrl('/business/hasSigned/' + id, function (data) {
+      if (app.hasData(data)) {
+        if (data == null) return;
+        if(data == 1){
+          op.setData({
+            needSign: false
+          });
+        }else{
+          op.setData({
+            needSign: true
+          });
+        }
+      }
+    });
+  },
+
+  sign2Server:function(id){
+    var op = this;
+    // 加载一个商户
+    app.getUrl('/business/sign/' + id, function (data) {
+      if (app.hasData(data)) {
+
+      }
     });
   },
 
@@ -46,7 +94,9 @@ Page({
   refresh:function(){
     var op = this;
     var id = app.getUserId();
+    this.setData({id: id});
     this.loadOneBusiness(id);
+    this.loadSign(id);
   },
 
   /**

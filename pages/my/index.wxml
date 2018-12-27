@@ -1,3 +1,13 @@
 <view>
 <include src="../common/oneBusinessTemp.wxml"></include>
+
+<view class="sign">
+  <button disabled="{{!needSign}}" open-type="getUserInfo" bindgetuserinfo="sign">签到</button>
+</view>
+
+<view class="invite" bindtap="jumpInvite" wx:if="{{id != -1}}">
+  <!--button class="invite-btn" open-type='share'-->
+<image src="/pages/img/invite.jpg" class="invite-img"></image>
+<!--/button-->
+</view>
 </view>

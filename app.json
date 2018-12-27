@@ -6,13 +6,15 @@
     "pages/business/commend",
     "pages/business/follower",
     "pages/business/fans",
+    "pages/business/score",
     "pages/cooperate/list",
     "pages/cooperate/oneMessage",
     "pages/cooperate/message",
     "pages/cooperate/reply",
     "pages/my/index",
     "pages/my/info",
-    "pages/my/type"
+    "pages/my/type",
+    "pages/my/invite"
   ],
 
   "tabBar": {

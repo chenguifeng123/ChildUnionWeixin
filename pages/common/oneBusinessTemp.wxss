@@ -77,8 +77,8 @@ page, .page{
   text-align: center;
 }
 
-.follow-left, .follow-right{
-  width: 50%;
+.follow-left, .follow-middle, .follow-right{
+  width: 33.33%;
   display: inline-block;
 }
 

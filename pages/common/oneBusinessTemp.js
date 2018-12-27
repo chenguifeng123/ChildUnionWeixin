@@ -26,6 +26,14 @@ var oneBusiness = {
     });
   },
 
+  jumpScore:function(event){
+    var allUrl = util.fillUrlParams('/pages/business/score', {
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+
   callMe:function(event){
     var phone = event.currentTarget.dataset.phone;
     wx.makePhoneCall({
