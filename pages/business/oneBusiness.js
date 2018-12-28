@@ -18,6 +18,8 @@ Page({
     start: 0,
     pageSize: 10,
     hasMoreData: true,
+
+    isLeaguer:false,
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,
@@ -114,7 +116,12 @@ Page({
     // 加载一个商户
     app.getUrl('/business/info/' + id, function (data) {
       if (app.hasData(data)) {
-        op.setData({ oneBusiness: data[0] });
+        var business = data[0];
+        if(business.score < 500){
+          business.phone = util.hidePhone(business.phone);
+          business.weixincode = util.hidePhone(business.weixincode);
+        }
+        op.setData({ oneBusiness: business });
       }
     });
   },

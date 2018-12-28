@@ -45,6 +45,17 @@ function getReq(url, data, cb) {
   })
 }
 
+function hidePhone(num) {
+  if(!num) return num;
+  var len = num.length;
+  var split = len / 3;
+  var result = num.substring(0, split);
+  for (var index = 0; index < split; index++)
+    result += '*';
+  result += num.substring(2 * split, len);
+  return result;
+}
+
 // 去前后空格  
 function trim(str) {
   return str.replace(/(^\s*)|(\s*$)/g, "");
@@ -90,6 +101,7 @@ function translateUrl(value) {
 module.exports = {
   formatTime: formatTime,
   req: req,
+  hidePhone: hidePhone,
   trim: trim,
   isError: isError,
   clearError: clearError,

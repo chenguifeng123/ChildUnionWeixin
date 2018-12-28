@@ -14,6 +14,7 @@ Page({
     needSign: true,
     id: -1,
     imageIndex: 1,
+    isLeaguer: true,
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,

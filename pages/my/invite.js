@@ -64,7 +64,7 @@ Page({
    */
   onShareAppMessage: function () {
     var op = this;
-    var allUrl = util.fillUrlParams('/pages/my/info', {
+    var allUrl = util.fillUrlParams('/pages/my/type', {
       invite : app.getUserId()
     });
 
