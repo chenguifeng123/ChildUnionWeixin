@@ -147,12 +147,13 @@ page, .page{
 
 .hide-btn{
   font-size: 0.7em;
-  width: 80px;
-  background-color: #008FD1;
+  width: 56px;
+  background-color: rgb(211, 184, 110);
   color: white;
-  height: 20px;
+  padding: 2px;
   display: inline-block;
-  line-height: 1.8;
+  line-height: 1;
+  margin-left: 10px;
 }
 
 .title{

@@ -9,7 +9,7 @@
 }
 
 .sign button{
-  background-color: #008FD1;
+  background-color: rgb(240, 212, 58);
 
 }
 
