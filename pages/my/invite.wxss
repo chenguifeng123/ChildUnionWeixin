@@ -8,7 +8,7 @@
 }
 
 .invite{
-  margin: 5px;
+  margin: 20px;
 }
 
 .left, .right{

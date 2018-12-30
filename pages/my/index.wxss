@@ -5,7 +5,7 @@
 }
 
 .sign, .sign button{
-  margin: 5px;
+  margin: 15px;
 }
 
 .sign button{
@@ -14,8 +14,8 @@
 }
 
 .invite{
-  width: 100%;
-  margin: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .invite-btn {
@@ -39,7 +39,7 @@
 
 .invite-img{
   width: 100%;
-  height: 200px;
+  height: 100px;
 }
 
 .title{
