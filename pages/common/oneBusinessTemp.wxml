@@ -13,6 +13,7 @@
       
       <view class="user-desc">
         <text class="userinfo-nickname">{{oneBusiness.realname}}</text>
+        <button class="leaguer-btn" wx:if="{{oneBusiness.score >= 500}}">vip</button>
         <image src="/pages/img/women.png" class="gender" wx:if="{{oneBusiness.gender == 1}}"></image>
         <!--image src="/pages/img/man.png" class="gender"  wx:else></image-->
       </view>

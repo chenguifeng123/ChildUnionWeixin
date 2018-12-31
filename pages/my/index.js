@@ -91,6 +91,7 @@ Page({
         if(data == null || data.length == 0) return;
         op.setData({ 
           oneBusiness: data[0],
+          needShow: true
          });
       }
     });

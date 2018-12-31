@@ -54,6 +54,17 @@ page, .page{
   font-size: 1em;
 }
 
+.leaguer-btn{
+  font-size: 0.7em;
+  width: 56px;
+  background-color: rgb(211, 184, 110);
+  color: rgb(184, 13, 13);
+  padding: 2px;
+  display: inline-block;
+  line-height: 1;
+  margin-left: 10px;
+}
+
 .business-job{
   margin-bottom:15px;
   color: white;
