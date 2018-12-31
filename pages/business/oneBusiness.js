@@ -117,11 +117,15 @@ Page({
     app.getUrl('/business/info/' + id, function (data) {
       if (app.hasData(data)) {
         var business = data[0];
-        if(business.score < 500){
-          business.phone = util.hidePhone(business.phone);
-          business.weixincode = util.hidePhone(business.weixincode);
-        }
-        op.setData({ oneBusiness: business });
+        var leaguer = false;
+        app.isLeaguerFunc(function(leaguer){
+          if(!leaguer){
+            business.phone = util.hidePhone(business.phone);
+            business.weixincode = util.hidePhone(business.weixincode);
+          }
+          op.setData({ oneBusiness: business, isLeaguer: leaguer });
+        });
+
       }
     });
   },

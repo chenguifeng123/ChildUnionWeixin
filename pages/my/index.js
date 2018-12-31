@@ -35,7 +35,12 @@ Page({
 
   sign:function(e){
     var op = this;
+    // 不等服务端返回,先限制
+    this.setData({
+      needSign: false
+    });
     app.onGotUserInfo(e, function () {
+
       op.sign2Server(op.data.id);
       op.refresh();
     });
@@ -86,7 +91,6 @@ Page({
         if(data == null || data.length == 0) return;
         op.setData({ 
           oneBusiness: data[0],
-          needShow: true
          });
       }
     });

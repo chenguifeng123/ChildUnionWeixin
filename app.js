@@ -119,6 +119,28 @@ App({
     }
   },
 
+  isLeaguerFunc:function(func){
+    var op = this;
+    var score = wx.getStorageSync('score');
+    if(score == ''){
+      if(this.getUserId() == -1){
+        func(false);
+      }else{
+        this.getUrl('/business/info/' + this.getUserId(), function (data) {
+          if (op.hasData(data)) {
+            if (data == null || data.length == 0) return;
+            // 因为积分动态更新,使用缓存的话,需要在多个积分的地方增加更新缓存,暂不考虑缓存
+            //wx.setStorageSync('score', data[0].score);
+            func(data[0].score >= 500);
+          }
+        });
+      }
+    }else{
+      func(score >= 500);
+    }
+    return;
+  },
+
   // 后续要重构采用 result{code: msg: data}这种结构返回
   hasData: function (data) {
     if (data == undefined || data == null) return false;
