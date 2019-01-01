@@ -40,9 +40,7 @@ Page({
       needSign: false
     });
     app.onGotUserInfo(e, function () {
-
       op.sign2Server(op.data.id);
-      op.refresh();
     });
   },
 
@@ -78,7 +76,7 @@ Page({
     // 加载一个商户
     app.getUrl('/business/sign/' + id, function (data) {
       if (app.hasData(data)) {
-
+        op.refresh();
       }
     });
   },
