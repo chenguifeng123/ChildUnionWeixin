@@ -1,5 +1,14 @@
 @import "../common/businessTemp.wxss";
 
+.slide-image{  
+    width: 100%;
+    height: 100px;
+}  
+
+swiper {
+  height: 100px;
+}
+
 .one-business{
   border-bottom-width: 1px;
   border-bottom-style: solid;

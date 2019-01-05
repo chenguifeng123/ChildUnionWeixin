@@ -18,7 +18,23 @@
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="searchSubmit">搜索</view>
         </view>
 
+    <swiper indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+      <block wx:for="{{imgUrls}}" wx:key="item.link">  
+        <swiper-item>  
+           <navigator url="{{item.link}}" hover-class="navigator-hover" open-type="switchTab" wx:if="{{item.isTab}}">  
+            <image src="{{item.url}}" class="slide-image" width="355" height="100"/>  
+           </navigator>
+           <navigator url="{{item.link}}" hover-class="navigator-hover" open-type="navigate" wx:else>  
+            <image src="{{item.url}}" class="slide-image" width="355" height="100"/>  
+           </navigator>
+        </swiper-item>  
+      </block>  
+    </swiper> 
 
+
+
+    
 
       <view class="one-business" wx:for="{{businessList}}" wx:for-index="index" data-index="{{index}}" data-id="{{item.id}}" wx:key="{{item.id}}" > 
         <include src="../common/businessTemp.wxml"></include>

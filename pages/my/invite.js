@@ -64,9 +64,13 @@ Page({
    */
   onShareAppMessage: function () {
     var op = this;
-    var allUrl = util.fillUrlParams('/pages/my/type', {
-      invite : app.getUserId()
-    });
+    var param = {};
+    if (app.getUserId() != -1){
+      param = {
+        invite: app.getUserId()
+      }
+    }
+    var allUrl = util.fillUrlParams('/pages/my/type', param);
 
     return {
       title: '快来加入南京亲子云',

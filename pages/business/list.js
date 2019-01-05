@@ -4,6 +4,27 @@ import businessTemp from '../common/businessTemp';
 
 Page({
   data: {
+    // 轮播URL和图片用来做广告栏
+    imgUrls: [
+      {
+        link: '/pages/my/invite',
+        url: "/pages/img/invite.jpg",
+        isTab: false,
+      }
+      /*
+      , {
+        link: '/pages/join/classList',
+        url: "/pages/img/banner-main2.jpg",
+        isTab : true
+      }
+      */
+    ],
+    // 轮播控制项
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,  // 轮播间隔
+    duration: 1000,
+
     businessList : [],
 
     start: 0,

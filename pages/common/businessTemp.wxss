@@ -61,14 +61,15 @@
 }
 
 .leaguer-btn{
-  font-size: 0.7em;
-  width: 56px;
-  background-color: rgb(211, 184, 110);
+  font-size: 0.6em;
+  font-weight: bold;
+  width: 36px;
+  background-color: rgb(255, 255, 255);
   color: rgb(184, 13, 13);
-  padding: 2px;
+  padding: 4px;
   display: inline-block;
-  line-height: 1;
-  margin-left: 10px;
+  line-height: 0.8;
+  margin-left: 5px;
 }
 
 .business-button-info{

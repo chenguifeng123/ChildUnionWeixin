@@ -10,7 +10,7 @@
             <image src="/pages/img/women.png" wx:if="{{item.gender == 1}}" style="width: 15px; height: 15px; "/>
             <!--image src="/pages/img/man.png" wx:else style="width: 15px; height: 15px; "/-->
             <text class="business-job"> {{item.job}} </text>
-            <button class="leaguer-btn" wx:if="{{item.score >= 500}}">vip</button>
+            <button class="leaguer-btn" wx:if="{{item.score >= 500}}">会员</button>
           </view>
           <!-- 公司 -->
           <view class="business-desc-info">
