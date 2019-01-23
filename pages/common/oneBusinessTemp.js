@@ -39,6 +39,16 @@ var oneBusiness = {
     wx.makePhoneCall({
       phoneNumber: phone
     })
+  },
+
+  setClip:function(event){
+    var weixin = event.currentTarget.dataset.weixin;
+    wx.setClipboardData({
+      data: weixin,
+      success: function (res) {
+        
+      }
+    });
   }
 
 };

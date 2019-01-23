@@ -26,6 +26,7 @@ Page({
   getFansById: oneBusinessTemp.getFansById,
   jumpScore: oneBusinessTemp.jumpScore,
   callMe: oneBusinessTemp.callMe,
+  setClip: oneBusinessTemp.setClip,
 
   goHome:function(event){
     wx.switchTab({
@@ -121,7 +122,7 @@ Page({
         app.isLeaguerFunc(function(leaguer){
           if(!leaguer){
             business.phone = util.hidePhone(business.phone);
-            business.weixincode = util.hidePhone(business.weixincode);
+            //business.weixincode = util.hidePhone(business.weixincode);
           }
           op.setData({ oneBusiness: business, isLeaguer: leaguer });
         });

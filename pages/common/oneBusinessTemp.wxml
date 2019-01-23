@@ -65,14 +65,10 @@
               <text data-phone="{{oneBusiness.phone}}">{{oneBusiness.phone}}</text>
               <button class="hide-btn">会员可见</button>
             </view>
-            <view wx:if="{{isLeaguer}}">
+            <view>
               <image src="{{'/pages/img/wechat-' + imageIndex + '.png'}}" class="desc-img"></image>
               <text>{{oneBusiness.weixincode}}</text>
-            </view>
-            <view wx:else>
-              <image src="{{'/pages/img/wechat-' + imageIndex + '.png'}}" class="desc-img"></image>
-              <text>{{oneBusiness.weixincode}}</text>
-              <button class="hide-btn" wx:if="{{!!oneBusiness.weixincode}}">会员可见</button>
+              <button class="hide-btn" wx:if="{{!!oneBusiness.weixincode}}" data-weixin="{{oneBusiness.weixincode}}" bindtap="setClip">一键复制</button>
             </view>
             <view>
               <image src="{{'/pages/img/addr-' + imageIndex + '.png'}}" class="desc-img"></image>
