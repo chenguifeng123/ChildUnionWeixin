@@ -25,6 +25,8 @@ Page({
     interval: 5000,  // 轮播间隔
     duration: 1000,
 
+    selectTxt:'行业',
+
     businessList : [],
 
     start: 0,
@@ -33,6 +35,8 @@ Page({
 
     inputShowed: false,
     searchValue: "",
+
+    tag:-1,
   },
 
   oneBusiness: businessTemp.oneBusiness,
@@ -65,13 +69,31 @@ Page({
     this.loadAllBusiness();
   },
 
+  selectType:function(event){
+    var tag = this.data.tag;
+    var allUrl = util.fillUrlParams('./typeSelect', {
+      tagId: tag
+    });
+    wx.navigateTo({
+      url: allUrl,
+    });
+  },
+
+  selectAll:function(event){
+    this.setData({
+      selectTxt: '行业',
+      tag: -1,
+    });
+    this.refreshAllBusiness();
+  },
+
   refreshAllBusiness:function(){
     this.setData({
       businessList: [],
       start: 0,
       hasMoreData: true,
       searchValue: "",
-      inputShowed: false
+      inputShowed: false,
     });
     this.loadAllBusiness();
   },
@@ -86,7 +108,8 @@ Page({
         id: id,
         start: op.data.start,
         num: op.data.pageSize,
-        search: op.data.searchValue
+        search: op.data.searchValue,
+        tag: op.data.tag
       }, function (data) {
       if (app.hasData(data)) {
         if (data.length < op.data.pageSize) {
@@ -105,7 +128,10 @@ Page({
     });
   },
 
-  onLoad: function () {
+  onLoad: function (options) {
+    if(!!options.tagId){
+      this.setData({ tag: options.tagId, selectTxt:options.tagName});
+    }
     this.loadAllBusiness();
   },
 

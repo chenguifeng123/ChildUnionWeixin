@@ -15,12 +15,7 @@
   </view>
 </view>
 
-<view class="one-service" wx:for="{{service}}" wx:for-index="index" data-index="{{index}}"  wx:key="{{item.subserviceId}}" > 
-  <view class="title"><text style="color:yellow;">●</text> {{item.subserviceName}}</view>
-  <view>
-    <button class="one-btn {{btnServiceSelected[index][tagIndex]}}" wx:for="{{item.tagList}}" wx:for-index="tagIndex" wx:for-item="tags" data-parent="{{index}}" data-index="{{tagIndex}}" wx:key="{{tags.tagId}}" data-tag="{{tags.tagId}}" bindtap="tagClick">{{tags.tagName}} </button>
-  </view>
-</view>
+<include src="../common/typeTemp.wxml"></include>
 
 <view class="next-view">
   <button class="next-step" bindtap="nextStep">下一步</button>

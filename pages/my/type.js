@@ -1,5 +1,6 @@
 var util = require('../../utils/util.js');
 const app = getApp()
+import typeTemp from '../common/typeTemp';
 
 Page({
 
@@ -12,64 +13,15 @@ Page({
     btnServiceSelected:[],
     tagMap : {},
     tagList:[],
+    tagNameList:[],
     invite:-1
   },
 
-  btnSelect: function(data){
-    var subArray = [];
-    var tagMap = {};
-    for(var subIndex = 0; subIndex < data.length; subIndex ++){
-      var tagList = data[subIndex]["tagList"];
-      var tagArray = [];
-      for(var tagIndex = 0; tagIndex < tagList.length; tagIndex ++){
-        tagMap[tagList[tagIndex]["tagId"]] = {parent: subIndex, index: tagIndex};
-        tagArray.push("not-click");
-      }
-      subArray.push(tagArray);
-    }
-    return {
-      map: tagMap,
-      array: subArray
-    };
-  },
-
-  tagClick:function(event){
-    var tagId = event.currentTarget.dataset.tag;
-    var parent = event.currentTarget.dataset.parent;
-    var index = event.currentTarget.dataset.index;
-
-    var currentTagList = this.data.tagList;
-    var btnServiceSelected = this.data.btnServiceSelected;
-
-    var dataIndex = currentTagList.indexOf(tagId);
-    // 已关注
-    if (dataIndex >=0){
-      currentTagList.splice(dataIndex, 1);
-      btnServiceSelected[parent][index] = "not-click";
-    }else{
-      if (currentTagList.length >= this.data.canPushCount){
-      }else{
-        currentTagList.push(tagId);
-        btnServiceSelected[parent][index] = "click";
-      }
-    }
-
-    this.setData({
-      tagList: currentTagList,
-      btnServiceSelected: btnServiceSelected
-    });
-  },
-
-  tagCheck:function(){
-    var tag = this.data.tagList;
-    if(tag.length == 0){
-      wx.showToast({
-        title: '标签必须选择',
-      })
-      return false;
-    }
-    return true;
-  },
+  btnSelect: typeTemp.btnSelect,
+  tagClick: typeTemp.tagClick,
+  tagCheck: typeTemp.tagCheck,
+  loadService: typeTemp.loadService,
+  initTagClick: typeTemp.initTagClick,
 
   nextStep:function(event){
     if(!this.tagCheck()) return ;
@@ -83,27 +35,12 @@ Page({
     });
   },
 
-  loadService: function () {
+  loadServiceSet: function () {
     var op = this;
-    // 加载所有信息
-    app.getUrl('/business/service/list', function (data) {
-      if (app.hasData(data)) {
-        for(var index = 0; index < data.length; index++){
-          if (data[index].serviceId == 1){
-            var service = data[index]['subserviceList'];
-            op.setData({ service: service });
-            var select = op.btnSelect(service);
-            op.setData({ 
-              btnServiceSelected : select.array,
-              tagMap : select.map
-            });
-            op.loadTagList();
-          }
-          
-        }
-      }
+    this.loadService(function(){
+      op.loadTagList();
     });
-  },
+   },
 
   loadTagList:function(){
     var op = this;
@@ -133,7 +70,6 @@ Page({
   },
 
   initTagClick: function(data){
-    var btnS
     for (var subIndex = 0; subIndex < data.length; subIndex++) {
       var tagList = data[subIndex]["tagList"];
       var tagArray = [];
@@ -152,7 +88,7 @@ Page({
     if (!!invite){
       this.setData({invite: invite});
     }
-    this.loadService();
+    this.loadServiceSet();
   },
 
   /**
