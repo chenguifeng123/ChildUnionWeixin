@@ -67,7 +67,7 @@ Page({
    */
   onLoad: function (options) {
     var op = this;
-    var tagId = options.tagId;
+    var tagId = Number(options.tagId);
     this.loadService(function () {
       if (tagId != -1){
         op.loadTagList(tagId);
