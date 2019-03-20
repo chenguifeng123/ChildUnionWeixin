@@ -12,6 +12,12 @@
     "pages/cooperate/oneMessage",
     "pages/cooperate/message",
     "pages/cooperate/reply",
+    "pages/campaign/list",
+    "pages/campaign/oneCampaign",  
+    "pages/campaign/order",
+    "pages/campaign/oneOrder",   
+    "pages/campaign/orderList", 
+    "pages/campaign/success",
     "pages/my/index",
     "pages/my/info",
     "pages/my/type",
@@ -29,6 +35,11 @@
         "pagePath": "pages/cooperate/list",
         "text": "商务合作",
         "iconPath": "pages/img/icon-cooperate.png"
+      },
+      {
+         "pagePath": "pages/campaign/list",
+          "text": "亲子名片",
+          "iconPath": "pages/img/icon-campaign.png"
       },
       {
         "pagePath": "pages/my/index",

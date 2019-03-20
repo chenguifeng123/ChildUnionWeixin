@@ -52,6 +52,14 @@ Page({
     });
   },
 
+  jumpOrderList:function(){
+    var allUrl = util.fillUrlParams('/pages/campaign/orderList', {
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+
   loadSign:function(id){
     var op = this;
     // 加载一个商户

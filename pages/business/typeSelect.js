@@ -70,7 +70,7 @@ Page({
     var tagId = Number(options.tagId);
     this.loadService(function () {
       if (tagId != -1){
-        op.loadTagList(tagId);
+        //op.loadTagList(tagId);
       }  
     });
   },

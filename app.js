@@ -1,6 +1,6 @@
 //app.js
 App({
-  hometeach: "https://www.qinzi123.com",
+  qinzi: "https://www.qinzi123.com",
   userCode: "0",
 
   login: function () {
@@ -45,7 +45,7 @@ App({
 
   post: function (loadUrl, postData, func) {
     wx.request({
-      url: this.hometeach + loadUrl,
+      url: this.qinzi + loadUrl,
       data: postData,
       method: "POST",
       header: {
@@ -59,7 +59,7 @@ App({
 
   getUrl: function (loadUrl, func) {
     wx.request({
-      url: this.hometeach + loadUrl,
+      url: this.qinzi + loadUrl,
       method: "GET",
       header: {
         'content-type': 'application/json' // 默认值
@@ -72,7 +72,7 @@ App({
 
   deleteUrl: function (loadUrl, func) {
     wx.request({
-      url: this.hometeach + loadUrl,
+      url: this.qinzi + loadUrl,
       method: "DELETE",
       header: {
         'content-type': 'application/json' // 默认值

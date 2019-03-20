@@ -1,0 +1,46 @@
+<view>
+
+<view class="main-panel">
+  <view class="one-line">
+    <view class="left-txt">订单号</view>
+    <view class="right-txt">{{oneOrder.order_no}}</view>
+  </view>
+
+  <view class="one-line">
+    <view class="left-txt">订单金额</view>
+    <view class="right-txt">{{'￥' + oneOrder.total }}</view>
+  </view>
+
+  <view class="one-line">
+    <view class="left-txt">订单内容</view>
+    <view class="right-txt">{{oneOrder.name}}</view>
+  </view>
+
+  <!--view class="one-line">
+    <view class="left-txt">手机号</view>
+    <view class="right-txt">20180000</view>
+  </view>
+
+  <view class="one-line">
+    <view class="left-txt">微信号</view>
+    <view class="right-txt">20180000</view>
+  </view-->
+</view>
+
+
+<view class="pay-title">
+支付方式
+</view>
+
+<view class="pay-list">
+<view class="pay-left">
+<image class="pay-left-img" src="/pages/img/weixin-pay.png" ></image>
+</view>
+<view class="pay-right">
+<image class="pay-right-img" src="/pages/img/weixin-pay-select.png" style="width:25px;height:25px;"></image>
+</view>
+</view>
+
+<button class="confirm-btn" open-type="getUserInfo" bindtap="prepay">确认支付</button>
+
+</view>

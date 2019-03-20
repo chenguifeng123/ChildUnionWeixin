@@ -1,0 +1,79 @@
+<view class="page">
+
+<view class="top-banner">
+
+  <view class = "banner">
+      <image src="{{img}}"></image>
+  </view>
+  <view class="banner-title">
+    <view class="banner-title-desc weui-media-box__desc"><text class="text-message">{{oneCampaign.name}}</text></view>
+    <view class="banner-title-share">
+      <button class="btn-campaign-img"  open-type="share" >
+        <image class="campaign-img" src="/pages/img/campaign-share.png"></image>
+      </button>
+    </view>
+  </view>
+  <view class="follow-count">
+    <view class="follow-left">
+      <view class="follow-value">
+        {{'￥' + oneCampaign.channel_price}}
+      </view>
+      <view class="follow-desc">渠道价
+      </view>
+
+    </view>
+
+    <view class="follow-middle">
+      <view class="follow-value">
+        {{'￥' + oneCampaign.price}}
+      </view>
+      <view class="follow-desc">市场价
+      </view>
+
+    </view>
+
+    <view class="follow-right">
+      <view class="follow-value">
+        {{'≥' + oneCampaign.limit_stock + '个'}}
+      </view>
+      <view class="follow-desc">起订数
+      </view>
+
+    </view>
+  </view>
+
+  <view class="product-stock control-num">
+                      <button class="control-btn btn-left" bindtap="minusStock"><image src="{{'/pages/img/' + minusBtnImg + '.png'}}" style="width: 20px; height: 20px;"/></button>
+                      <button class="control-btn btn-middle">{{stockNumber}}</button>
+                      <button class="control-btn btn-right" bindtap="addStock"><image src="{{'/pages/img/' + addBtnImg + '.png'}}" style="width: 20px; height: 20px;"/></button>
+  </view>
+
+</view>
+
+<view class="show-desc">
+    <view class="top-title">
+      <text class="title-desc" decode="emsp">&nbsp;&nbsp;热门推荐 </text>
+    </view>
+
+    <view class="desc-info">
+    {{oneCampaign.detail}}
+    </view>
+
+    <view class="desc-company">
+    提供方: {{oneCampaign.company}}
+    </view>
+</view>
+
+
+  <view class="bottom-button">
+    <button class="bottom-left-button bottom-class" bindtap="goHome">
+      <image src="/pages/img/home.png" class="bottom-img" />
+      <text class="bottom-txt"> 回首页</text>
+    </button>
+    <button class="bottom-right-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo">
+      
+      <text class="price-bottom-txt">{{'￥' + allPrice + '立即订购'}}</text>
+    </button>
+   </view> 
+
+ </view> 
