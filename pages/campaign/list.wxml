@@ -1,13 +1,13 @@
 <view>
 
-<view class="top-banner">
+<!--view class="top-banner">
   <image src="/pages/img/campaign-list-banner.jpg"></image>
 </view>
 
 
     <view class="top-title">
       <text class="title-desc" decode="emsp">&nbsp;&nbsp;热门推荐 </text>
-    </view>
+    </view-->
 
   <view >
 

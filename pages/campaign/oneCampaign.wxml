@@ -52,12 +52,12 @@
 
 <view class="show-desc">
     <view class="top-title">
-      <text class="title-desc" decode="emsp">&nbsp;&nbsp;热门推荐 </text>
+      <text class="title-desc" decode="emsp">&nbsp;&nbsp;详细信息 </text>
     </view>
 
-    <view class="desc-info">
+    <text class="desc-info">
     {{oneCampaign.detail}}
-    </view>
+    </text>
 
     <view class="desc-company">
     提供方: {{oneCampaign.company}}

@@ -20,14 +20,17 @@ page, .page{
 
 .banner-title-desc, .banner-title-share{
     display: inline-block;
+    
 }
 
 .banner-title-desc{
-  width: 80%;
+  width: 70%;
+  padding: 10px;
 }
 
 .banner-title-share{
   width: 20%;
+  float:right;
 }
 
 .banner-title-share image{
@@ -41,7 +44,8 @@ page, .page{
 
 .text-message{
   /* word-break:break-all; */ 
-  font-size: 1.8em;
+  font-size: 1.4em;
+  color: black;
 }
 
 .btn-campaign-img::after{
@@ -94,7 +98,9 @@ page, .page{
 
 
 .show-desc{
-  margin-top: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  padding-bottom: 35px;
   background-color: white;
 }
 
@@ -116,7 +122,7 @@ page, .page{
 }
 
 .desc-company{
-  padding-top: 10px;
+  padding: 10px;
   font-size: 0.7em;
   color: rgb(32, 103, 196);
 }
