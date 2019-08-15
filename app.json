@@ -1,7 +1,7 @@
 {
-  "pages":[
+  "pages": [
     "pages/business/list",
-    "pages/business/oneBusiness",  
+    "pages/business/oneBusiness",
     "pages/business/success",
     "pages/business/commend",
     "pages/business/follower",
@@ -13,17 +13,17 @@
     "pages/cooperate/message",
     "pages/cooperate/reply",
     "pages/campaign/list",
-    "pages/campaign/oneCampaign",  
+    "pages/campaign/oneCampaign",
     "pages/campaign/order",
-    "pages/campaign/oneOrder",   
-    "pages/campaign/orderList", 
+    "pages/campaign/oneOrder",
+    "pages/campaign/orderList",
     "pages/campaign/success",
+    "pages/company/list",
     "pages/my/index",
     "pages/my/info",
     "pages/my/type",
     "pages/my/invite"
   ],
-
   "tabBar": {
     "list": [
       {
@@ -33,13 +33,18 @@
       },
       {
         "pagePath": "pages/cooperate/list",
-        "text": "商务合作",
+        "text": "市场动态",
         "iconPath": "pages/img/icon-cooperate.png"
       },
       {
-         "pagePath": "pages/campaign/list",
-          "text": "渠道采购",
-          "iconPath": "pages/img/icon-campaign.png"
+        "pagePath": "pages/campaign/list",
+        "text": "资源库",
+        "iconPath": "pages/img/icon-resource.png"
+      },
+      {
+        "pagePath": "pages/company/list",
+        "text": "亲子机构",
+        "iconPath": "pages/img/icon-company.png"
       },
       {
         "pagePath": "pages/my/index",
@@ -48,11 +53,11 @@
       }
     ]
   },
-
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#008FD1",
     "navigationBarTitleText": "南京亲子云",
-    "navigationBarTextStyle":"white"
-  }
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
 }
