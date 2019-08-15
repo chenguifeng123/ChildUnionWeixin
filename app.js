@@ -131,12 +131,12 @@ App({
             if (data == null || data.length == 0) return;
             // 因为积分动态更新,使用缓存的话,需要在多个积分的地方增加更新缓存,暂不考虑缓存
             //wx.setStorageSync('score', data[0].score);
-            func(data[0].score >= 500);
+            func(data[0].score >= 1198);
           }
         });
       }
     }else{
-      func(score >= 500);
+      func(score >= 1198);
     }
     return;
   },
