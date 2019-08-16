@@ -63,7 +63,7 @@ Page({
       if (app.hasData(data)) {
         app.globalData.messageDataUpdated = true;
         if (data == 1) {
-          var allUrl = util.fillUrlParams('/pages/business/success', {
+          var allUrl = util.fillUrlParams('/pages/cooperate/verify', {
           });
           wx.navigateTo({
             url: allUrl

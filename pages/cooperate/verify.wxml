@@ -4,7 +4,7 @@
             <icon type="success" size="93"></icon>
         </view>
         <view class="weui-msg__text-area">
-            <view class="weui-msg__title">成功</view>
+            <view class="weui-msg__title">发布成功，待系统审核通过后展示</view>
         </view>
         <view class="weui-msg__extra-area">
             <view class="weui-footer">

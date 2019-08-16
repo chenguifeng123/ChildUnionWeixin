@@ -50,10 +50,19 @@ Page({
       replyId: op.data.replyId,
       replyMessage: replyMessage,
     }, function (data) {
+      /** 
       if (app.hasData(data)) {
         wx.navigateBack({
           delta: 1
         })
+      }
+      */
+      if (app.hasData(data)) {
+        var allUrl = util.fillUrlParams('/pages/cooperate/verify', {
+        });
+        wx.navigateTo({
+          url: allUrl
+        });
       }
     });
   },
