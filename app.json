@@ -12,7 +12,7 @@
     "pages/cooperate/oneMessage",
     "pages/cooperate/message",
     "pages/cooperate/reply",
-    "pages/cooperate/verify",    
+    "pages/cooperate/verify",
     "pages/campaign/list",
     "pages/campaign/oneCampaign",
     "pages/campaign/order",
@@ -59,6 +59,6 @@
     "navigationBarBackgroundColor": "#008FD1",
     "navigationBarTitleText": "南京亲子云",
     "navigationBarTextStyle": "white"
-  }
-
+  },
+  "sitemapLocation": "sitemap.json"
 }
