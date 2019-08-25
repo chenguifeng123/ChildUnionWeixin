@@ -11,10 +11,11 @@ Page({
     oneBusiness: {},
     isMyPage: true,
     needShow: false,
-    needSign: true,
+    needSign: false,
     id: -1,
     imageIndex: 1,
     isLeaguer: true,
+    formIdArray: [],
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,
@@ -33,8 +34,22 @@ Page({
     });
   },
 
+  saveFormId: function (v) {
+    //if (v.detail.formId != 'the formId is a mock one') {
+    this.data.formIdArray.push(v.detail.formId);
+    //}
+  },
+
   sign:function(e){
     var op = this;
+    var formId = e.detail.formId;
+    app.post('/formId/' + formId, {
+      cardId: app.getUserId(),
+      formId: formId,
+      isUse: 0,
+    }, function (data) {
+      console.log("新增一个formId：" + data);
+    });
     // 不等服务端返回,先限制
     this.setData({
       needSign: false
@@ -61,6 +76,7 @@ Page({
   },
 
   loadSign:function(id){
+    if(id == -1) return;
     var op = this;
     // 加载一个商户
     app.getUrl('/business/hasSigned/' + id, function (data) {
