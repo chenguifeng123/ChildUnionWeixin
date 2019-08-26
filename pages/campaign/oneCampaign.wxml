@@ -16,9 +16,9 @@
   <view class="follow-count">
     <view class="follow-left">
       <view class="follow-value">
-        {{'￥' + oneCampaign.channel_price}}
+        {{oneCampaign.channel_price}}
       </view>
-      <view class="follow-desc">渠道价
+      <view class="follow-desc">亲子币
       </view>
 
     </view>
@@ -72,7 +72,7 @@
     </button>
     <button class="bottom-right-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo">
       
-      <text class="price-bottom-txt">{{'￥' + allPrice + '立即订购'}}</text>
+      <text class="price-bottom-txt">{{'合计' + allPrice + ' 立即兑换'}}</text>
     </button>
    </view> 
 

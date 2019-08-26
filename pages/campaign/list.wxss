@@ -40,4 +40,5 @@
 .campaign-time{
   font-size: 0.7em;
   color: #777777;
+  text-align: right;
 }
