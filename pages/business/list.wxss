@@ -2,11 +2,11 @@
 
 .slide-image{  
     width: 100%;
-    height: 100px;
+    height: 150px;
 }  
 
 swiper {
-  height: 100px;
+  height: 150px;
 }
 
 .one-business, .select-view{
