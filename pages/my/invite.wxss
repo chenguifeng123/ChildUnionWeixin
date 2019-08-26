@@ -36,6 +36,7 @@
   text-align: center;
   background-color: #FABF01;
   color: #C93F00;
+  padding: 0;
 }
 
 .bottom-txt{

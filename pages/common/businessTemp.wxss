@@ -72,6 +72,12 @@
   margin-left: 5px;
 }
 
+.leaguer_normal{
+  width: 17px;
+  height: 15px;
+  margin-left: 5px;
+}
+
 .business-button-info{
   margin: 0px;
 }

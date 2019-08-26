@@ -40,9 +40,7 @@
 
 <view class="bottom-info">
 <text> \t\n </text>
-<button class="bottom-btn " open-type='share' >现在邀请奖励100积分</button>
-<view class="bottom-txt">(满500分自动升级为会员)</view>
-
+<button class="bottom-btn " open-type='share' >现在邀请奖励100亲子币</button>
 </view>
 
 </view>

@@ -2,15 +2,15 @@
 <include src="../common/oneBusinessTemp.wxml"></include>
 
 <view class="order" bindtap="jumpOrderList">
-<image src="/pages/img/order.png" class="order-img"></image>
-<text>我的采购</text>
-<text class="more-data"> >> </text>
+<!--image src="/pages/img/order.png" class="order-img"></image-->
+<text>我的订单</text>
+<text class="more-data"> > </text>
 </view>
 
 <view class="sign">
 <form bindsubmit="sign" report-submit="{{true}}">
   <!--button disabled="{{!needSign}}" open-type="getUserInfo" bindgetuserinfo="sign">签到</button-->
-  <button disabled="{{!needSign}}" formType="submit">签到+10</button>
+  <button disabled="{{!needSign}}" formType="submit">每日签到+10</button>
   </form>
 </view>
 
