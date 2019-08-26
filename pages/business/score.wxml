@@ -1,19 +1,18 @@
 <view>
  <view class="one-panel weui-media-box weui-media-box_text">
-    <view class="title weui-media-box__title weui-media-box__title_in-text">积分的作用</view>
+    <view class="title weui-media-box__title weui-media-box__title_in-text"> 亲子币的作用</view>
     <view class="desc">
-    1、成为会员。（满500积分自动升级为会员，满5000积分自动升级为超级会员）  <text> \t\n </text>
-    2、加入亲子大联盟理事会。（积分排名靠前的亲子商户可优先进入亲子大联盟理事会）  <text> \t\n </text>
-    3、兑换亲子云平台提供的各类产品或服务。  <text> \t\n </text>
+    1、兑换会员权益  <text> \t\n </text>
+    2、兑换"云资源"里的产品  <text> \t\n </text>
     </view>
   </view>
 
  <view class="one-panel weui-media-box weui-media-box_text">
-    <view class="title weui-media-box__title weui-media-box__title_in-text">如何获取积分</view>
+    <view class="title weui-media-box__title weui-media-box__title_in-text"> 如何获取亲子币？</view>
     <view class="desc">
-    1、每邀请一位好友注册亲子云名片，可获得100积分。  <text> \t\n </text>
-    2、发布一篇合作信息可获得20积分。  <text> \t\n </text>
-    3、签到一次可获得10积分。  <text> \t\n </text>
+    1、每邀请一位从事亲子行业的好友注册云名片，可获得100个亲子币 <text> \t\n </text>
+    2、每日签到增加10个亲子币 <text> \t\n </text>
+    3、微信充值获得亲子币
     </view>
   </view>
 </view>
