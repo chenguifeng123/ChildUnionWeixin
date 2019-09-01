@@ -12,6 +12,7 @@
   <!--button disabled="{{!needSign}}" open-type="getUserInfo" bindgetuserinfo="sign">签到</button-->
   <button disabled="{{!needSign}}" formType="submit">每日签到+10</button>
   </form>
+  <button class="confirm-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
 </view>
 
 <view class="invite" bindtap="jumpInvite" wx:if="{{id != -1}}">

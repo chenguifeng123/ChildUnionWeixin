@@ -25,7 +25,7 @@
 
     <view class="follow-middle">
       <view class="follow-value">
-        {{'￥' + oneCampaign.price}}
+        {{'亲子币' + oneCampaign.price}}
       </view>
       <view class="follow-desc">市场价
       </view>

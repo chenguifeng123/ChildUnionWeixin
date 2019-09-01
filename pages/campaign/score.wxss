@@ -31,6 +31,7 @@
   text-align: right;
   float:right;
   color: rgb(253, 207, 1);
+
 }
 
 .pay-title{

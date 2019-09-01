@@ -4,11 +4,11 @@
   margin-bottom: 0px;
 }
 
-.sign, .sign button{
+.sign, .sign button, .confirm-btn{
   margin: 15px;
 }
 
-.sign button{
+.sign button, .confirm-btn{
   background-color: rgb(240, 212, 58);
 
 }

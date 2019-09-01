@@ -16,6 +16,8 @@
     "pages/campaign/list",
     "pages/campaign/oneCampaign",
     "pages/campaign/order",
+    "pages/campaign/score",
+    "pages/campaign/scoreOrder",
     "pages/campaign/oneOrder",
     "pages/campaign/orderList",
     "pages/campaign/success",

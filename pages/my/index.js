@@ -59,6 +59,21 @@ Page({
     });
   },
 
+  payfor: function (e) {
+    var card = wx.getStorageSync('id');
+    if (card == '') {
+      wx.showToast({
+        title: '请先绑定用户',
+      });
+      return;
+    }
+    var allUrl = util.fillUrlParams('/pages/campaign/score', {
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+
   jumpInvite:function(e){
     var allUrl = util.fillUrlParams('/pages/my/invite', {
     });

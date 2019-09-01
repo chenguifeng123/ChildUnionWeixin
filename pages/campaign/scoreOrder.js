@@ -7,37 +7,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    oneOrder:{},
-    oneBusiness:{}
+    oneOrder: {}
   },
 
 
-  loadOneOrder(id){
+  loadOneOrder(id) {
     var op = this;
     // 加载一个商户
     app.getUrl('/order/' + id, function (data) {
       if (app.hasData(data)) {
         var oneOrder = data[0];
-        op.setData({ oneOrder: oneOrder});
+        op.setData({ oneOrder: oneOrder });
       }
     });
   },
 
-  loadOneBusiness: function (id) {
-    var op = this;
-    // 加载一个商户
-    app.getUrl('/business/info/' + id, function (data) {
-      if (app.hasData(data)) {
-        if (data == null || data.length == 0) return;
-        op.setData({
-          oneBusiness: data[0],
-          needShow: true
-        });
-      }
-    });
-  },
-  
-  prepay:function(event){
+
+
+  prepay: function (event) {
     var card = wx.getStorageSync('id');
     if (card == '') {
       wx.showToast({
@@ -46,12 +33,11 @@ Page({
       return;
     }
     var op = this;
-    app.post('/order/payScore', {
+    app.post('/order/prepay', {
       id: op.data.oneOrder.id,
       card: card,
       body: op.data.oneOrder.name + '订单',
       order: op.data.oneOrder.order_no,
-      payment: op.data.oneOrder.total,
       total: op.data.oneOrder.total,
     }, function (data) {
       if (!!data && !!data.status) {
@@ -60,31 +46,31 @@ Page({
         })
         console.log(data);
         return;
-      } else {
-        var allUrl = util.fillUrlParams('/pages/campaign/success', {
-          id: op.data.oneOrder.id,
-        });
-        wx.navigateTo({
-          url: allUrl
-        });
+      }
+      if (app.hasData(data)) {
+        // 发起微信支付
+        wx.requestPayment({
+          'timeStamp': data.timeStamp,
+          'nonceStr': data.nonceStr,
+          'package': data.package,
+          'signType': data.signType,
+          'paySign': data.paySign,
+          'success': function (res) {
+            console.log(res);
+            var allUrl = util.fillUrlParams('/pages/campaign/success', {
+              id: op.data.oneOrder.id,
+            });
+            wx.navigateTo({
+              url: allUrl
+            });
+          },
+          'fail': function (res) {
+            console.log(res.errMsg)
+          }
+        })
       }
     });
 
-  },
-
-  payfor:function(e){
-    var card = wx.getStorageSync('id');
-    if (card == '') {
-      wx.showToast({
-        title: '请先绑定用户',
-      });
-      return;
-    }
-    var allUrl = util.fillUrlParams('/pages/campaign/score', {
-    });
-    wx.navigateTo({
-      url: allUrl
-    });
   },
 
   /**
@@ -106,8 +92,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var card = wx.getStorageSync('id');
-    this.loadOneBusiness(card);
+
   },
 
   /**

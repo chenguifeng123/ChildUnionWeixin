@@ -16,6 +16,8 @@
     <view class="right-txt">{{oneOrder.name}}</view>
   </view>
 
+
+
   <!--view class="one-line">
     <view class="left-txt">手机号</view>
     <view class="right-txt">20180000</view>
@@ -41,6 +43,15 @@
 </view>
 </view-->
 
-<button class="confirm-btn" open-type="getUserInfo" bindtap="prepay">确认支付</button>
+<view class="cost-panel">
+  <view class="one-line">
+    <view class="left-txt">我的余额</view>
+    <view class="right-txt">{{oneBusiness.score }}</view>
+  </view>
+</view>
+
+<button class="confirm-btn" disabled="{{oneBusiness.score < oneOrder.total}}" open-type="getUserInfo" bindtap="prepay">确认支付</button>
+
+<button class="confirm-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
 
 </view>

@@ -1,0 +1,17 @@
+<view>
+<view class="main-panel">
+
+  <view class="one-line">
+    <view class="left-txt">支付金额(￥)</view>
+    <view class="right-txt">
+    <input class="weui-input" placeholder=""   bindinput="bindValue" value="{{value}}"/>
+    </view>
+  </view>
+
+</view>
+
+
+<button class="confirm-btn" open-type="getUserInfo" bindtap="prepay">确认支付</button>
+
+
+</view>
