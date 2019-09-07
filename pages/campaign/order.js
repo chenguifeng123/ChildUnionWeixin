@@ -87,6 +87,14 @@ Page({
     });
   },
 
+  jumpInvite: function (e) {
+    var allUrl = util.fillUrlParams('/pages/my/invite', {
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

@@ -7,10 +7,13 @@
 }
 
 .main-panel{
+  padding:10px;
   padding-top:20px;
+  
 }
 
 .cost-panel{
+  padding:10px;
   margin-top: 20px;
 }
 
@@ -27,11 +30,11 @@
   text-align: left;
 }
 
-.right-txt{
-  text-align: right;
-  float:right;
-  color: rgb(253, 207, 1);
-
+.pay-txt{
+  padding: 5px 5px 0px 5px;
+  text-align: center;
+  color: black;
+  font-size: 1.2em;
 }
 
 .pay-title{
@@ -69,9 +72,16 @@
   text-align: right;
   padding-bottom: 10px;
 }
-
+.tips-txt-view{
+  margin-top: 10px;
+  text-align: center;
+}
+.tips-txt{
+  color: rgb(245, 179, 94);
+  font-size: 0.9em;
+}
 .confirm-btn{
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   width: 80%;
   color: white;

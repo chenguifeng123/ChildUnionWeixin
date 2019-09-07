@@ -7,11 +7,14 @@
 }
 
 .main-panel{
+  padding: 10px;
   padding-top:20px;
+  
 }
 
 .cost-panel{
-  margin-top: 20px;
+  margin-top: 5px;
+  padding: 10px;
 }
 
 .one-line{
@@ -24,13 +27,24 @@
 }
 
 .left-txt{
+  margin-top: 10px;
   text-align: left;
+  color:rgba(156, 155, 155, 0.747);
 }
 
 .right-txt{
+  margin-top: 10px;
   text-align: right;
   float:right;
-  color: rgb(253, 207, 1);
+  color: black;
+}
+
+.pay-txt{
+  margin-top: 10px;
+  text-align: right;
+  float:right;
+  color: red;
+  font-size:  1em;
 }
 
 .pay-title{
@@ -75,4 +89,31 @@
   width: 80%;
   color: white;
   background-color: rgb(253, 207, 1);
+}
+
+.charge-txt-view{
+  padding-top: 20px;
+  text-align: center;
+}
+.charge-txt{
+  color: rgb(5, 5, 5);
+  font-size: 0.9em;
+}
+
+.charge-btn{
+  margin-top: 10px;
+  text-align: center;
+  width: 80%;
+  color: white;
+  background-color: rgb(60, 184, 233);
+}
+
+.invite{
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.invite-img{
+  width: 100%;
+  height: 120px;
 }

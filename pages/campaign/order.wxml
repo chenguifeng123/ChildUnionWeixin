@@ -1,21 +1,20 @@
 <view>
 
 <view class="main-panel">
-  <view class="one-line">
+  <!--view class="one-line">
     <view class="left-txt">订单号</view>
     <view class="right-txt">{{oneOrder.order_no}}</view>
-  </view>
-
-  <view class="one-line">
-    <view class="left-txt">亲子币</view>
-    <view class="right-txt">{{oneOrder.total }}</view>
-  </view>
+  </view-->
 
   <view class="one-line">
     <view class="left-txt">订单内容</view>
     <view class="right-txt">{{oneOrder.name}}</view>
   </view>
 
+  <view class="one-line">
+    <view class="left-txt">需支付</view>
+    <view class="pay-txt">{{oneOrder.total }} 亲子币</view>
+  </view>
 
 
   <!--view class="one-line">
@@ -45,13 +44,20 @@
 
 <view class="cost-panel">
   <view class="one-line">
-    <view class="left-txt">我的余额</view>
-    <view class="right-txt">{{oneBusiness.score }}</view>
+    <view class="left-txt">我的亲子币</view>
+    <view class="right-txt">{{ oneBusiness.score }}</view>
   </view>
 </view>
 
-<button class="confirm-btn" disabled="{{oneBusiness.score < oneOrder.total}}" open-type="getUserInfo" bindtap="prepay">确认支付</button>
+<button class="confirm-btn" hidden="{{oneBusiness.score < oneOrder.total}}" open-type="getUserInfo" bindtap="prepay">确认支付</button>
+<view class="charge-txt-view">
+  <text class="charge-txt" hidden="{{oneBusiness.score >= oneOrder.total}}" open-type="getUserInfo">余额不足，请先充值！
+  </text>
+</view>
+<button hidden="{{oneBusiness.score >= oneOrder.total}}" class="charge-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
 
-<button class="confirm-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
+<view class="invite" bindtap="jumpInvite">
+  <image src="/pages/img/invite.jpg" class="invite-img"></image>
+</view>
 
 </view>

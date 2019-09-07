@@ -2,14 +2,17 @@
 <view class="main-panel">
 
   <view class="one-line">
-    <view class="left-txt">支付金额(￥)</view>
-    <view class="right-txt">
+    <view class="left-txt">充值金额</view>
+  </view>
+  <view class="pay-txt">
+    <view>￥</view>
     <input class="weui-input" placeholder=""   bindinput="bindValue" value="{{value}}"/>
     </view>
-  </view>
-
 </view>
-
+<view class="tips-txt-view">
+  <text class="tips-txt">提示: 100元 = 1000亲子币
+  </text>
+</view>
 
 <button class="confirm-btn" open-type="getUserInfo" bindtap="prepay">确认支付</button>
 
