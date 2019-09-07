@@ -66,11 +66,20 @@ page, .page{
   color: rgb(195, 199, 201);
   font-size: 0.8em;
 }
-
-.follow-value{
-  color: rgb(141, 139, 25);
+.coin-desc{
+  color: rgb(240, 193, 63);
+  font-size: 0.8em;
 }
-
+.follow-value{
+  color: black;
+}
+.marketprice-value{
+  text-decoration: line-through;
+}
+.pay-value{
+  color: red;
+  font-size:  0.9em;
+}
 
 .control-num{
   text-align: center;
@@ -172,6 +181,7 @@ page, .page{
 
 .price-bottom-txt{
   color: white;
+  font-size: 0.9em;
 }
 
 .bottom-class::after{

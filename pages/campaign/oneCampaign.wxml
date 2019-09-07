@@ -15,19 +15,19 @@
   </view>
   <view class="follow-count">
     <view class="follow-left">
-      <view class="follow-value">
+      <view class="pay-value">
         {{oneCampaign.channel_price}}
       </view>
-      <view class="follow-desc">亲子币
+      <view class="coin-desc">亲子币
       </view>
 
     </view>
 
     <view class="follow-middle">
-      <view class="follow-value">
-        {{'亲子币' + oneCampaign.price}}
+      <view class="marketprice-value">
+        {{oneCampaign.price}}
       </view>
-      <view class="follow-desc">市场价
+      <view class="follow-desc">市场价(元)
       </view>
 
     </view>
