@@ -5,14 +5,19 @@
 }
 
 .sign, .sign button, .confirm-btn{
+  text-align: center;
   margin: 15px;
 }
 
-.sign button, .confirm-btn{
+.sign{
   background-color: rgb(240, 212, 58);
 
 }
+.confirm-btn{
+  color: white;
+  background-color: rgb(60, 184, 233);
 
+}
 .invite{
   margin-left: 0px;
   margin-right: 0px;
