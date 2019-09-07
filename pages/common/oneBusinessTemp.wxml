@@ -81,7 +81,7 @@
             </view>
             <view wx:else>
               <image src="{{'/pages/img/wechat-' + imageIndex + '.png'}}" class="desc-img"></image>
-              <text>{{oneBusiness.weixincode}}</text>
+              <text>***************</text>
               <button class="hide-btn">会员可见</button>
             </view>
             <view>
