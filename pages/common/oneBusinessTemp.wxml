@@ -18,7 +18,8 @@
         <text class="userinfo-nickname">{{oneBusiness.realname}}</text>
         <image src="/pages/img/women.png" class="gender" wx:if="{{oneBusiness.gender == 1}}"></image>
         <image src="/pages/img/man.png" class="gender"  wx:else></image>
-        <image src="/pages/img/leaguer_normal.png" class="leaguer_normal"  wx:if="{{oneBusiness.score >= 2000}}"></image>
+        <!--image src="/pages/img/leaguer_normal.png" class="leaguer_normal"  wx:if="{{oneBusiness.score >= 2000}}"></image-->
+        <image src="/pages/img/leaguer_normal.png" class="leaguer_normal"  wx:if="{{oneBusiness.leaguer == 1}}"></image>
       </view>
       <view class="business-company">{{oneBusiness.company}}</view>
       <view class="business-job">{{oneBusiness.job}}</view>

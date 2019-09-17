@@ -121,8 +121,9 @@ App({
 
   isLeaguerFunc:function(func){
     var op = this;
-    var score = wx.getStorageSync('score');
-    if(score == ''){
+    //var score = wx.getStorageSync('score');
+    var leaguer = wx.getStorageSync('leaguer');
+    if (leaguer == ''){
       if(this.getUserId() == -1){
         func(false);
       }else{
@@ -131,12 +132,14 @@ App({
             if (data == null || data.length == 0) return;
             // 因为积分动态更新,使用缓存的话,需要在多个积分的地方增加更新缓存,暂不考虑缓存
             //wx.setStorageSync('score', data[0].score);
-            func(data[0].score >= 2000);
+            //func(data[0].score >= 2000);
+            func(data[0].leaguer == 1);
           }
         });
       }
     }else{
-      func(score >= 2000);
+      //func(score >= 2000);
+      func(leaguer == 1);
     }
     return;
   },
