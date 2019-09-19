@@ -35,21 +35,13 @@ Page({
   },
 
   saveFormId: function (v) {
-    //if (v.detail.formId != 'the formId is a mock one') {
-    this.data.formIdArray.push(v.detail.formId);
-    //}
+    app.formIdInput(v, this);
   },
 
   sign:function(e){
     var op = this;
-    var formId = e.detail.formId;
-    app.post('/formId/' + formId, {
-      cardId: app.getUserId(),
-      formId: formId,
-      isUse: 0,
-    }, function (data) {
-      console.log("新增一个formId：" + data);
-    });
+    this.saveFormId(e);
+    app.batchAddFormId(op);
     // 不等服务端返回,先限制
     this.setData({
       needSign: false

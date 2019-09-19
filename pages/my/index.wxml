@@ -8,10 +8,32 @@
 </view>
 
 <view>
-<form bindsubmit="sign" report-submit="{{true}}">
-  <!--button disabled="{{!needSign}}" open-type="getUserInfo" bindgetuserinfo="sign">签到</button-->
+<!--form bindsubmit="sign" report-submit="{{true}}">
   <button class="sign" disabled="{{!needSign}}" formType="submit">每日签到+10</button>
-  </form>
+</form-->
+
+<form bindsubmit='sign' report-submit="true">
+    <button form-type="submit" class='form_button'>
+	    <form bindsubmit='saveFormId' report-submit="true">
+          <button form-type="submit" class='form_button'>
+	    <form bindsubmit='saveFormId' report-submit="true">
+    <button form-type="submit" class='form_button'>
+	    <form bindsubmit='saveFormId' report-submit="true">
+		    <button form-type="submit" class='form_button'>
+			    <form bindsubmit='saveFormId' report-submit="true">
+				    <button form-type="submit" class='sign' disabled="{{!needSign}}">
+            每日签到+10
+				    </button>
+				</form>
+		    </button>
+		</form>
+    </button>
+    		</form>
+    </button>
+    		</form>
+    </button>
+</form>
+
   <button class="confirm-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
 </view>
 

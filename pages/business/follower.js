@@ -10,12 +10,18 @@ Page({
   data: {
     businessList: [],
     id : app.getUserId(),
+    formIdArray: [],
   },
 
   oneBusiness: businessTemp.oneBusiness,
   onGotUserInfo: businessTemp.onGotUserInfo,
   addFollower: businessTemp.addFollower,
   
+  saveFormId: function (v) {
+    app.formIdInput(v, this);
+  },
+
+
   loadFollower: function () {
     var op = this;
     var id = this.data.id;

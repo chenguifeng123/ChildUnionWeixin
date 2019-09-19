@@ -29,6 +29,10 @@
 
         <!-- 关注 -->
         <view class="business-right-info"> 
-            <button class="business-btn-not-follow" wx:if="{{item.isFollow == 0}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" >+关注</button> 
+
+    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
+            <button class="business-btn-not-follow" wx:if="{{item.isFollow == 0}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" open-type="getUserInfo" form-type="submit" bindgetuserinfo="onGotUserInfo" >+关注</button> 
+    </form>
+
             <button class="business-btn-follow" wx:if="{{item.isFollow == 1}}" data-id="{{item.id}}" data-follow="{{item.isFollow}}" >已关注</button>
          </view>

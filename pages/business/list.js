@@ -37,11 +37,18 @@ Page({
     searchValue: "",
 
     tag:-1,
+
+    formIdArray: [],
   },
 
   oneBusiness: businessTemp.oneBusiness,
   onGotUserInfo: businessTemp.onGotUserInfo,
   addFollower: businessTemp.addFollower,
+
+  saveFormId: function (v) {
+    app.formIdInput(v, this);
+  },
+
 
   showInput: function () {
     this.setData({

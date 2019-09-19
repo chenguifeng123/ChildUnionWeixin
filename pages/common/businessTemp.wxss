@@ -128,3 +128,7 @@
 .business-btn-follow{
   background-color: rgb(238, 238, 238);
 }
+
+.form_class_message {
+  width: 100%;
+}

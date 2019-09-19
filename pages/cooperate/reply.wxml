@@ -5,8 +5,8 @@
     <view class="message-input">
 
     
-    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class'>
-      <button formType="submit" class='form_button'>
+    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
+      <button formType="submit" class='form_button_message'>
       <textarea id="replyMessage" name="replyMessage" maxlength="256" placeholder="请输入内容" bindinput="bindMessageInput"></textarea>
       </button>
     </form>

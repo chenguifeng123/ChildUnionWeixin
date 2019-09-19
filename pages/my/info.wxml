@@ -61,5 +61,27 @@
         </view>
 
 <view class="submit-view">
+
+<form bindsubmit='saveFormId' report-submit="true">
+    <button form-type="submit" class='form_button'>
+	    <form bindsubmit='saveFormId' report-submit="true">
+          <button form-type="submit" class='form_button'>
+	    <form bindsubmit='saveFormId' report-submit="true">
+    <button form-type="submit" class='form_button'>
+	    <form bindsubmit='saveFormId' report-submit="true">
+		    <button form-type="submit" class='form_button'>
+			    <form bindsubmit='saveFormId' report-submit="true">
+
   <button class="submit-btn" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo">提交</button>
+
+				</form>
+		    </button>
+		</form>
+    </button>
+    		</form>
+    </button>
+    		</form>
+    </button>
+</form>
+
 </view>

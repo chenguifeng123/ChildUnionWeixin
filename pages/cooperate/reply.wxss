@@ -25,16 +25,16 @@ textarea{
   color: white;
 }
 
-.form_class {
+.form_class_message {
   width: 100%;
 }
-.form_button {
+.form_button_message {
   background-color: transparent;
   padding: 0;
   margin: 0;
   text-align: left;
 }
  
-.form_button::after {
+.form_button_message::after {
   border: 0px;
 }

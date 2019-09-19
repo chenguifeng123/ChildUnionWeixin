@@ -38,10 +38,10 @@ textarea{
   color: white;
 }
 
-.form_class {
+.form_class_message {
   width: 100%;
 }
-.form_button {
+.form_button_message {
   background-color: transparent;
   padding: 0;
   margin: 0;
@@ -49,13 +49,13 @@ textarea{
   line-height: 0;
 }
  
-.form_button::after {
+.form_button_message::after {
   border: 0px;
   padding: 0;
   margin: 0;
   line-height: 0;
 }
-.form_button buton-over{
+.form_button_message buton-over{
   padding: 0;
   margin: 0;
 }

@@ -17,6 +17,7 @@ Page({
 
     tag : [],
     invite:-1,
+    formIdArray: [],
   },
 
   bindRealnameInput: function (e) {
@@ -61,6 +62,9 @@ Page({
     })
   },
 
+  saveFormId: function (v) {
+    app.formIdInput(v, this);
+  },
 
   onGotUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo;
@@ -168,6 +172,7 @@ Page({
           });
         }
       }
+      app.batchAddFormId(op);
     });
   },
 

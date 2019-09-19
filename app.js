@@ -144,6 +144,24 @@ App({
     return;
   },
 
+  formIdInput: function(v, op){
+    var formId = v.detail.formId == 'the formId is a mock one' ? '0' : v.detail.formId;
+    op.data.formIdArray.push(formId);
+  },
+
+  batchAddFormId: function(op){
+    if(!!op.data.formIdArray){
+      if(op.data.formIdArray.length == 0) return;
+      var idList = op.data.formIdArray.join(",");
+      this.post('/formList/' + this.getUserId() + '-' + idList, {}, function (data) {
+        console.log("批量新增formId：" + data);
+        op.setData({
+          formIdArray: []
+        });
+      });
+    }
+  },
+
   // 后续要重构采用 result{code: msg: data}这种结构返回
   hasData: function (data) {
     if (data == undefined || data == null) return false;

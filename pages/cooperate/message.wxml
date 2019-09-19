@@ -5,8 +5,8 @@
     <view class="title-name">标题</view>
     <view class="title-input">
     
-    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class'>
-      <button formType="submit" class='form_button'>
+    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
+      <button formType="submit" class='form_button_message'>
       <input maxlength="50" placeholder="请输入标题" bindinput="bindTitleInput"></input>
       </button>
     </form>
@@ -21,8 +21,8 @@
     <view class="message-name">内容</view>
     <view class="message-input">
 
-    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class'>
-      <button formType="submit" class='form_button'>
+    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
+      <button formType="submit" class='form_button_message'>
       <textarea maxlength="2000" placeholder="请输入内容" bindinput="bindMessageInput"></textarea>
       </button>
     </form>

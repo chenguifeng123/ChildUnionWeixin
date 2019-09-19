@@ -6,12 +6,18 @@ Page({
 
   data: {
     businessList: [],
+    formIdArray: [],
   },
 
   oneBusiness: businessTemp.oneBusiness,
   onGotUserInfo: businessTemp.onGotUserInfo,
   addFollower: businessTemp.addFollower,
   
+  saveFormId: function (v) {
+    app.formIdInput(v, this);
+  },
+
+
   loadCommendBusiness: function () {
     var op = this;
     var start = Math.floor((Math.random() * 390 + 0));

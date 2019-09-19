@@ -19,6 +19,7 @@ var business = {
     var op = this;
     app.onGotUserInfo(e, function () {
       op.addFollower(e);
+      app.batchAddFormId(op);
     });
   },
 
