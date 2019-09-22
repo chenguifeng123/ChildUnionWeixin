@@ -51,10 +51,12 @@
 
 <button class="confirm-btn" hidden="{{oneBusiness.score < oneOrder.total}}" open-type="getUserInfo" bindtap="prepay">确认支付</button>
 <view class="charge-txt-view">
-  <text class="charge-txt" hidden="{{oneBusiness.score >= oneOrder.total}}" open-type="getUserInfo">余额不足，请先充值！
+  <text class="charge-txt" hidden="{{oneBusiness.score >= oneOrder.total}}" open-type="getUserInfo">余额不足，请到“我的”充值亲子币！
+  </text>
+  <text class="charge-txt" hidden="{{oneBusiness.score >= oneOrder.total}}">（10元=100亲子币）
   </text>
 </view>
-<button hidden="{{oneBusiness.score >= oneOrder.total}}" class="charge-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
+<!--button hidden="{{oneBusiness.score >= oneOrder.total}}" class="charge-btn" open-type="getUserInfo" bindtap="payfor">充值</button-->
 
 <view class="invite" bindtap="jumpInvite">
   <image src="/pages/img/invite.jpg" class="invite-img"></image>
