@@ -52,7 +52,18 @@ App({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        func(res.data);
+        if (!!res.data.code) {
+          if (res.data.code != "00000000") {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            });
+          } else {
+            func(res.data);
+          }
+        } else
+          func(res.data);
       }
     })
   },
@@ -65,7 +76,18 @@ App({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        func(res.data);
+        if (!!res.data.code ){
+          if(res.data.code != "00000000"){
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            });
+          }else{
+            func(res.data);
+          }
+        }else
+          func(res.data);
       }
     })
   },
@@ -146,7 +168,8 @@ App({
 
   formIdInput: function(v, op){
     var formId = v.detail.formId == 'the formId is a mock one' ? '0' : v.detail.formId;
-    op.data.formIdArray.push(formId);
+    if (op.data.formIdArray.indexOf(formId) < 0)
+      op.data.formIdArray.push(formId);
   },
 
   batchAddFormId: function(op){
@@ -165,6 +188,7 @@ App({
   // 后续要重构采用 result{code: msg: data}这种结构返回
   hasData: function (data) {
     if (data == undefined || data == null) return false;
+    if (!!data.code && data.code != "00000000") return false;
     return true;
   },
 
