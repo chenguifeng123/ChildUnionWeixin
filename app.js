@@ -60,7 +60,7 @@ App({
               duration: 2000
             });
           } else {
-            func(res.data);
+            func(res.data.data);
           }
         } else
           func(res.data);
@@ -84,7 +84,7 @@ App({
               duration: 2000
             });
           }else{
-            func(res.data);
+            func(res.data.data);
           }
         }else
           func(res.data);
@@ -100,7 +100,7 @@ App({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        func(res.data);
+        func(res.data.data);
       }
     })
   },

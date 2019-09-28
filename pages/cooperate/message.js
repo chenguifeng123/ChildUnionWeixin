@@ -15,7 +15,7 @@ Page({
 
   saveFormId: function (v) {
     //if (v.detail.formId != 'the formId is a mock one') {
-      this.data.formIdArray.push(v.detail.formId);
+    app.formIdInput(v, this);
     //}
   },
 
