@@ -18,6 +18,8 @@ Page({
     tag : [],
     invite:-1,
     formIdArray: [],
+
+    commited:false,
   },
 
   bindRealnameInput: function (e) {
@@ -142,6 +144,11 @@ Page({
   submit:function(){
     var op = this;
     if(!this.checkInput()) return;
+
+    op.setData({
+      commited:true,
+    });
+
     app.post('/business/setUser', {
       code:  app.userCode,
       headimgurl: app.globalData.userInfo.avatarUrl,
@@ -171,8 +178,14 @@ Page({
             url: allUrl
           });
         }
+        app.batchAddFormId(op);
+      }else{
+
+        op.setData({
+          commited: false,
+        });
       }
-      app.batchAddFormId(op);
+
     });
   },
 
@@ -186,6 +199,7 @@ Page({
     this.setData({
       tag: tag,
       invite:invite,
+      commited:false,
       });
     this.loadOneBusiness(app.getUserId());
   },
