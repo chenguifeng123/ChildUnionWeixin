@@ -1,5 +1,6 @@
 var util = require('../../utils/util.js');
 const app = getApp()
+import orderTemp from '../common/orderTemp';
 
 Page({
 
@@ -7,51 +8,50 @@ Page({
    * 页面的初始数据
    */
   data: {
-    value: 100,
-    num:1,
+    qinzi: app.qinzi,
+    item: {},
+
   },
 
-  bindValue:function(e){
-    this.setData({
-      value: e.detail.value
+  repay: function (event) {
+    var op = this;
+    var allUrl = util.fillUrlParams('/pages/campaign/scoreOrder', {
+      id: op.data.item.id,
+    });
+    wx.navigateTo({
+      url: allUrl
     });
   },
 
-  prepay: function (event) {
-    var card = wx.getStorageSync('id');
-    if (card == '') {
-      wx.showToast({
-        title: '请先绑定用户',
-      });
-      return;
-    }
+  callMe: function (event) {
+    wx.makePhoneCall({
+      phoneNumber: '18913388884',
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
+  },
+
+  loadOneOrder(id) {
     var op = this;
-    app.post('/rechargeOrder/data', {
-      cardId: card,
-      price: op.data.value,
-      num: op.data.num,
-      total: op.data.value,
-    }, function (data) {
-      if (typeof data == 'number') {
-        var allUrl = util.fillUrlParams('/pages/campaign/scoreOrder', {
-          id: data,
-        });
-        wx.navigateTo({
-          url: allUrl
-        });
-      } else {
-        wx.showToast({
-          title: '订单创建失败',
-        })
+    // 加载一个商户
+    app.getUrl('/rechargeOrder/' + id, function (data) {
+      if (app.hasData(data)) {
+        var oneOrder = data[0];
+        op.setData({ item: oneOrder });
       }
     });
-
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var id = options.id;
+    this.loadOneOrder(id);
   },
 
   /**

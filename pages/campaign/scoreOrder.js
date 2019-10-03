@@ -14,7 +14,7 @@ Page({
   loadOneOrder(id) {
     var op = this;
     // 加载一个商户
-    app.getUrl('/order/' + id, function (data) {
+    app.getUrl('/rechargeOrder/' + id, function (data) {
       if (app.hasData(data)) {
         var oneOrder = data[0];
         op.setData({ oneOrder: oneOrder });
@@ -59,6 +59,7 @@ Page({
             console.log(res);
             var allUrl = util.fillUrlParams('/pages/campaign/success', {
               id: op.data.oneOrder.id,
+              type:1,
             });
             wx.navigateTo({
               url: allUrl

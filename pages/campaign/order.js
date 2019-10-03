@@ -63,6 +63,7 @@ Page({
       } else {
         var allUrl = util.fillUrlParams('/pages/campaign/success', {
           id: op.data.oneOrder.id,
+          type: 0,
         });
         wx.navigateTo({
           url: allUrl

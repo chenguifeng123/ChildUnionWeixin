@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:-1
+    id:-1,
+    type:0,
   },
 
   goHome: function (event) {
@@ -18,7 +19,8 @@ Page({
 
   goOrder:function(event){
     var op = this;
-    var allUrl = util.fillUrlParams('/pages/campaign/oneOrder', {
+    var url = this.data.type == 0 ? '/pages/campaign/oneOrder' : '/pages/campaign/oneRechargeOrder';
+    var allUrl = util.fillUrlParams(url, {
       id: op.data.id,
     });
     wx.navigateTo({
@@ -31,7 +33,8 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    this.setData({id:id});
+    var type = options.type;
+    this.setData({id:id, type: type});
   },
 
   /**

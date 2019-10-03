@@ -74,6 +74,15 @@ Page({
     });
   },
 
+  jumpRechargeOrderList: function () {
+    var allUrl = util.fillUrlParams('/pages/campaign/rechargeOrderList', {
+    });
+    wx.navigateTo({
+      url: allUrl
+    });
+  },
+
+
   jumpOrderList:function(){
     var allUrl = util.fillUrlParams('/pages/campaign/orderList', {
     });

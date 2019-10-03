@@ -5,11 +5,15 @@ import orderTemp from '../common/orderTemp';
 Page({
 
   /**
+   * 和订单代码类似，先分离出来，后续代码要充值和积分的要有不同的展示
+   */
+
+  /**
    * 页面的初始数据
    */
   data: {
     qinzi: app.qinzi,
-    orderList:[],
+    rechargeOrderList: [],
 
     start: 0,
     pageSize: 30,
@@ -17,12 +21,12 @@ Page({
 
   },
 
-  oneOrder: orderTemp.oneOrder,
+  oneRechargeOrder: orderTemp.oneRechargeOrder,
   loadOrder: orderTemp.loadOrder,
 
   refreshAllOrder: function () {
     this.setData({
-      orderList: [],
+      rechargeOrderList: [],
       start: 0,
       hasMoreData: true,
     });
@@ -33,10 +37,10 @@ Page({
     var op = this;
     var id = wx.getStorageSync('id');
     id = id == '' ? -1 : id;
-    if(id == -1) return;
-    var orderList = this.data.orderList;
+    if (id == -1) return;
+    var rechargeOrderList = this.data.rechargeOrderList;
     // 加载商户
-    app.post('/order/list', {
+    app.post('/rechargeOrder/list', {
       card: id,
       start: op.data.start,
       num: op.data.pageSize,
@@ -44,12 +48,12 @@ Page({
       if (app.hasData(data)) {
         if (data.length < op.data.pageSize) {
           op.setData({
-            orderList: orderList.concat(data),
+            rechargeOrderList: rechargeOrderList.concat(data),
             hasMoreData: false
           });
         } else {
           op.setData({
-            orderList: orderList.concat(data),
+            rechargeOrderList: rechargeOrderList.concat(data),
             hasMoreData: true,
             start: op.data.start + op.data.pageSize
           })
