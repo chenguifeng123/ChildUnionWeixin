@@ -46,6 +46,11 @@ Page({
     this.setData({
       needSign: false
     });
+    wx.showToast({
+      title: '亲子币+10',
+      icon: 'success',
+      duration: 2000
+    });
     app.onGotUserInfo(e, function () {
       op.sign2Server(op.data.id);
     });

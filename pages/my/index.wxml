@@ -3,13 +3,13 @@
 
 <view class="order" bindtap="jumpOrderList">
 <!--image src="/pages/img/order.png" class="order-img"></image-->
-<text>我的积分订单</text>
+<text>兑换记录</text>
 <text class="more-data"> > </text>
 </view>
 
 <view class="order" bindtap="jumpRechargeOrderList">
 <!--image src="/pages/img/order.png" class="order-img"></image-->
-<text>我的充值订单</text>
+<text>充值记录</text>
 <text class="more-data"> > </text>
 </view>
 
@@ -28,7 +28,7 @@
 		    <button form-type="submit" class='form_button'>
 			    <form bindsubmit='saveFormId' report-submit="true">
 				    <button form-type="submit" class='sign' disabled="{{!needSign}}">
-            每日签到+10
+            每日签到
 				    </button>
 				</form>
 		    </button>
