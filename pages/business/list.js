@@ -6,12 +6,17 @@ Page({
   data: {
     // 轮播URL和图片用来做广告栏
     imgUrls: [
+      
       {
+        link: '/pages/business/banner/banner1',
+        url: "/pages/img/qinghuaci_banner.jpeg",
+        isTab: true
+      }
+      , {
         link: '/pages/join/classList',
         url: "/pages/img/banner2.png",
-        isTab: true,
+        isTab: false
       }
-      
       , {
         link: '/pages/my/invite',
         url: "/pages/img/invite.jpg",
