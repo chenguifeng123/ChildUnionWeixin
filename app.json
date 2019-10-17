@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cooperate/list",
     "pages/business/list",
     "pages/business/oneBusiness",
     "pages/business/success",
@@ -8,7 +9,6 @@
     "pages/business/fans",
     "pages/business/score",
     "pages/business/typeSelect",
-    "pages/cooperate/list",
     "pages/cooperate/oneMessage",
     "pages/cooperate/message",
     "pages/cooperate/reply",
@@ -27,29 +27,30 @@
     "pages/my/index",
     "pages/my/info",
     "pages/my/type",
+    "pages/business/banner/banner1",
     "pages/my/invite"
   ],
   "tabBar": {
     "list": [
-      {
-        "pagePath": "pages/business/list",
-        "text": "亲子名片",
-        "iconPath": "pages/img/icon-business.png"
-      },
       {
         "pagePath": "pages/cooperate/list",
         "text": "市场动态",
         "iconPath": "pages/img/icon-cooperate.png"
       },
       {
-        "pagePath": "pages/campaign/list",
-        "text": "云资源",
-        "iconPath": "pages/img/icon-resource.png"
+        "pagePath": "pages/business/list",
+        "text": "亲子名片",
+        "iconPath": "pages/img/icon-business.png"
       },
       {
         "pagePath": "pages/company/list",
         "text": "亲子机构",
         "iconPath": "pages/img/icon-company.png"
+      },
+      {
+        "pagePath": "pages/campaign/list",
+        "text": "云资源",
+        "iconPath": "pages/img/icon-resource.png"
       },
       {
         "pagePath": "pages/my/index",

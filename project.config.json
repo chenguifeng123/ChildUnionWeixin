@@ -37,7 +37,7 @@
 				{
 					"id": -1,
 					"name": "new",
-					"pathName": "pages/business/list",
+					"pathName": "pages/cooperate/list",
 					"query": "cc=1",
 					"scene": null
 				}
