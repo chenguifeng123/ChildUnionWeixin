@@ -12,6 +12,32 @@ Page({
     pageSize: 30,
     hasMoreData: true,
 
+    // 轮播URL和图片用来做广告栏
+    imgUrls: [
+
+      {
+        link: '/pages/business/banner/banner1',
+        url: "/pages/img/qinghuaci_banner.jpeg",
+        isTab: true
+      }
+      , {
+        link: '/pages/join/classList',
+        url: "/pages/img/banner2.png",
+        isTab: false
+      }
+      , {
+        link: '/pages/my/invite',
+        url: "/pages/img/invite.jpg",
+        isTab: false
+      }
+
+    ],
+    // 轮播控制项
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,  // 轮播间隔
+    duration: 1000,
+
   },
 
   loadMessage:function(){

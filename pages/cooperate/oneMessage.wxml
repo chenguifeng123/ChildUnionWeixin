@@ -37,7 +37,7 @@
     </view>
   </view>
   <button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
-    留　言
+    回复
   </button>
 
 </view> 
@@ -61,9 +61,9 @@
 </view>
 
   <view class="bottom-button">
-    <button class="bottom-left-button bottom-class" bindtap="goHome">
+    <button class="bottom-left-button bottom-class" bindtap="goCooperateList">
       <image src="/pages/img/home.png" class="bottom-img" />
-      <text class="bottom-txt"> 回首页</text>
+      <text class="bottom-txt"> 首页</text>
     </button>
     <button class="bottom-middle-button bottom-class"   bindtap="contact">
       <image src="/pages/img/button-contact.png" class="bottom-right-img" />

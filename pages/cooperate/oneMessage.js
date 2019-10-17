@@ -73,6 +73,12 @@ Page({
     })
   },
 
+  goCooperateList: function (event) {
+    wx.switchTab({
+      url: '/pages/cooperate/list',
+    })
+  },
+
   contact: function(event){
     var call = this.data.phone;
     wx.makePhoneCall({

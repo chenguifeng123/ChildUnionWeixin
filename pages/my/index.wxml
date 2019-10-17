@@ -14,11 +14,11 @@
 </view>
 
 <view>
-<!--form bindsubmit="sign" report-submit="{{true}}">
-  <button class="sign" disabled="{{!needSign}}" formType="submit">每日签到+10</button>
-</form-->
+  <form bindsubmit="sign" report-submit="{{true}}">
+    <button class="sign" disabled="{{!needSign}}" formType="submit">每日签到</button>
+  </form>
 
-<form bindsubmit='sign' report-submit="true">
+<!--form bindsubmit='sign' report-submit="true">
     <button form-type="submit" class='form_button'>
 	    <form bindsubmit='saveFormId' report-submit="true">
           <button form-type="submit" class='form_button'>
@@ -38,9 +38,9 @@
     </button>
     		</form>
     </button>
-</form>
+</form-->
 
-  <button class="confirm-btn" open-type="getUserInfo" bindtap="payfor">充值</button>
+  <!--button class="confirm-btn" open-type="getUserInfo" bindtap="payfor">充值</button-->
 </view>
 
 <view class="invite" bindtap="jumpInvite" wx:if="{{id != -1}}">
