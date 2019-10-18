@@ -1,3 +1,11 @@
+.weui-cells{
+  margin-top:15px;
+}
+
+.weui-cell{
+  height:40px;
+}
+
 .weui-label, .weui-cell__bd{
   font-size: 0.8em;
 }
@@ -6,7 +14,7 @@
   width: 70px;
 }
 .submit-view{
-  margin-top:15px;
+  margin-top:30px;
   text-align: center;
 }
 
@@ -18,6 +26,24 @@
   color: white;
 }
 
+.weui-cell_box{
+  height: 35%;
+}
+
 .boxInput{
-  width: 200px;
+  margin-top: 10px;
+  width: 98%;
+}
+
+.sexCell{
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.radio {
+  transform:scale(0.8);
+  margin-left: 10px;
+}
+
+.sexText{
+  font-size: 1.3em;
 }

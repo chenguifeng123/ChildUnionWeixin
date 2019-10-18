@@ -15,12 +15,12 @@
                 <view class="weui-cell__bd">
                     <radio-group class="radio-group" bindchange="radioChange">
                       <radio class="radio" value="0" checked="{{gender == 0}}">
-                        <text>男</text>
+                        <text class="sexText">男</text>
                       </radio>
                       <radio class="radio" value="1" checked="{{gender == 1}}">
-                        <text>女</text>
+                        <text class="sexText">女</text>
                       </radio>
-            </radio-group>
+                    </radio-group>
                 </view>
             </view>
 
@@ -65,12 +65,12 @@
                 </view>
             </view>
 
-            <view class="weui-cell weui-cell_input">
+            <view class="weui-cell weui-cell_input weui-cell_box">
                 <view class="weui-cell__hd">
                     <view class="weui-label">简介</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <textarea bindinput='bindIntroduceInput' class="boxInput"      maxlength='2048' placeholder='' value="{{introduce}}"   selection-end='-1' selection-start='-1' cursor='-1'></textarea>
+                    <textarea bindinput='bindIntroduceInput' class="boxInput"     maxlength='2048' placeholder='' value="{{introduce}}"   selection-end='-1' selection-start='-1' cursor='-1'></textarea>
                 </view>
             </view>
             
