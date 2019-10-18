@@ -27,7 +27,6 @@
     "pages/my/index",
     "pages/my/info",
     "pages/my/type",
-    "pages/business/banner/banner1",
     "pages/my/invite"
   ],
   "tabBar": {

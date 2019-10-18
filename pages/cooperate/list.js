@@ -16,7 +16,7 @@ Page({
     imgUrls: [
 
       {
-        link: '/pages/business/banner/banner1',
+        link: '',
         url: "/pages/img/qinghuaci_banner.jpeg",
         isTab: true
       }
