@@ -92,3 +92,29 @@ button::after{ border: none; }
 swiper {
   height: 150px;
 }
+
+.marquee_container{
+  background-color: rgb(255, 255, 255);
+  height: 40rpx;
+  line-height: 40rpx;
+  position: relative;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(228, 228, 228);
+  padding-bottom: 5px;
+}
+.marquee_container:hover{
+  /* 不起作用 */
+  animation-play-state: paused;
+}
+.marquee_text{
+  color:#ff0000;
+  font-size: 28rpx;
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: around;
+  animation-duration: 12s;  /*过渡时间*/
+  animation-iteration-count: infinite;
+  animation-timing-function:linear;
+}
