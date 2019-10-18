@@ -1,6 +1,9 @@
 <view>
   <include src="../common/oneBusinessTemp.wxml"></include>
 
+  <view wx:if="{{!isLeaguer}}">
+    <button class="pay-score-btn" open-type="getUserInfo" bindgetuserinfo="payShowScore" >查看会员资料需兑付50积分</button>
+  </view>
 
   <view class="message-banner">
     合作信息({{messageList.length}})

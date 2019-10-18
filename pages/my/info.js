@@ -8,6 +8,7 @@ Page({
    */
   data: {
     realname:'',
+    gender: -1,
     company:'',
     job:'',
     phone:'',
@@ -20,6 +21,12 @@ Page({
     formIdArray: [],
 
     commited:false,
+  },
+
+  radioChange: function (e) {
+    this.setData({
+      gender: e.detail.value
+    })
   },
 
   bindRealnameInput: function (e) {
@@ -83,6 +90,7 @@ Page({
         var oneBusiness = data[0];
         op.setData({
           realname: oneBusiness.realname,
+          gender: oneBusiness.gender == undefined ? -1 : oneBusiness.gender,
           company: oneBusiness.company,
           job: oneBusiness.job,
           phone: oneBusiness.phone,
@@ -99,6 +107,12 @@ Page({
     if (!this.data.realname || this.data.realname.length < 1) {
       wx.showToast({
         title: '姓名不能为空'
+      });
+      return false;
+    }
+    if (!this.data.gender ) {
+      wx.showToast({
+        title: '性别不能为空'
       });
       return false;
     }
@@ -153,6 +167,7 @@ Page({
       code:  app.userCode,
       headimgurl: app.globalData.userInfo.avatarUrl,
       realname: op.data.realname,
+      gender: op.data.gender,
       company: op.data.company,
       job: op.data.job,
       phone: op.data.phone,

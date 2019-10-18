@@ -10,6 +10,22 @@
 
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
+                    <view class="weui-label">性别</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <radio-group class="radio-group" bindchange="radioChange">
+                      <radio class="radio" value="0" checked="{{gender == 0}}">
+                        <text>男</text>
+                      </radio>
+                      <radio class="radio" value="1" checked="{{gender == 1}}">
+                        <text>女</text>
+                      </radio>
+            </radio-group>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
                     <view class="weui-label">公司</view>
                 </view>
                 <view class="weui-cell__bd">

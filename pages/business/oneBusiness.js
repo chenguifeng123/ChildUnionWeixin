@@ -18,8 +18,10 @@ Page({
     start: 0,
     pageSize: 10,
     hasMoreData: true,
+    phone:'',
 
     isLeaguer:false,
+    isTempCanShow: false,
   },
 
   getFollowerById: oneBusinessTemp.getFollowerById,
@@ -94,6 +96,28 @@ Page({
     });
   },
 
+  payShowScore: function (e) {
+    // 支付可以查看权限的积分
+    var op = this;
+    var userId = app.getUserId();
+    app.onGotUserInfo(e, function () {
+      app.getUrl('/card/show/payScore/' + userId + '-' + op.data.id, function (data) {
+        if (app.hasData(data)) {
+          wx.showToast({
+            title: '支付成功',
+            icon: 'none',
+            duration: 2000
+          });
+          wx.setStorageSync(op.data.id, op.data.id);
+          op.onLoad({
+            id: op.data.id,
+            follow: op.data.follow
+          })
+        }
+      });
+    });
+  },
+
   addFollower:function(event){
     // 加载一个商户
     var op = this;
@@ -112,6 +136,15 @@ Page({
     });
   },
 
+  loadTempShowInfo: function(id){
+    // 检查该用户是否被支付，可以查看信息
+    var canShowId = wx.getStorageSync(id);
+    var isTempCanShow = canShowId != '' ? true : false;
+    this.setData({
+      isTempCanShow: isTempCanShow,
+    });
+  },
+
   loadOneBusiness: function (id) {
     var op = this;
     // 加载一个商户
@@ -120,6 +153,7 @@ Page({
         var business = data[0];
         var leaguer = false;
         app.isLeaguerFunc(function(leaguer){
+          leaguer = leaguer || op.data.isTempCanShow;
           if(!leaguer){
             business.phone = util.hidePhone(business.phone);
             //business.weixincode = util.hidePhone(business.weixincode);
@@ -176,6 +210,7 @@ Page({
       id: id,
       follow: follow
       });
+    this.loadTempShowInfo(id);
     this.loadOneBusiness(id);
     this.loadMessageByCardId(id);
   },
