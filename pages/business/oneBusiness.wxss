@@ -9,8 +9,10 @@
 }
 
 .pay-score-btn{
-  margin: 5px;
+  width:50%;
+  margin-top: 10px;
   background-color: rgb(240, 212, 58);
+  color: rgb(255, 255, 255);
 }
 
 .message-banner{

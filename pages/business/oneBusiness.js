@@ -97,25 +97,40 @@ Page({
   },
 
   payShowScore: function (e) {
-    // 支付可以查看权限的积分
     var op = this;
-    var userId = app.getUserId();
-    app.onGotUserInfo(e, function () {
-      app.getUrl('/card/show/payScore/' + userId + '-' + op.data.id, function (data) {
-        if (app.hasData(data)) {
-          wx.showToast({
-            title: '支付成功',
-            icon: 'none',
-            duration: 2000
+    wx.showModal({
+      title: '提示',
+      content: '本次操作将消耗50亲子币，继续吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+          // 用户点击了确定
+          // 支付可以查看权限的积分
+          var userId = app.getUserId();
+          app.onGotUserInfo(e, function () {
+            app.getUrl('/card/show/payScore/' + userId + '-' + op.data.id, function (data) {
+              if (app.hasData(data)) {
+                wx.showToast({
+                  title: '支付成功',
+                  icon: 'none',
+                  duration: 2000
+                });
+                wx.setStorageSync(op.data.id, op.data.id);
+                op.onLoad({
+                  id: op.data.id,
+                  follow: op.data.follow
+                })
+                console.log('用户查看联系方式成功')
+              }
+            });
           });
-          wx.setStorageSync(op.data.id, op.data.id);
-          op.onLoad({
-            id: op.data.id,
-            follow: op.data.follow
-          })
+        } else if (sm.cancel) {
+          console.log('用户取消查看联系方式');
+          return;
         }
-      });
-    });
+      }
+
+    })
+    
   },
 
   addFollower:function(event){
