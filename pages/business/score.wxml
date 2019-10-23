@@ -1,18 +1,18 @@
 <view>
- <view class="one-panel weui-media-box weui-media-box_text">
+ <!--view class="one-panel weui-media-box weui-media-box_text">
     <view class="title weui-media-box__title weui-media-box__title_in-text"> 亲子币的作用</view>
     <view class="desc">
-    1、兑换会员权益  <text> \t\n </text>
-    2、兑换"云资源"里的产品  <text> \t\n </text>
+      <text>\t 1、查看联系方式 \n </text>
+      <text>\t 2、兑换"云资源"里的产品 \n </text>
     </view>
-  </view>
+  </view-->
 
  <view class="one-panel weui-media-box weui-media-box_text">
     <view class="title weui-media-box__title weui-media-box__title_in-text"> 如何获取亲子币？</view>
     <view class="desc">
-    1、每邀请一位从事亲子行业的好友注册云名片，可获得100个亲子币 <text> \t\n </text>
-    2、每日签到增加10亲子币 <text> \t\n </text>
-    3、发帖获得40亲子币，回帖获得20亲子币 <text> \t\n </text>
+    1、每邀请一位从事亲子行业的好友注册云名片，可获得100亲子币 <text> \t\n </text>
+    2、每日签到一次可增加10亲子币 <text> \t\n </text>
+    3、发帖并通过审核可获得40亲子币，回帖并通过审核可获得20亲子币 <text> \t\n </text>
     4、联系客服获得亲子币（微信njqinzi1）
     </view>
   </view>
