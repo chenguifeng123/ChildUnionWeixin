@@ -72,7 +72,7 @@
     </button>
     <button class="bottom-right-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo">
       
-      <text class="price-bottom-txt">{{'合计' + allPrice + ' 立即兑换'}}</text>
+      <text class="price-bottom-txt">{{'合计' + allPrice + ' 立即预订'}}</text>
     </button>
    </view> 
 
