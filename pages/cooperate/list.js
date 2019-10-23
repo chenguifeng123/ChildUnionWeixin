@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bannerDefault: '/pages/cooperate/banner',
     messageList : [],
     start: 0,
     pageSize: 30,
@@ -14,23 +15,6 @@ Page({
 
     // 轮播URL和图片用来做广告栏
     imgUrls: [
-
-      {
-        link: '',
-        url: "/pages/img/qinghuaci_banner.jpeg",
-        isTab: true
-      }
-      , {
-        link: '/pages/join/classList',
-        url: "/pages/img/banner2.png",
-        isTab: false
-      }
-      , {
-        link: '/pages/my/invite',
-        url: "/pages/img/invite.jpg",
-        isTab: false
-      }
-
     ],
     // 轮播控制项
     indicatorDots: true,
@@ -38,6 +22,17 @@ Page({
     interval: 3000,  // 轮播间隔
     duration: 1000,
 
+  },
+
+  loadBanner:function(){
+    var op = this;
+    app.getUrl('/banner/list', function (data) {
+      if (app.hasData(data)) {
+        op.setData({
+          imgUrls: data,
+        });
+      }
+    });
   },
 
   loadMessage:function(){
@@ -125,6 +120,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadBanner();
     this.loadMessage();
   },
 

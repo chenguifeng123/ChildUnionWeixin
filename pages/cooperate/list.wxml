@@ -1,15 +1,26 @@
 <view class="page">
   <swiper indicator-dots="{{indicatorDots}}"  
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
-      <block wx:for="{{imgUrls}}" wx:key="item.link">  
-        <swiper-item>  
+      <block wx:for="{{imgUrls}}" wx:key="item.link"> 
+        <!--  是否是本地页面 --> 
+        <swiper-item wx:if="{{item.isLocal}}">  
            <navigator url="{{item.link}}" hover-class="navigator-hover" open-type="switchTab" wx:if="{{item.isTab}}">  
             <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
            </navigator>
            <navigator url="{{item.link}}" hover-class="navigator-hover" open-type="navigate" wx:else>  
             <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
            </navigator>
-        </swiper-item>  
+        </swiper-item>
+        <!-- 跳转公众号页面 --> 
+        <swiper-item wx:else>  
+           <navigator url="{{bannerDefault + '?id=' + item.id}}" hover-class="navigator-hover" open-type="switchTab" wx:if="{{item.isTab}}">  
+            <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
+           </navigator>
+           <navigator url="{{bannerDefault + '?id=' + item.id}}" hover-class="navigator-hover" open-type="navigate" wx:else>  
+            <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
+           </navigator>
+        </swiper-item>
+
       </block>  
     </swiper> 
 
