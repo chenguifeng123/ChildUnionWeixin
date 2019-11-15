@@ -4,7 +4,7 @@
 
 
 .one-message{
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   background-color:white;
 }
 
