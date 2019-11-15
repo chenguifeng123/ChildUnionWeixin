@@ -12,6 +12,7 @@ Page({
     formIdArray:[],
     index:'',
     messageType: util.messageType,
+    select: false,
   },
 
   saveFormId: function (v) {
@@ -35,8 +36,10 @@ Page({
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
-    })
+      index: e.detail.value,
+      select: true
+    });
+    
   },
   checkInput: function () {
     if (!this.data.title || this.data.title.length < 1) {
@@ -104,7 +107,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      select:false
+    });
   },
 
   /**

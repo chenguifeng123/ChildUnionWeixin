@@ -20,7 +20,7 @@
 
   <view>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{tool.messageTypeStr}}">
-      <button type="default">分类</button>
+      <button type="default">{{!!select ? tool.messageTypeStr[index] : '分类'}}</button>
   </picker>
   </view>
 
