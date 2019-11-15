@@ -1,3 +1,5 @@
+<wxs src="../../utils/tool.wxs" module="tool" />
+
 <view class="page">
   <swiper indicator-dots="{{indicatorDots}}"  
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
@@ -31,7 +33,7 @@
     </view>
 </view>
 
-  <view class="one-message" wx:for="{{messageList}}"  wx:for-index="index" data-index="{{index}}" data-id="{{item.id}}" data-title="{{item.title}}" data-message="{{item.message}}" data-last="{{item.lastString}}" data-card="{{item.cardId}}" data-realname="{{item.cardInfo.realname}}"  data-job="{{item.cardInfo.job}}" data-company="{{item.cardInfo.company}}" data-headimgurl="{{item.cardInfo.headimgurl}}" data-phone="{{item.cardInfo.phone}}" data-read="{{item.readCount}}" data-like="{{item.giveLike}}" wx:key = "{{item.id}}"  bindtap="oneMessage" >
+  <view class="one-message" wx:for="{{messageList}}"  wx:for-index="index" data-index="{{index}}" data-id="{{item.id}}" data-title="{{item.title}}" data-message="{{item.message}}" data-type="{{item.messageType}}" data-last="{{item.lastString}}" data-card="{{item.cardId}}" data-realname="{{item.cardInfo.realname}}"  data-job="{{item.cardInfo.job}}" data-company="{{item.cardInfo.company}}" data-headimgurl="{{item.cardInfo.headimgurl}}" data-phone="{{item.cardInfo.phone}}" data-read="{{item.readCount}}" data-like="{{item.giveLike}}" wx:key = "{{item.id}}"  bindtap="oneMessage" >
 
         <view class="weui-panel weui-panel_access">
             <view class="weui-panel__hd">
@@ -41,8 +43,9 @@
             </view>
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_text">
-                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
-                    <view class="weui-media-box__desc"><text class="text-message">{{item.message}}</text></view>
+                    <view class="weui-media-box__title weui-media-box__title_in-text" > {{tool.translateMessageType(item.messageType) + item.title}}</view>
+                    <view class="weui-media-box__desc"><text class="text-message">{{item.message}}</text>
+                    </view>
                 </view>
             </view>
         </view>

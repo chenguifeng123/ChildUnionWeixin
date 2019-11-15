@@ -1,3 +1,4 @@
+<wxs src="../../utils/tool.wxs" module="tool" />
 <view class="page">
 
 <!--form bindsubmit="submit" report-submit="true"-->
@@ -15,6 +16,12 @@
     <view class="title-tip">
       最多50字
     </view>
+  </view>
+
+  <view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{tool.messageTypeStr}}">
+      <button type="default">分类</button>
+  </picker>
   </view>
 
   <view class="message">

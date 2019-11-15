@@ -9,9 +9,10 @@ Page({
   data: {
     title: '',
     message: '',
-    formIdArray:[]
+    formIdArray:[],
+    index:'',
+    messageType: util.messageType,
   },
-
 
   saveFormId: function (v) {
     //if (v.detail.formId != 'the formId is a mock one') {
@@ -31,6 +32,12 @@ Page({
     })
   },
 
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
   checkInput: function () {
     if (!this.data.title || this.data.title.length < 1) {
       wx.showToast({
@@ -44,9 +51,14 @@ Page({
       });
       return false;
     }
+    if (!this.data.index || this.data.message.index < 1) {
+      wx.showToast({
+        title: '分类不能为空'
+      });
+      return false;
+    }
     return true;
   },
-
 
   submit: function (e) {
     //var formId = e.detail.formId;
@@ -59,6 +71,7 @@ Page({
       formIdList: op.data.formIdArray,
       title: op.data.title,
       message: op.data.message,
+      messageType:op.data.index,
     }, function (data) {
       if (app.hasData(data)) {
         app.globalData.messageDataUpdated = true;

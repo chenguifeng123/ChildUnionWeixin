@@ -11,6 +11,7 @@ Page({
     id : 0,
     title: '',
     message: '',
+    messageType: 0,
     last: '',
     read: 0,
     like: 0,
@@ -111,6 +112,7 @@ Page({
     var id = options.id;
     var title = options.title;
     var message = options.message;
+    var messageType = options.messageType;
     var last = options.last;
     var read = options.read;
     var like = options.like;
@@ -125,6 +127,7 @@ Page({
       id: id,
       title: title,
       message: message,
+      messageType: messageType,
       last: last,
       read: read,
       like: like,

@@ -1,9 +1,8 @@
 <view>
-
+<wxs src="../../utils/tool.wxs" module="tool" />
 <view class="content">
-
   <view class="title">
-    {{title}}
+    {{tool.translateMessageType(messageType) + title}}
   </view>
 
   <view class="author" data-card="{{card}}" bindtap="jumpBusiness">

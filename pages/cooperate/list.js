@@ -24,6 +24,10 @@ Page({
 
   },
 
+  translateMessageType: function(value){
+    return util.translateMessageType(value);
+  },
+
   loadBanner:function(){
     var op = this;
     app.getUrl('/banner/list', function (data) {
@@ -73,6 +77,7 @@ Page({
     var id = event.currentTarget.dataset.id;
     var title = event.currentTarget.dataset.title;
     var message = event.currentTarget.dataset.message;
+    var messageType = event.currentTarget.dataset.type;
     var last = event.currentTarget.dataset.last;
     var read = event.currentTarget.dataset.read;
     var like = event.currentTarget.dataset.like;
@@ -87,6 +92,7 @@ Page({
       id: id,
       title: title,
       message: message,
+      messageType: messageType,
       last: last,
       read: read,
       like: like,

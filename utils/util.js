@@ -109,5 +109,5 @@ module.exports = {
 
   fillUrlParams: fillUrlParams,
   translate: translate,
-  translateUrl: translateUrl
+  translateUrl: translateUrl,
 }

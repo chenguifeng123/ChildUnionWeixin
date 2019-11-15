@@ -1,0 +1,14 @@
+var messageTypeStr = ['赞助招商', '项目合作', '招租转让', '资源互换', '求职招聘', '其它信息'];
+
+var translateMessageType = function (value) {
+  if (!!value || value == 0){
+    var index = parseInt(value);
+    return '[' + messageTypeStr[index] + ']';
+  }
+  return '';
+}
+
+module.exports = {
+  messageTypeStr: messageTypeStr,
+  translateMessageType: translateMessageType
+}
