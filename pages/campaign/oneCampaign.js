@@ -68,6 +68,12 @@ Page({
     })
   },
 
+  goCampaignlist: function (event) {
+    wx.switchTab({
+      url: '/pages/campaign/list',
+    })
+  },
+
   onGotUserInfo: function (e) {
     var op = this;
     app.onGotUserInfo(e, function () {

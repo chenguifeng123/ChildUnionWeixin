@@ -66,9 +66,9 @@
 
 
   <view class="bottom-button">
-    <button class="bottom-left-button bottom-class" bindtap="goHome">
+    <button class="bottom-left-button bottom-class" bindtap="goCampaignlist">
       <image src="/pages/img/home.png" class="bottom-img" />
-      <text class="bottom-txt"> 回首页</text>
+      <text class="bottom-txt">返回</text>
     </button>
     <button class="bottom-right-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo">
       

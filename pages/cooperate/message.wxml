@@ -3,12 +3,12 @@
 
 <!--form bindsubmit="submit" report-submit="true"-->
   <view class="title">
-    <view class="title-name">标题</view>
+    <view class="title-name">发布需求</view>
     <view class="title-input">
     
     <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
       <button formType="submit" class='form_button_message'>
-      <input maxlength="50" placeholder="请输入标题" bindinput="bindTitleInput"></input>
+      <input maxlength="50" placeholder="请输入标题" bindinput="bindTitleInput" class="inputClass"></input>
       </button>
     </form>
 
@@ -19,12 +19,6 @@
   </view>
 
   <view>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{tool.messageTypeStr}}">
-      <button type="default">{{!!select ? tool.messageTypeStr[index] : '选择分类 >'}}</button>
-  </picker>
-  </view>
-
-  <view>
       <radio-group class="radio-group" bindchange="radioChange">
         <radio class="radio" value="0" checked="{{sourceType == 0}}">
           <text class="sexText">图片</text>
@@ -32,18 +26,24 @@
         <radio class="radio" value="1" checked="{{sourceType == 1}}">
           <text class="sexText">视频</text>
         </radio>
-      </radio-group>
-          <button bindtap="uploadFile" type="default" >上传</button>
+        </radio-group>
+          <button bindtap="uploadFile" class="uploadBtnClass">选择文件</button>
     <text>{{showResult}}</text>
   </view>
 
+  <view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{tool.messageTypeStr}}">
+      <button class="messageTypeClass">{{!!select ? tool.messageTypeStr[index] : '需求分类'}}</button>
+  </picker>
+  </view>
+
   <view class="message">
-    <view class="message-name">内容</view>
+    <!--view class="message-name">内容</view-->
     <view class="message-input">
 
     <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
       <button formType="submit" class='form_button_message'>
-      <textarea maxlength="2000" placeholder="请输入内容" bindinput="bindMessageInput"></textarea>
+      <textarea maxlength="2000" placeholder="请输入正文" bindinput="bindMessageInput"></textarea>
       </button>
     </form>
 

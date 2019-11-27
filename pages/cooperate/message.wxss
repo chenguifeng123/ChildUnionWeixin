@@ -7,7 +7,12 @@
 }
 
 .title-name, .message-name{
+  font-size: 1em;
   font-weight: bold;
+}
+
+.radio{
+  margin: 3px;
 }
 
 .title-tip, .message-tip{
@@ -16,13 +21,22 @@
   text-align: right;
 }
 
+.uploadBtnClass{
+  background-color:rgb(214, 228, 240);
+}
+
+.messageTypeClass{
+  margin-top: 10px;
+  background-color:rgb(166, 204, 240);
+}
+
 input, textarea{
   border: 1rpx solid rgb(221, 221, 221);
 }
 
 textarea{
   width: 99%;
-  height: 400px;
+  height: 350px;
 }
 
 .submit-view{
