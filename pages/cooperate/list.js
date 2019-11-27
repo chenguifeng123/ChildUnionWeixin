@@ -78,6 +78,8 @@ Page({
     var title = event.currentTarget.dataset.title;
     var message = event.currentTarget.dataset.message;
     var messageType = event.currentTarget.dataset.type;
+    var sourceType = event.currentTarget.dataset.stype;
+    var sourcePath = event.currentTarget.dataset.spath;
     var last = event.currentTarget.dataset.last;
     var read = event.currentTarget.dataset.read;
     var like = event.currentTarget.dataset.like;
@@ -93,6 +95,8 @@ Page({
       title: title,
       message: message,
       messageType: messageType,
+      sourceType: sourceType,
+      sourcePath: sourcePath,
       last: last,
       read: read,
       like: like,

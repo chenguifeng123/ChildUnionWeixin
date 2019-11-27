@@ -24,6 +24,19 @@
   </picker>
   </view>
 
+  <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" value="0" checked="{{sourceType == 0}}">
+          <text class="sexText">图片</text>
+        </radio>
+        <radio class="radio" value="1" checked="{{sourceType == 1}}">
+          <text class="sexText">视频</text>
+        </radio>
+      </radio-group>
+          <button bindtap="uploadFile" type="default" >上传</button>
+    <text>{{showResult}}</text>
+  </view>
+
   <view class="message">
     <view class="message-name">内容</view>
     <view class="message-input">

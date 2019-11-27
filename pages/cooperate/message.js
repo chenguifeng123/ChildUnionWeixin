@@ -13,6 +13,9 @@ Page({
     index:'',
     messageType: util.messageType,
     select: false,
+    sourceType: -1,
+    sourcePath: '',
+    showResult: '',
   },
 
   saveFormId: function (v) {
@@ -41,6 +44,64 @@ Page({
     });
     
   },
+
+  radioChange: function (e) {
+    this.setData({
+      sourceType: e.detail.value
+    })
+  },
+
+  postFile2Server:function(path){
+    var op = this;
+    wx.uploadFile({
+      url: app.qinzi + '/mini/uploadFile/sourcePath', //请更改为你自己部署的接口
+      filePath: path,
+      name: 'file',
+      success(res) {
+        var data = JSON.parse(res.data);
+        op.setData({
+          sourcePath: data.data.url,
+          showResult: '上传成功'
+        });
+      }
+    })
+  },
+
+  checkAndPost: function (tempFilePaths){
+
+  },
+
+  uploadFile:function(){
+    var op = this;
+    if(this.data.sourceType == -1){
+      wx.showToast({
+        title: '请选择上传类型'
+      });
+      return;
+    }
+    if(this.data.sourceType == 0){
+      wx.chooseImage({
+        success(res) {
+          var tempFilePaths = res.tempFilePaths;
+          if (tempFilePaths.length > 1) {
+            wx.showToast({
+              title: '只能选择一个'
+            });
+            return;
+          }
+          op.postFile2Server(tempFilePaths[0]);
+        }
+      });
+    }
+    else if (this.data.sourceType == 1) {
+      wx.chooseVideo({
+        success(res) {
+          op.postFile2Server(res.tempFilePath);
+        }
+      });
+    }
+  },
+
   checkInput: function () {
     if (!this.data.title || this.data.title.length < 1) {
       wx.showToast({
@@ -75,6 +136,8 @@ Page({
       title: op.data.title,
       message: op.data.message,
       messageType:op.data.index,
+      sourceType:op.data.sourceType,
+      sourcePath:op.data.sourcePath,
     }, function (data) {
       if (app.hasData(data)) {
         app.globalData.messageDataUpdated = true;

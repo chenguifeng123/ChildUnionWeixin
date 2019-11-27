@@ -12,6 +12,8 @@ Page({
     title: '',
     message: '',
     messageType: 0,
+    sourceType: 0,
+    sourcePath: '',
     last: '',
     read: 0,
     like: 0,
@@ -113,6 +115,8 @@ Page({
     var title = options.title;
     var message = options.message;
     var messageType = options.messageType;
+    var sourceType = options.sourceType;
+    var sourcePath = !!options.sourcePath && options.sourcePath != 'null' ? app.qinzi + "/" + options.sourcePath : null;
     var last = options.last;
     var read = options.read;
     var like = options.like;
@@ -128,6 +132,8 @@ Page({
       title: title,
       message: message,
       messageType: messageType,
+      sourceType: sourceType,
+      sourcePath: sourcePath,
       last: last,
       read: read,
       like: like,

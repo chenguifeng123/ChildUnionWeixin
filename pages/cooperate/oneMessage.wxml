@@ -27,6 +27,14 @@
   <view class="message">
     <text class="text-message">{{message}}</text>
   </view>
+  <view wx:if="{{!!sourcePath}}" class="source">
+    <view wx:if="{{sourceType == 0}}">
+      <image src="{{sourcePath}}"></image>
+    </view>
+    <view wx:if="{{sourceType == 1}}">
+      <video src="{{sourcePath}}"></video>
+    </view>
+  </view>
   <view class="attach-message">
     <view class="read-count">
       阅读 {{read}}

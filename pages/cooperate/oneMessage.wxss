@@ -65,6 +65,10 @@ page{
   font-size: 0.8em;
 }
 
+.source{
+  margin-top: 20px;
+}
+
 .attach-message{
   margin-top:15px;
   font-size: 0.7em;
