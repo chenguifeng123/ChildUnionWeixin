@@ -109,6 +109,7 @@
 
 .default-tag, .default-tag::after{
   border: none;
+  background-color: white;
 }
 
 .business-btn-not-follow, .business-btn-follow{

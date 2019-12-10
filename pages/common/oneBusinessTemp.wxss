@@ -170,6 +170,7 @@ page, .page{
 
 .default-tag, .default-tag::after{
   border: none;
+  background-color: white;
 }
 
 .desc-info{
