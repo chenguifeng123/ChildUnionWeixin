@@ -9,6 +9,7 @@
     "pages/business/fans",
     "pages/business/score",
     "pages/business/typeSelect",
+    "pages/business/citys",
     "pages/cooperate/banner",    
     "pages/cooperate/oneMessage",
     "pages/cooperate/message",
@@ -64,6 +65,11 @@
     "navigationBarBackgroundColor": "#008FD1",
     "navigationBarTitleText": "南京亲子云",
     "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "aaa"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,25 @@
+<scroll-view class="flex-left" scroll-y="true" scroll-into-view="{{scrollIntoId}}">
+  <view class='top-module'>
+    <view class='top-inner-box'>
+      <!--view class='hot-city-title'>我的位置</view>
+      <view class='list-one-line'>
+        <view class='one-box' catchtap='selectHotCity'>{{county}}</view>
+      </view-->
+
+      <view class='hot-city-title'>国内热门城市</view>
+      <view class='list-one-line'>
+        <view class='one-box' wx:for="{{hotCitys}}" wx:key= "{{index}}" data-index="{{index}}" class="{{((index+1)%3) !=0 ?'one-box':'one-box-last'}}" catchtap='selectHotCity'>{{item.cityName}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{citys}}" wx:key="zimu" wx:for-index="bigindex" wx:for-item="zimu" class='city-list' catchtap='selectCity'>
+    <view class="item-title item-a" id="{{zimu.name}}" data-bigindex="{{bigindex}}">{{zimu.name}}</view>
+    <view class="item" wx:for="{{zimu.list}}" wx:key="item" wx:for-item="item" data-bigindex="{{bigindex}}" data-item="{{zimu}}" data-index='{{index}}'>{{item.cityName}}</view>
+  </view>
+</scroll-view>
+  <view class="scroll_list" style='margin-top:{{(100-2.8*(citys.length))/4}}vh'>
+    <view class="scroll_list_chi">热</view>
+    <view wx:for="{{citys}}" wx:key="zimu" wx:for-index="bigindex" wx:for-item="zimu" bindtouchstart="touchstartfn">
+      <view class="scroll_list_chi" data-id="{{zimu.name}}" data-bigindex="{{bigindex}}" data-index='{{index}}'>{{zimu.name}}</view>
+    </view>
+  </view>

@@ -43,6 +43,9 @@ Page({
 
     tag:-1,
 
+    cityCode: 0,
+    cityName: '',
+
     formIdArray: [],
   },
 
@@ -79,6 +82,15 @@ Page({
       inputShowed: false
     });
     this.loadAllBusiness();
+  },
+
+  selectCity: function (event) {
+    var tag = this.data.tag;
+    var allUrl = util.fillUrlParams('./citys', {
+    });
+    wx.navigateTo({
+      url: allUrl,
+    });
   },
 
   selectType:function(event){
@@ -121,7 +133,8 @@ Page({
         start: op.data.start,
         num: op.data.pageSize,
         search: op.data.searchValue,
-        tag: op.data.tag
+        tag: op.data.tag,
+        city: op.data.cityCode
       }, function (data) {
       if (app.hasData(data)) {
         if (data.length < op.data.pageSize) {
@@ -143,6 +156,11 @@ Page({
   onLoad: function (options) {
     if(!!options.tagId){
       this.setData({ tag: options.tagId, selectTxt:options.tagName});
+    }
+    if (!!options.cityCode){
+      this.setData({ cityCode: options.cityCode, cityName: options.cityName });
+    }else{
+      this.setData({ cityCode: 220, cityName: '南京' });
     }
     this.loadAllBusiness();
   },

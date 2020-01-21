@@ -1,0 +1,117 @@
+/**index.wxss**/
+page{
+  background: #F4F4F4;
+}
+.top-module{
+  width: 100vw;
+  height: auto;
+}
+.top-inner-box{
+  width: 96vw;
+   height: auto;
+  padding-left: 2vw;
+  padding-right: 2vw;
+ background: white;
+}
+.hot-city-title{
+  height: 8vh;
+  line-height: 8vh;
+}
+.list-one-line{
+   height: auto;
+  width: 84vw;
+  margin-left: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.one-box{
+ height: 5vh;
+  width:25vw;
+  margin-right: 2.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1rpx solid rgb(233, 232, 232);
+  margin-bottom: 1.4vh;
+}
+.one-box-last{
+   height: 5vh;
+  width:25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1rpx solid rgb(233, 232, 232);
+  margin-bottom: 1.4vh;
+}
+page{
+  height: 100%;
+}
+.zimu{
+  width: 50rpx;
+  height: 20px;
+  line-height: 20px;
+} 
+.zimulist{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom:0;
+  width: 50rpx;
+  z-index: 999999999999;
+  background-color: #fff;
+  text-align: center;
+}
+.item-title{
+  height: 48rpx;
+  line-height: 48rpx;
+  border-bottom: solid 1rpx #f0f1f2;
+ padding-left: 2vw;
+  color: #9A9A9A;
+}
+.item{
+  height:80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #D9D9D9;
+ margin-left: 3vw;
+}
+.item-a{
+  background-color: #f0f1f2;
+}
+.flex-wrap{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.flex-left{
+  width: 100vw;
+  height: 100%;
+}
+.flex-right{
+  width: 50rpx;
+  height: 100%;
+}
+/*城市选择 右边*/
+.scroll_list {
+    background: rgba(0,0,0,0);
+    position: absolute;
+    width: 46rpx;
+    top: 100rpx;
+    right: 6rpx;
+}
+.city-list{
+  background: white;
+}
+.scroll_list_chi {
+    text-align: center;
+    font-size: 24rpx;
+    color: rgb(39, 39, 39);
+    height: 2.4vh;
+}
+.top-module>view{
+  font-size: 28rpx;
+}
+.city-list>view{
+  font-size: 28rpx;
+}

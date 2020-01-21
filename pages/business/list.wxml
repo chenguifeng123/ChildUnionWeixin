@@ -2,6 +2,7 @@
       <official-account></official-account>
 
         <view class="weui-search-bar">
+          <button class="city-btn-select" bindtap="selectCity">{{cityName + ' ▾ '}} </button>
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
