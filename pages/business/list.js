@@ -153,16 +153,28 @@ Page({
     });
   },
 
+  loadCity:function(){
+    var op = this;
+    app.loadCity(function (city) {
+      op.setData({
+        cityCode: city.cityCode,
+        cityName: city.cityName
+      });
+      op.refreshAllBusiness();
+    })
+  },
+
   onLoad: function (options) {
     if(!!options.tagId){
       this.setData({ tag: options.tagId, selectTxt:options.tagName});
     }
     if (!!options.cityCode){
       this.setData({ cityCode: options.cityCode, cityName: options.cityName });
+      this.loadAllBusiness();
     }else{
-      this.setData({ cityCode: 220, cityName: '南京' });
-    }
-    this.loadAllBusiness();
+      this.loadCity();
+     }
+    //this.loadAllBusiness();
   },
 
   /**
@@ -172,6 +184,9 @@ Page({
     if (app.globalData.listDataUpdated){
       this.refreshAllBusiness();
       app.globalData.listDataUpdated = false;
+    }
+    if (wx.getStorageSync('city') == ''){
+      this.loadCity();
     }
   },
 

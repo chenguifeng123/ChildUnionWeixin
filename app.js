@@ -166,6 +166,8 @@ App({
     return;
   },
 
+
+
   formIdInput: function(v, op){
     var formId = v.detail.formId == 'the formId is a mock one' ? '0' : v.detail.formId;
     if (op.data.formIdArray.indexOf(formId) < 0)
@@ -212,6 +214,43 @@ App({
     var id = wx.getStorageSync('id');
     return id == '' ? -1 : id;
     //return 26;
+  },
+
+  loadCity: function(setCity){
+    var defaultCity = {
+      cityCode: 220,
+      cityName: '南京'
+    };
+    if (this.getUserId() == -1)
+      setCity(defaultCity); 
+    var cityCode = wx.getStorageSync('city');
+    var op = this;
+    if(cityCode == ''){
+      this.getUrl('/business/info/' + this.getUserId(), function (data) {
+        if (op.hasData(data)) {
+          if (data != null && data.length > 0){
+            cityCode = data[0].city;
+            if (!!cityCode){
+              op.getUrl('/business/oneCity/' + cityCode, function (data1) {
+                if (op.hasData(data1)) {
+                  wx.setStorageSync('city', cityCode);  
+                  wx.setStorageSync('cityName', data1.cityName);
+                  setCity({
+                    cityCode: cityCode,
+                    cityName: data1.cityName
+                  });
+                }
+              });
+            }
+          }
+        }
+      });
+    }else{
+      setCity({
+        cityCode: cityCode,
+        cityName: wx.getStorageSync('cityName')
+      });
+    }
   },
 
   globalData: {
