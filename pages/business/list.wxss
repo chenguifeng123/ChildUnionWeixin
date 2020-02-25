@@ -1,16 +1,21 @@
 @import "../common/businessTemp.wxss";
 
 .city-btn-select{
-color: black;
-font-size: 0.8em;
-width: 60px;
-height: 30px;
-display: inline-block;
-line-height: 2;
-vertical-align: middle;
-padding-left: 2px;
-padding-right: 2px;
-margin-right: 3px;
+  color: rgb(0, 0, 0);
+  font-size: 0.9em;
+  width: 70px;
+  height: 30px;
+  display: inline-block;
+  line-height: 2;
+  padding-left: 2px;
+  padding-right: 2px;
+  vertical-align: middle;
+  margin-right: 3px;
+  background-color: rgb(238, 238, 238);
+}
+.city-btn-select::after{
+    outline:none;
+    border:0;
 }
 
 .slide-image{  
@@ -33,12 +38,13 @@ swiper {
 }
 
 .btn-select{
-  width: 45%;
   margin: 5px;
-  display: inline-block;
+  display: inline;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 0.9em;
-  color: white;
-  background-color:  #018fd1;
+  color: rgb(2, 143, 215);
+  background-color:  #ffffff;
 }
 
 @keyframes around {

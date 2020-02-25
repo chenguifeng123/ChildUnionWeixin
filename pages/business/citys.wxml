@@ -12,14 +12,14 @@
       </view>
     </view>
   </view>
-  <view wx:for="{{citys}}" wx:key="zimu" wx:for-index="bigindex" wx:for-item="zimu" class='city-list' catchtap='selectCity'>
+  <!--view wx:for="{{citys}}" wx:key="zimu" wx:for-index="bigindex" wx:for-item="zimu" class='city-list' catchtap='selectCity'>
     <view class="item-title item-a" id="{{zimu.name}}" data-bigindex="{{bigindex}}">{{zimu.name}}</view>
     <view class="item" wx:for="{{zimu.list}}" wx:key="item" wx:for-item="item" data-bigindex="{{bigindex}}" data-item="{{zimu}}" data-index='{{index}}'>{{item.cityName}}</view>
-  </view>
+  </view-->
 </scroll-view>
-  <view class="scroll_list" style='margin-top:{{(100-2.8*(citys.length))/4}}vh'>
+  <!--view class="scroll_list" style='margin-top:{{(100-2.8*(citys.length))/4}}vh'>
     <view class="scroll_list_chi">热</view>
     <view wx:for="{{citys}}" wx:key="zimu" wx:for-index="bigindex" wx:for-item="zimu" bindtouchstart="touchstartfn">
       <view class="scroll_list_chi" data-id="{{zimu.name}}" data-bigindex="{{bigindex}}" data-index='{{index}}'>{{zimu.name}}</view>
     </view>
-  </view>
+  </view-->

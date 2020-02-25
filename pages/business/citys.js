@@ -8,24 +8,36 @@ Page({
     location:'',
     county:'',
     hotCitys: [{
+      "cityCode": 220,
+      "cityName": "南京"
+    }, 
+    {
       "cityCode": 65,
       "cityName": "北京"
     },
     {
-      "cityCode": 121,
-      "cityName": "广州"
-    },
-    {
       "cityCode": 253,
       "cityName": "上海"
+      },
+    {
+      "cityCode": 121,
+      "cityName": "广州"
     },
     {
       "cityCode": 254,
       "cityName": "深圳"
     },
     {
-      "cityCode": 220,
-      "cityName": "南京"
+      "cityCode": 408,
+      "cityName": "镇江"
+    },
+    {
+      "cityCode": 255,
+      "cityName": "苏州"
+    },
+    {
+      "cityCode": 292,
+      "cityName": "武汉"
     },
     ],
     citys: [ ],

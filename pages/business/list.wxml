@@ -34,9 +34,9 @@
     </swiper--> 
 
     <view class="select-view">
-      <button class="type-select btn-select" bindtap="selectType">{{selectTxt}}
-      </button>
       <button class="all-select btn-select" bindtap="selectAll">全部
+      </button>
+      <button class="type-select btn-select" bindtap="selectType">{{selectTxt}}
       </button>
     </view>
     <view class="one-business" wx:for="{{businessList}}" wx:for-index="index" data-index="{{index}}" data-id="{{item.id}}" wx:key="{{item.id}}" > 
