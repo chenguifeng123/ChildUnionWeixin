@@ -12,6 +12,8 @@ Page({
     company:'',
     job:'',
     phone:'',
+    cityCode: 0,
+    cityName:'',
     workaddress:'',
     introduce:'',
     weixincode:'',
@@ -27,6 +29,16 @@ Page({
     this.setData({
       gender: e.detail.value
     })
+  },
+
+  selectCity: function(e){
+    var allUrl = util.fillUrlParams('/pages/business/citys', {
+      sourceTab: 0,
+      sourcePage: '/pages/my/info'
+    });
+    wx.navigateTo({
+      url: allUrl,
+    });
   },
 
   bindRealnameInput: function (e) {
@@ -81,6 +93,16 @@ Page({
       this.submit();
   },
 
+  loadCity: function () {
+    var op = this;
+    app.loadCity(function (city) {
+      op.setData({
+        cityCode: city.cityCode,
+        cityName: city.cityName
+      });
+    })
+  },
+
   loadOneBusiness: function (id) {
     var op = this;
     // 加载一个商户
@@ -110,7 +132,7 @@ Page({
       });
       return false;
     }
-    if (!this.data.gender ) {
+    if (this.data.gender != 0 && this.data.gender != 1) {
       wx.showToast({
         title: '性别不能为空'
       });
@@ -172,6 +194,7 @@ Page({
       job: op.data.job,
       phone: op.data.phone,
       weixincode: op.data.weixincode,
+      city: op.data.cityCode,
       workaddress: op.data.workaddress,
       introduce: op.data.introduce,
       tag : op.data.tag,
@@ -179,8 +202,11 @@ Page({
       invite:op.data.invite
     }, function (data) {
       if (app.hasData(data)) {
+        wx.setStorageSync('city', op.data.cityCode);
+        wx.setStorageSync('cityName', op.data.cityName);
         if(app.getUserId() == -1){
           wx.setStorageSync('id', data);
+
           var allUrl = util.fillUrlParams('/pages/business/commend', {
           });
           wx.navigateTo({
@@ -209,13 +235,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var tag = options.tag;
-    var invite = options.invite;
-    this.setData({
-      tag: tag,
-      invite:invite,
-      commited:false,
+    if(!!options.tag){
+      var tag = options.tag;
+      var invite = options.invite;
+      this.setData({
+        tag: tag,
+        invite: invite,
+        commited: false,
       });
+    }
+    if (wx.getStorageSync('city') == '') {
+      this.loadCity();
+    } else {
+      this.setData({
+        cityCode: wx.getStorageSync('city'),
+        cityName: wx.getStorageSync('cityName')
+      });
+    }
+    if (!!options.cityCode)
+      this.setData({ cityCode: options.cityCode, cityName: options.cityName });
     this.loadOneBusiness(app.getUserId());
   },
 

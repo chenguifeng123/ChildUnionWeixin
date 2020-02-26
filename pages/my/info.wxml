@@ -56,6 +56,16 @@
                     <input class="weui-input" placeholder="" bindinput="bindWeixinInput" value="{{weixincode}}" />
                 </view>
             </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">城市</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <button class="city-btn-select" bindtap="selectCity">{{cityName + ' ▾ '}} </button>
+                </view>
+            </view>
+
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
                     <view class="weui-label">地址</view>

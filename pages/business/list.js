@@ -87,6 +87,8 @@ Page({
   selectCity: function (event) {
     var tag = this.data.tag;
     var allUrl = util.fillUrlParams('./citys', {
+      sourceTab: 1,
+      sourcePage: '/pages/business/list'
     });
     wx.navigateTo({
       url: allUrl,

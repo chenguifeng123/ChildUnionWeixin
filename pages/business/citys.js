@@ -41,6 +41,9 @@ Page({
     },
     ],
     citys: [ ],
+
+    sourceTab: 1,
+    sourcePage: '/pages/business/list'
   },
 
   // 加载当前位置
@@ -104,13 +107,18 @@ Page({
       cityName: cityName
     });
     app.globalData.listDataUpdated = true;
-    var allUrl = util.fillUrlParams('./list', {
+    var allUrl = util.fillUrlParams(this.data.sourcePage, {
       cityCode: cityCode,
       cityName: cityName
     });
-    wx.switchTab({
-      url: allUrl,
-    });
+    if(this.data.sourceTab == 1)
+      wx.switchTab({
+        url: allUrl,
+      });
+    else if(this.data.sourceTab == 0)
+      wx.navigateBack({
+        delta: 1
+      })
   },
 
   // 选择热门城市
@@ -146,6 +154,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (!!options.sourcePage)
+      this.setData({ sourcePage: options.sourcePage, sourceTab: options.sourceTab   });
     //this.getLocation();
     this.getCitys();
   },

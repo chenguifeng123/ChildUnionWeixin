@@ -166,8 +166,6 @@ App({
     return;
   },
 
-
-
   formIdInput: function(v, op){
     var formId = v.detail.formId == 'the formId is a mock one' ? '0' : v.detail.formId;
     if (op.data.formIdArray.indexOf(formId) < 0)
