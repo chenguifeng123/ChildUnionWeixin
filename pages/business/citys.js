@@ -28,16 +28,24 @@ Page({
       "cityName": "深圳"
     },
     {
+      "cityCode": 292,
+      "cityName": "武汉"
+    },
+    {
+      "cityCode": 133,
+      "cityName": "合肥"
+    },
+    {
       "cityCode": 408,
       "cityName": "镇江"
     },
     {
-      "cityCode": 255,
-      "cityName": "苏州"
+      "cityCode": 87,
+      "cityName": "常州"
     },
     {
-      "cityCode": 292,
-      "cityName": "武汉"
+      "cityCode": 255,
+      "cityName": "苏州"
     },
     ],
     citys: [ ],

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/cooperate/list",
     "pages/business/list",
+    "pages/cooperate/list",
     "pages/business/oneBusiness",
     "pages/business/success",
     "pages/business/commend",
@@ -34,14 +34,14 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/cooperate/list",
-        "text": "市场动态",
-        "iconPath": "pages/img/icon-cooperate.png"
-      },
-      {
         "pagePath": "pages/business/list",
         "text": "亲子名片",
         "iconPath": "pages/img/icon-business.png"
+      },
+      {
+        "pagePath": "pages/cooperate/list",
+        "text": "市场动态",
+        "iconPath": "pages/img/icon-cooperate.png"
       },
       {
         "pagePath": "pages/company/list",

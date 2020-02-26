@@ -17,6 +17,9 @@
     <view class="item" wx:for="{{zimu.list}}" wx:key="item" wx:for-item="item" data-bigindex="{{bigindex}}" data-item="{{zimu}}" data-index='{{index}}'>{{item.cityName}}</view>
   </view-->
 </scroll-view>
+<view class="morecity">
+  开通更多城市，请联系管理员微信：njqinzi1
+</view>
   <!--view class="scroll_list" style='margin-top:{{(100-2.8*(citys.length))/4}}vh'>
     <view class="scroll_list_chi">热</view>
     <view wx:for="{{citys}}" wx:key="zimu" wx:for-index="bigindex" wx:for-item="zimu" bindtouchstart="touchstartfn">

@@ -86,7 +86,7 @@ page{
 }
 .flex-left{
   width: 100vw;
-  height: 100%;
+
 }
 .flex-right{
   width: 50rpx;
@@ -114,4 +114,9 @@ page{
 }
 .city-list>view{
   font-size: 28rpx;
+}
+.morecity{
+  margin: 5px;
+  font-size: 28rpx;
+  text-align: center;
 }
