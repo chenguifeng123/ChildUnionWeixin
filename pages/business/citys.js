@@ -32,6 +32,10 @@ Page({
       "cityName": "武汉"
     },
     {
+      "cityCode": 131,
+      "cityName": "杭州"
+    },
+    {
       "cityCode": 133,
       "cityName": "合肥"
     },
@@ -46,7 +50,7 @@ Page({
     {
       "cityCode": 255,
       "cityName": "苏州"
-    },
+    }
     ],
     citys: [ ],
 
