@@ -170,13 +170,15 @@ Page({
     if(!!options.tagId){
       this.setData({ tag: options.tagId, selectTxt:options.tagName});
     }
+    // 由公众号跳转过来
     if (!!options.cityCode){
       this.setData({ cityCode: options.cityCode, cityName: options.cityName });
-      this.loadAllBusiness();
+      //this.loadAllBusiness();
     }else{
-      this.loadCity();
+      this.setData({ cityCode: 220, cityName: '南京' });
+      //this.loadCity();
      }
-    //this.loadAllBusiness();
+    this.loadAllBusiness();
   },
 
   /**
