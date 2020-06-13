@@ -50,6 +50,10 @@ Page({
     {
       "cityCode": 255,
       "cityName": "苏州"
+    },
+    {
+      "cityCode": 329,
+      "cityName": "盐城"
     }
     ],
     citys: [ ],
