@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/business/list",
+    
     "pages/cooperate/list",
     "pages/business/oneBusiness",
     "pages/business/success",
@@ -33,11 +33,7 @@
   ],
   "tabBar": {
     "list": [
-      {
-        "pagePath": "pages/business/list",
-        "text": "亲子名片",
-        "iconPath": "pages/img/icon-business.png"
-      },
+      
       {
         "pagePath": "pages/cooperate/list",
         "text": "市场动态",
@@ -48,11 +44,7 @@
         "text": "亲子机构",
         "iconPath": "pages/img/icon-company.png"
       },
-      {
-        "pagePath": "pages/campaign/list",
-        "text": "云资源",
-        "iconPath": "pages/img/icon-resource.png"
-      },
+      
       {
         "pagePath": "pages/my/index",
         "text": "我的",
@@ -63,7 +55,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#008FD1",
-    "navigationBarTitleText": "南京亲子云",
+    "navigationBarTitleText": "亲子云",
     "navigationBarTextStyle": "white"
   },
   "permission": {
