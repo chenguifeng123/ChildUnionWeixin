@@ -4,6 +4,7 @@
 <!--form bindsubmit="submit" report-submit="true"-->
   <view class="title">
     <view class="title-name">发布需求</view>
+    
     <view class="title-input">
     
     <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
@@ -27,16 +28,14 @@
           <text class="sexText">视频</text>
         </radio>
         </radio-group>
-          <button bindtap="uploadFile" class="uploadBtnClass">选择文件</button>
+          <button bindtap="uploadFile" class="uploadBtnClass">上传</button>
     <text>{{showResult}}</text>
   </view>
-
-  <view>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{tool.messageTypeStr}}">
-      <button class="messageTypeClass">{{!!select ? tool.messageTypeStr[index] : '需求分类'}}</button>
-  </picker>
-  </view>
-
+<view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{tool.messageTypeStr}}">
+        <button class="messageTypeClass">{{!!select ? tool.messageTypeStr[index] : '发布类型'}}</button>
+    </picker>
+    </view>
   <view class="message">
     <!--view class="message-name">内容</view-->
     <view class="message-input">

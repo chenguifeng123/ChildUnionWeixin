@@ -48,4 +48,5 @@
 <image src="/pages/img/invite.jpg" class="invite-img"></image>
 <!--/button-->
 </view>
+<cell bind:startmessage='startmessage' bind:completemessage="completemessage" plugid='34a7cc1cdfd3d0264ee128020cfbf807'  />
 </view>

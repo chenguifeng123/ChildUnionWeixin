@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "cell": "plugin://contactPlugin/cell"
+  }
+
+}

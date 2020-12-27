@@ -3,16 +3,16 @@
 }
 
 .title-input, .message-input{
-  padding-top:5px;
+  padding-top:10px;
 }
 
 .title-name, .message-name{
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
 .radio{
-  margin: 3px;
+  margin: 5px;
 }
 
 .title-tip, .message-tip{
@@ -22,12 +22,12 @@
 }
 
 .uploadBtnClass{
-  background-color:rgb(214, 228, 240);
+  background-color:rgb(128, 189, 243);
 }
 
 .messageTypeClass{
   margin-top: 10px;
-  background-color:rgb(166, 204, 240);
+  background-color:rgb(128, 189, 243);
 }
 
 input, textarea{

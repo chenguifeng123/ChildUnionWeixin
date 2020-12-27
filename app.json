@@ -1,7 +1,13 @@
 {
+  "plugins": {
+    "contactPlugin": {
+      "version": "1.3.0",
+      "provider": "wx104a1a20c3f81ec2"
+    }
+  },
   "pages": [
-    
     "pages/cooperate/list",
+    "pages/business/list",
     "pages/business/oneBusiness",
     "pages/business/success",
     "pages/business/commend",
@@ -38,6 +44,11 @@
         "pagePath": "pages/cooperate/list",
         "text": "市场动态",
         "iconPath": "pages/img/icon-cooperate.png"
+      },
+      {
+        "pagePath": "pages/business/list",
+        "text": "亲子名片",
+        "iconPath": "pages/img/icon-business.png"
       },
       {
         "pagePath": "pages/company/list",
