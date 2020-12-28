@@ -5,20 +5,20 @@
     <view class="message-input">
 
     
-    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
       <button formType="submit" class='form_button_message'>
       <textarea id="replyMessage" name="replyMessage" maxlength="256" placeholder="请输入内容" bindinput="bindMessageInput"></textarea>
       </button>
-    </form>
 
     </view>
   </view>
 
 <view class="submit-view">
 
-  <form bindsubmit="submit" report-submit="{{true}}">
+  <!--view bindtap="submit" report-submit="{{true}}">
   <button class="submit-btn" formType="submit">提交</button>
-  </form>
+  </view-->
+
+  <button bindtap="submit" class="submit-btn" formType="submit">提交</button>
 
 </view>
 <!--/form-->

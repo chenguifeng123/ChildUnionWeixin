@@ -9,7 +9,7 @@ Page({
 
   goHome: function (event) {
     wx.switchTab({
-      url: '/pages/business/list',
+      url: '/pages/cooperate/list',
     });
   },
 

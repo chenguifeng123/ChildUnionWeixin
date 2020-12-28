@@ -185,6 +185,29 @@ App({
     }
   },
 
+  getAuth2PushMessage: function(templateId){
+    //var templateId = 'Ite6-mnfTlONu6rd35AJ-SGQYKQgj1WMvjVj0O5h9kE'
+    wx.requestSubscribeMessage({
+        tmplIds: [templateId],
+        success: (res)=> {
+          console.log(res);
+            // 如果用户点击允许
+            if(res[templateId] == 'accept'){
+                console.log('点击了允许');
+            } else {
+                console.log('点击了取消');
+            }
+        },
+        fail:(res) => {
+          console.log('操作失败', res);
+        }, 
+        complete:(res) => {
+          console.log('一定操作', res);
+          //runFunction();
+        }
+    }) 
+  },
+
   // 后续要重构采用 result{code: msg: data}这种结构返回
   hasData: function (data) {
     if (data == undefined || data == null) return false;

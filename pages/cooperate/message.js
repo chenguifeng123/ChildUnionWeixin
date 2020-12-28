@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    templateId : 'auLNgQjD8StjjSvOvVcdk3qU7XDURV2gRZB9OdiYozM',
     title: '',
     message: '',
     formIdArray:[],
@@ -16,6 +17,7 @@ Page({
     sourceType: -1,
     sourcePath: '',
     showResult: '',
+    authClick: false,
   },
 
   saveFormId: function (v) {
@@ -124,11 +126,17 @@ Page({
     return true;
   },
 
-  submit: function (e) {
-    //var formId = e.detail.formId;
-    this.saveFormId(e);
+  auth: function(){
+    if(!this.data.authClick){
+      app.getAuth2PushMessage(this.data.templateId);
+      this.setData({
+        authClick:true
+      })
+    }
+  },
+
+  addMessage: function(){
     var op = this;
-    if (!this.checkInput()) return;
     app.post('/cooperate/message', {
       cardId: app.getUserId(),
       //formId: op.data.formIdArray,
@@ -150,6 +158,13 @@ Page({
         }
       }
     });
+  },
+
+  submit: function (e) {
+    var op = this;
+    if (!this.checkInput()) return;
+    this.auth();
+    this.addMessage();
   },
 
   /**

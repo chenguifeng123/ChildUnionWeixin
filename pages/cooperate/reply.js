@@ -7,10 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    templateId : '9mY0ssY4O1iSnG9c3hPID4BQxVBHA_GWWjBZ43-HEl4',
     messageId: 0,
     replyId: 0,
     message: '',
-    formIdArray: []
+    formIdArray: [],
+    authClick : false,
   },
 
   saveFormId: function (v) {
@@ -35,12 +37,17 @@ Page({
     return true;
   },
 
-  submit: function (e) {
-    this.saveFormId(e);
-    if(!this.checkInput()) return; 
-    //var formId = e.detail.formId;
+  auth: function(){
+    if(!this.data.authClick){
+      app.getAuth2PushMessage(this.data.templateId);
+      this.setData({
+        authClick:true
+      })
+    }
+  },
+
+  addReply:function(){
     var op = this;
-    //var replyMessage = e.detail.value.replyMessage;
     var replyMessage = this.data.message;
     app.post('/cooperate/messageReply', {
       messageId: op.data.messageId,
@@ -65,6 +72,13 @@ Page({
         });
       }
     });
+  },
+
+  submit: function (e) {
+    if(!this.checkInput()) return; 
+    //var formId = e.detail.formId;
+    this.auth();
+    this.addReply();
   },
 
   /**

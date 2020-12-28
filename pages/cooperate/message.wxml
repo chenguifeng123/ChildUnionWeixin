@@ -7,11 +7,9 @@
     
     <view class="title-input">
     
-    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
       <button formType="submit" class='form_button_message'>
       <input maxlength="50" placeholder="请输入标题" bindinput="bindTitleInput" class="inputClass"></input>
       </button>
-    </form>
 
     </view>
     <view class="title-tip">
@@ -40,11 +38,9 @@
     <!--view class="message-name">内容</view-->
     <view class="message-input">
 
-    <form bindsubmit="saveFormId" report-submit="{{true}}" class='form_class_message'>
       <button formType="submit" class='form_button_message'>
       <textarea maxlength="2000" placeholder="请输入正文" bindinput="bindMessageInput"></textarea>
       </button>
-    </form>
 
 
     </view>
@@ -55,9 +51,11 @@
 
 <view class="submit-view">
 
-<form bindsubmit="submit" report-submit="{{true}}">
-  <button class="submit-btn" formType="submit">提交</button>
-</form>
+<!--view bindtap="submit" report-submit="{{true}}">
+  <button bindtap="submit" class="submit-btn" formType="submit">提交</button>
+</view-->
+
+<button bindtap="submit" class="submit-btn" formType="submit">提交</button>
 
 </view>
 
