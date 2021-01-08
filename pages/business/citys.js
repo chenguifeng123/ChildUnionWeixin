@@ -7,7 +7,12 @@ Page({
     scrollIntoId: '',
     location:'',
     county:'',
-    hotCitys: [{
+    hotCitys: [
+    {
+        "cityCode": -1,
+        "cityName": "全部"
+    }, 
+    {
       "cityCode": 220,
       "cityName": "南京"
     }, 

@@ -175,7 +175,8 @@ Page({
       this.setData({ cityCode: options.cityCode, cityName: options.cityName });
       //this.loadAllBusiness();
     }else{
-      this.setData({ cityCode: 220, cityName: '南京' });
+      //this.setData({ cityCode: 220, cityName: '南京' });
+      this.setData({ cityCode: -1, cityName: '全部' });
       //this.loadCity();
      }
     this.loadAllBusiness();
