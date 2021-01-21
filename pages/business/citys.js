@@ -53,8 +53,20 @@ Page({
       "cityName": "常州"
     },
     {
+      "cityCode": 294,
+      "cityName": "无锡"
+    },
+    {
       "cityCode": 255,
       "cityName": "苏州"
+    },
+    {
+      "cityCode": 151,
+      "cityName": "淮安"
+    },
+    {
+      "cityCode": 321,
+      "cityName": "徐州"
     },
     {
       "cityCode": 329,
