@@ -43,9 +43,9 @@
       <image src="/pages/img/like.jpg" style="width:16px;height:16px;" bindtap="updateLike"></image> {{like}}
     </view>
   </view>
-  <button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+  <!--button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
     回复
-  </button>
+  </button-->
 
 </view> 
 
@@ -72,10 +72,12 @@
       <image src="/pages/img/home.png" class="bottom-img" />
       <text class="bottom-txt"> 首页</text>
     </button>
-    <button class="bottom-middle-button bottom-class"   bindtap="contact">
+    <!--button class="bottom-middle-button bottom-class"   bindtap="contact">
       <image src="/pages/img/button-contact.png" class="bottom-right-img" />
-    </button>
-
+    </button-->
+    <button class="bottom-middle-button bottom-class" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    回复
+  </button>
     <button class="bottom-right-button bottom-class" open-type="share">
       <image src="/pages/img/button-share.png" class="bottom-right-img" />
     </button>
