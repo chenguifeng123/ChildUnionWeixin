@@ -47,6 +47,8 @@ Page({
     cityName: '',
 
     formIdArray: [],
+
+    countDisplayCards: 1000,
   },
 
   oneBusiness: businessTemp.oneBusiness,
@@ -124,6 +126,17 @@ Page({
     this.loadAllBusiness();
   },
 
+  loadBusinessCount:function(city){
+    var op = this;
+    app.getUrl('/business/count/' + city, function (data) {
+      if (app.hasData(data)) {
+        op.setData({
+          countDisplayCards: data,
+        });
+      }
+    });
+  },
+
   loadAllBusiness:function(){
     var op = this;
     var id = wx.getStorageSync('id');
@@ -180,6 +193,7 @@ Page({
       //this.loadCity();
      }
     this.loadAllBusiness();
+    this.loadBusinessCount(-1);
   },
 
   /**

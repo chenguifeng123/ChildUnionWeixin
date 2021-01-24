@@ -82,3 +82,14 @@ swiper {
   animation-iteration-count: infinite;
   animation-timing-function:linear;
 }
+
+.card-display-bar{
+  font-size: 0.9em;
+  color: rgb(2, 143, 215);
+  text-align: center;
+}
+
+.card-display-text{
+  font-size: 1em;
+  color: #ff0000;
+}
