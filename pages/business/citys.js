@@ -71,6 +71,14 @@ Page({
     {
       "cityCode": 329,
       "cityName": "盐城"
+    },
+    {
+      "cityCode": 226,
+      "cityName": "南通"
+    },
+    {
+      "cityCode": 227,
+      "cityName": "南阳"
     }
     ],
     citys: [ ],
