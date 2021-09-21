@@ -16,7 +16,7 @@
         </view>
 
         <view class="reply-right-info"> 
-           <button class="reply-btn" data-id="{{item.id}}" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" >回复</button> 
+           <button class="reply-btn" data-id="{{item.id}}" bindtap = "onGotUserInfo" >回复</button> 
         </view>
 
         <view class="reply-message-multi" wx:if="{{item.replyId != 0}}">

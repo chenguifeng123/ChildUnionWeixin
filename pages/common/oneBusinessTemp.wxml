@@ -3,7 +3,7 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{oneBusiness.headimgurl}}" background-size="cover"></image>
 
   <view class="refresh-personal" wx:if="{{isMyPage == true && needShow == false}}">
-    <button class="weui-btn mini-btn button-personal" type="default" size="mini" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">设置名片</button>
+    <button class="weui-btn mini-btn button-personal" type="default" size="mini" bindtap="onGotUserInfo">设置名片</button>
   </view>
       <!-- 此处隐藏，该功能移动到基本资料处>
       <!--image bindtap="modifyCard" class="modify-img" src="/pages/img/modify.png" wx:if="{{isMyPage == true && needShow == true}}"></image-->

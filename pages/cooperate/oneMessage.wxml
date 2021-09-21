@@ -75,7 +75,7 @@
     <!--button class="bottom-middle-button bottom-class"   bindtap="contact">
       <image src="/pages/img/button-contact.png" class="bottom-right-img" />
     </button-->
-    <button class="bottom-middle-button bottom-class" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    <button class="bottom-middle-button bottom-class" bindtap = "onGotUserInfo">
     回复
   </button>
     <button class="bottom-right-button bottom-class" open-type="share">

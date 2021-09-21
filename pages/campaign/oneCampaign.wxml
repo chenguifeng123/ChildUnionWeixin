@@ -70,7 +70,7 @@
       <image src="/pages/img/home.png" class="bottom-img" />
       <text class="bottom-txt">返回</text>
     </button>
-    <button class="bottom-right-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo">
+    <button class="bottom-right-button bottom-class"  bindtap = "onGotUserInfo">
       
       <text class="price-bottom-txt">{{'合计' + allPrice + ' 立即预订'}}</text>
     </button>

@@ -22,7 +22,7 @@ App({
       this.canIUseGetUserProfile = true
     }
   },
-  getUserProfile(e) {
+  getUserProfile(e, getFunction) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
     // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
@@ -30,6 +30,13 @@ App({
       success: (res) => {
         this.globalData.userInfo = res.userInfo;
         this.globalData.hasUserInfo = true;
+        this.onGotUserInfoV1(e, getFunction);
+      },
+      fail: (res) => {
+        console.log(res);
+      },
+      complete: (res) => {
+        console.log(res);
       }
     })
   },
@@ -132,8 +139,8 @@ App({
     });
   },
 
-  onGotUserInfo: function (e, getFunction) {
-    this.globalData.userInfo = e.detail.userInfo;
+  onGotUserInfoV1: function (e, getFunction) {
+    //this.globalData.userInfo = e.detail.userInfo;
     if (this.getUserId() != -1) {
       getFunction();
       return;
@@ -160,6 +167,13 @@ App({
         }
       });
     }
+  },
+
+  onGotUserInfo:function(e, func){
+    if(Object.keys(this.globalData.userInfo) == 0)
+      this.getUserProfile(e, func);
+    else
+      this.onGotUserInfoV1(e, func);
   },
 
   isLeaguerFunc:function(func){

@@ -31,7 +31,7 @@
       <image src="/pages/img/home.png" class="bottom-img" />
       <text class="bottom-txt"> 回首页</text>
     </button>
-    <button class="bottom-middle-button bottom-class" open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" wx:if="{{follow == 0}}">
+    <button class="bottom-middle-button bottom-class" bindtap = "onGotUserInfo" wx:if="{{follow == 0}}">
       <image src="/pages/img/follow.png" class="bottom-img" />
       <text class="middle-bottom-txt"> 关注</text>
     </button>

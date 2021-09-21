@@ -44,7 +44,7 @@
         </view>
   </view>
 
-    <button class="weui-btn btn-addmessage" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    <button class="weui-btn btn-addmessage" bindtap = "onGotUserInfo">
     <image src="/pages/img/add-message1.jpg">
     </image>
     

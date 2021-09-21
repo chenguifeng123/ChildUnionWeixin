@@ -88,9 +88,10 @@ Page({
   },
 
   onGotUserInfo: function (e) {
-    app.globalData.userInfo = e.detail.userInfo;
+    //app.globalData.userInfo = e.detail.userInfo;
     if (app.globalData.userInfo != null)
       this.submit();
+
   },
 
   loadCity: function () {
